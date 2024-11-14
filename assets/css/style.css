@@ -12,9 +12,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Avenir";
   font-weight: 600;
-  color: #00113E;
+  color: #fff;
 }
 
 p {
@@ -23,7 +23,8 @@ p {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 46px;
+  letter-spacing: -3px;
 }
 
 h2 {
@@ -35,7 +36,8 @@ h3 {
 }
 
 h4 {
-  font-size: 25px;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 h5 {
@@ -48,9 +50,9 @@ h6 {
 }
 
 .btn {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Avenir";
   border: none;
-  color: #fff !important;
+  /* color: #fff !important; */
   padding: 20px 45px;
   border-radius: 0;
 }
@@ -104,16 +106,24 @@ h6 {
 }
 
 .btn-primary {
-  background: #EAA4A4;
-  color: #fff;
+  background: #ADD6D2;
+  color: #1B0563;
+  margin-top: 16px;
+  font-weight: 600;
 }
 .btn-primary:hover {
-  background: #e07b7b;
+  background: #1B0563;
 }
 
 .btn-secondary {
   background: #ADD6D2;
-  color: #fff;
+  color: #1B0563;
+}
+
+.btn-ghost {
+  /* background-color: none; */
+  border: 1px solid #fff;
+  color: #1B0563;
 }
 .btn-secondary:hover {
   background: #8bc5bf;
@@ -192,7 +202,7 @@ textarea.form-control {
 
 .site-navigation {
   padding: 20px 0;
-  background: #fff;
+  background: transparent;
   position: fixed;
   top: 0;
   width: 100%;
@@ -201,7 +211,7 @@ textarea.form-control {
 }
 @media (max-width: 991px) {
   .site-navigation {
-    background: #fff;
+    background: #00113E;;
     margin: 10px;
     border-radius: 5px;
     top: 0;
@@ -228,13 +238,13 @@ textarea.form-control {
 }
 .site-navigation .nav-item .nav-link {
   font-family: "Montserrat", sans-serif;
-  color: #00113E;
+  color: #fff;
   transition: all 0.3s ease;
   padding: 15px 18px;
   position: relative;
 }
 .site-navigation .nav-item .nav-link:hover {
-  color: #EAA4A4;
+  color: #ADD6D2;
 }
 .site-navigation .nav-item:last-child {
   margin-left: 15px;
@@ -288,12 +298,10 @@ textarea.form-control {
 .site-hero {
   position: relative;
   height: 100vh;
-  background-image: url("../images/backgrounds/hero-background.jpg");
-  background-size: cover;
-  background-position: center center;
   display: flex;
+  flex-flow: row;
   align-items: center;
-  justify-content: center;
+  background: linear-gradient(to bottom, #433878, #6353B2, #705DC8);
 }
 @media (max-width: 991px) {
   .site-hero {
@@ -307,7 +315,8 @@ textarea.form-control {
   }
 }
 .site-hero-content h1 {
-  margin-bottom: 75px;
+  margin-bottom: 16px;
+  margin-top: 75px;
 }
 @media (max-width: 991px) {
   .site-hero-content h1 {
@@ -450,14 +459,14 @@ textarea.form-control {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 500;
-  color: #EAA4A4;
+  color: #A7FFEB;
 }
 .site-project-cta::before {
   content: "";
   position: absolute;
   height: 2px;
   width: 100%;
-  background: #EAA4A4;
+  background: #A7FFEB;
   bottom: -2px;
   transition: transform 0.3s cubic-bezier(0.36, 0.03, 0, 0.91);
   transform-origin: right;
@@ -562,10 +571,11 @@ textarea.form-control {
   margin-bottom: 30px;
 }
 .site-project-single-image img {
-  width: 48%;
+  width: 100%;
+  margin-bottom: 30px;
 }
 .site-project-single-image img:nth-child(2n) {
-  margin-left: auto;
+  margin-left: 0;
 }
 @media (max-width: 767px) {
   .site-project-single-image img {
