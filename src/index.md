@@ -8,7 +8,7 @@ hero:
     text: "See Our Works"
     link: "#project"
   connectBtn: 
-    text: "Connect with us"
+    text: "Book a consultation call"
     link: "contact"
 
 portfolio:

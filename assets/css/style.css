@@ -29,6 +29,7 @@ h1 {
 
 h2 {
   font-size: 50px;
+  color:#000;
 }
 
 h3 {
@@ -121,8 +122,8 @@ h6 {
 }
 
 .btn-ghost {
-  /* background-color: none; */
-  border: 1px solid #fff;
+/* background-color: none; */
+  border: 2px solid #fff;
   color: #1B0563;
 }
 .btn-secondary:hover {
@@ -142,10 +143,11 @@ body {
   }
 }
 .section-title h2 {
-  font-weight: 300;
-  letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: -3px;
   text-transform: uppercase;
   margin-bottom: 15px;
+  max-width: 900px;
 }
 @media (max-width: 991px) {
   .section-title h2 {
@@ -238,6 +240,7 @@ textarea.form-control {
 }
 .site-navigation .nav-item .nav-link {
   font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   color: #fff;
   transition: all 0.3s ease;
   padding: 15px 18px;
@@ -301,7 +304,7 @@ textarea.form-control {
   display: flex;
   flex-flow: row;
   align-items: center;
-  background: linear-gradient(to bottom, #433878, #6353B2, #705DC8);
+  background: linear-gradient(to bottom, #433878, #6353B2, #705DC8); /*TODO: solid background #050540  */
 }
 @media (max-width: 991px) {
   .site-hero {
@@ -316,7 +319,7 @@ textarea.form-control {
 }
 .site-hero-content h1 {
   margin-bottom: 16px;
-  margin-top: 75px;
+  margin-top: 45px;
 }
 @media (max-width: 991px) {
   .site-hero-content h1 {
