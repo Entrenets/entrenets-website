@@ -1,0 +1,37 @@
+{
+    "challenges_A": [
+        {
+            "title": "Long downtimes and slow troubleshooting",
+            "des": "Network inefficiencies can lead to extended service outages and delays in identifying and fixing issues.",
+            "icon": "./assets/images/challenges/troubleshooting.svg"
+        },
+        {
+            "title": "Increased operational costs",
+            "des": "Unoptimized networks drive up expenses for maintenance, bandwidth, and hardware replacements.", 
+            "icon": "./assets/images/challenges/expenses.svg"
+        },
+        {
+            "title": "Poor user experience",
+            "des": "Slow networks disrupt workflows, frustrate employees, and lead to dissatisfaction among customers.", 
+            "icon": "./assets/images/challenges/sad-comment.svg"
+        }
+    ],
+    "challenges_B": [
+        {
+            "title": "Security vulnerabilities",
+            "des": "Outdated or poorly maintained networks are easier targets for cyberattacks, putting sensitive data at risk.",
+            "icon": "./assets/images/challenges/security-vulnerable.svg"
+
+        },
+        {
+            "title": "Limited scalability",
+            "des": "Without proper network planning, growth becomes difficult and can create performance bottlenecks.", 
+            "icon": "./assets/images/challenges/scalable.svg"
+        },
+        {
+            "title": "Lack of visibility",
+            "des": "Failing to monitor and control your network, might lead to reactive rather than proactive problem-solving.", 
+            "icon": "./assets/images/challenges/monitoring.svg"
+        }
+    ]
+}

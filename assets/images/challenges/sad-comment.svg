@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" id="sadcomment">
+  <path fill="#add6d2" stroke="#4f706e" stroke-linejoin="round" d="M7 17C7 13.6863 9.68629 11 13 11H35C38.3137 11 41 13.6863 41 17V26C41 29.3137 38.3137 32 35 32H23.6978C22.2787 32 20.9055 32.503 19.8222 33.4197L15 37.5V34C15 32.8954 14.1046 32 13 32C9.68629 32 7 29.3137 7 26V17Z" class="colorf9aaaa svgShape colorStroke212121 svgStroke"></path>
+  <circle cx="20.5" cy="18.5" r="1.5" fill="#95b9b4" stroke="#4f706e" class="colorf45d5d svgShape colorStroke212121 svgStroke"></circle>
+  <circle cx="28.5" cy="18.5" r="1.5" fill="#95b9b4" stroke="#4f706e" class="colorf45d5d svgShape colorStroke212121 svgStroke"></circle>
+  <path stroke="#4f706e" stroke-linecap="round" d="M18 25.875C22.5 23.375 26 23.375 31 25.875" class="colorStroke212121 svgStroke"></path>
+</svg>

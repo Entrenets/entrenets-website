@@ -11,9 +11,8 @@ hero:
     text: "Book a consultation call"
     link: "contact"
 
-portfolio:
-  subTitle: "OUR RECENT WORKS"
-  title: "Crafting experiences and seeking to make the complex clear & beautiful."
+challenge:
+  title: "<span style='color: #7C7C86'>Network performance is the backbone of your business operations.</span> Make it unbreakable."
   seeAllbtn:
     link: "portfolio"
     text: "MORE WORKS"

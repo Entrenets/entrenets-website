@@ -7,15 +7,23 @@
         <div class="site-hero-content">
           <h1>{{hero.title | safe}}</h1>
           <h4>{{hero.subTitle}}</h4>
-          <a href="/{{hero.connectBtn.link}}" class="btn btn-primary btn-sm-rounded">
+          <a
+            href="/{{hero.connectBtn.link}}"
+            class="btn btn-primary btn-sm-rounded"
+          >
             <span class="btn-area">
-              <span data-text="{{hero.connectBtn.text}}">{{hero.connectBtn.text}}</span>
+              <span data-text="{{hero.connectBtn.text}}"
+                >{{hero.connectBtn.text}}</span
+              >
             </span>
           </a>
         </div>
       </div>
       <div class="col-lg-6">
-        <img src="./assets/images/backgrounds/man-managing-files-and-data-on-cloud-web-server-md.png" alt="hero image"/>
+        <img
+          src="./assets/images/backgrounds/man-managing-files-and-data-on-cloud-web-server-md.png"
+          alt="hero image"
+        />
       </div>
     </div>
   </div>
@@ -25,6 +33,7 @@
   </a>
 </section>
 
+{#
 <section class="site-counter" id="counter">
   <div class="container">
     <div class="row">
@@ -44,36 +53,38 @@
     </div>
   </div>
 </section>
+#}
 
 <section class="site-project" id="project">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 center">
         <div class="section-title">
-          <h2>{{portfolio.subTitle}}</h2>
-          <p>{{portfolio.title}}</p>
+          <h2>{{challenge.title | safe}}</h2>
         </div>
       </div>
-      {% for portfolio in collections.portfolios %}
-      <div class="col-lg-6 col-md-10 mx-auto">
-        <div class="site-project-item">
-          <div class="site-project-item-thumb">
-            <img src="{{portfolio.data.img}}" alt="project-thumb" />
-          </div>
-          <div class="site-project-item-content">
-            <span>{{portfolio.data.subTitle}}</span>
-            <h3>{{portfolio.data.title}}</h3>
-            <a href="{{portfolio.data.page.url}}" class="read-more"
-              >{{portfolio.data.linkText}}</a
-            >
+
+      <div class="col-md-6 challenge-col">
+        {% for challenge in challenges.challenges_A %}
+        <div class="challenge-container">
+          <img src="{{challenge.icon}}" />
+          <div class="challenge-content">
+            <h6>{{challenge.title}}</h6>
+            <p>{{challenge.des}}</p>
           </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-      <div class="col-12 text-center text-lg-left">
-        <a href="/{{portfolio.seeAllbtn.link}}" class="site-project-cta"
-          >{{portfolio.seeAllbtn.text}}</a
-        >
+      <div class="col-md-6 challenge-col">
+        {% for challenge in challenges.challenges_B %}
+        <div class="challenge-container">
+          <img src="{{challenge.icon}}" />
+          <div class="challenge-content">
+            <h6>{{challenge.title}}</h6>
+            <p>{{challenge.des}}</p>
+          </div>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
