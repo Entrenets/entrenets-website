@@ -26,7 +26,7 @@
         {
             "title": "Limited scalability",
             "des": "Without proper network planning, growth becomes difficult and can create performance bottlenecks.", 
-            "icon": "./assets/images/challenges/scalable.svg"
+            "icon": "./assets/images/challenges/expand.svg"
         },
         {
             "title": "Lack of visibility",
