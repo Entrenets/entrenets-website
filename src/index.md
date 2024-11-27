@@ -22,4 +22,16 @@ hero:
 
 challenge:
   title: "<span style='color: #000'>Network performance is the backbone of your business operations.</span> Make it unbreakable."
+
+ourSolutions:
+  title: "Explore our solutions"
+  subTitle: "Cutting-edge solutions designed to empower your business driving efficiency, scalability, and innovation every step of the way."
+
+mission:
+  title: "<span style='color: #4F75FF'>Get technology working for you.</span>"
+  main: "Our mission is to help you innovate and
+        scale with ease by simplifying operations, boosting agility, and
+        building resilience. So, you can focus on what matters most—growing
+        without limits."
+
 ---

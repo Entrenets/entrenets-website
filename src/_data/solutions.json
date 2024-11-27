@@ -1,0 +1,19 @@
+{
+  "solutions": [
+    {
+      "title": "Network Automation",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "icon": "assets/images/solutions/automation.svg"
+    },
+    {
+      "title": "IT infrastructure and DevOps",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "icon": "assets/images/solutions/devops.svg"
+    },
+    {
+      "title": "Cloud Migration",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "icon": "assets/images/solutions/cloud.svg"
+    }
+  ]
+}
