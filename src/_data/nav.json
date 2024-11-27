@@ -1,6 +1,6 @@
 {
   "navLogo":"/assets/images/logo.png",
   "navLinks":["Services","Study cases","Blog","About"],
-  "navBtnLink":"contact",
+  "navBtnLink":"https://calendar.google.com/calendar/scheduling-button-script.css",
   "navBtnText":"Get in touch"
 }

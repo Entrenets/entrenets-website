@@ -8,7 +8,7 @@ hero:
     text: "Cloud Migration"
     link: "#project"
   automationBtn:
-    text: "Automation"
+    text: "Network Automation"
     link: "#project"
   managedCloud:
     text: "Managed Cloud"

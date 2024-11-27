@@ -80,8 +80,8 @@ h6 {
   font-family: "Avenir";
   border: none;
   margin: 0 6px;
-  padding: 15px 30px;
-  border-radius: 0;
+  padding: 10px 15px;
+  border-radius: 40px;
 }
 
 .btn:focus {
@@ -112,29 +112,21 @@ h6 {
   left: 0;
 }
 
-.btn-sm {
-  padding: 15px 40px !important;
-}
-
-.btn-sm-rounded {
+.qxCTlb {
   border-radius: 40px;
+  padding: 15px 25px;
 }
 
-.btn-primary {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
-  margin-top: 20px;
-  font-weight: 600;
-}
-
-.btn-primary:hover {
-  background-color: var(--hover-primary-btn-bg);
+.qxCTlb:hover {
+  background-color: var(--hover-primary-btn-bg) !important;
 }
 
 .btn-secondary {
   background: var(--secondary-color);
   color: #fff;
   font-weight: 500;
+  padding: 15px 25px;
+  min-width: 200px;
 }
 
 .btn-secondary:hover {
@@ -184,7 +176,7 @@ h3 {
 .site-navigation {
   padding: 20px 0;
   background: transparent;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 99;
@@ -291,6 +283,10 @@ h3 {
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
 }
 
+.navbar-nav {
+  align-items: center;
+}
+
 @media (max-width: 575px) {
   .site-navigation.nav-bg {
     padding: 15px;
@@ -339,14 +335,17 @@ h3 {
     font-size: 50px;
   }
 }
+
 @media (max-width: 789px) {
   .site-hero-content h1 {
     font-size: 40px;
   }
+
   .site-hero-content h6 {
     font-size: 14px;
   }
 }
+
 @media (max-width: 575px) {
   .site-hero-content h1 {
     font-size: 30px;
@@ -454,12 +453,13 @@ h3 {
 .challenge-content {
   padding: 16px;
 }
+
 .challenge-content h6 {
   color: var(--text-blue-color);
 }
 
 .challenge-content p {
-  color:#454545;
+  color: #454545;
 }
 
 .solution-col {
@@ -482,7 +482,8 @@ h3 {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.solutions h2, p {
+.solutions h2,
+p {
   color: var(--text-light-color);
 }
 
