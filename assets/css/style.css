@@ -6,10 +6,23 @@ VERSION:	1.0.0
 -------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Montserrat:300,400,500,600,700&display=swap");
 
+:root {
+  --primary-color: #000;
+  --secondary-color: #4161d3;
+  --accent-color: #54C392;
+  --text-light-color: #fcfbf9;
+  --text-dark-color: #454545;
+  --text-blue-color: #4F75FF;
+
+  --hover-light-text: rgba(255, 255, 255, 0.8);
+  --hover-primary-btn-bg: #429f77;
+  --hover-secundary-btn-bg: #2E4BB8;
+}
+
 body {
   font-family: "avenir";
   font-size: 16px;
-  color: #9D9EA5;
+  background-color: linear-gradient(to bottom, #F5F5F5, #FDFDFD);
 }
 
 h1,
@@ -20,49 +33,54 @@ h5,
 h6 {
   font-family: "Avenir";
   font-weight: 600;
-  color: #fff;
+  margin-bottom: 12px;
 }
 
 p {
-  font-size: 16px;
-  color: #9D9EA5;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
   margin-bottom: 0;
+  color: var(--text-light-color);
 }
 
 h1 {
-  font-size: 46px;
+  font-size: 78px;
   letter-spacing: -3px;
+  background-image: linear-gradient(to right, #6439FF, #4F75FF, #00CCDD, #7CF5FF);
+  color: transparent;
+  background-clip: text;
 }
 
 h2 {
   font-size: 50px;
-  color: #000;
+  color: var(--text-blue-color);
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 40px;
+  color: var(--primary-color);
 }
 
 h4 {
-  font-weight: 400;
   font-size: 20px;
+  color: #c8c9ce;
 }
 
 h5 {
   font-size: 18px;
+  color: var(--text-blue-color);
 }
 
 h6 {
-  font-size: 15px;
-  color: #000;
+  font-size: 16px;
+  color: var(--text-light-color);
 }
 
 .btn {
   font-family: "Avenir";
   border: none;
-  /* color: #fff !important; */
-  padding: 20px 45px;
+  margin: 0 6px;
+  padding: 15px 30px;
   border-radius: 0;
 }
 
@@ -85,8 +103,6 @@ h6 {
   position: relative;
   display: block;
   padding: 2px 0;
-  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
-  transform-origin: left center;
 }
 
 .btn .btn-area span::after {
@@ -94,25 +110,6 @@ h6 {
   position: absolute;
   top: 150%;
   left: 0;
-  transform: skewY(30deg);
-  transform-origin: left center;
-  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.btn:hover .btn-area span {
-  transform: translateY(-150%) skewY(7deg);
-}
-
-.btn:hover .btn-area span::after {
-  transform: skewY(-7deg);
-}
-
-.btn:visited .btn-area span {
-  transform: translateY(-150%) skewY(7deg);
-}
-
-.btn:visited .btn-area span::after {
-  transform: skewY(-7deg);
 }
 
 .btn-sm {
@@ -124,38 +121,29 @@ h6 {
 }
 
 .btn-primary {
-  background: #ADD6D2;
-  color: #1B0563;
-  margin-top: 16px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  margin-top: 20px;
   font-weight: 600;
 }
 
 .btn-primary:hover {
-  background: #1B0563;
+  background-color: var(--hover-primary-btn-bg);
 }
 
 .btn-secondary {
-  background: #ADD6D2;
-  color: #1B0563;
-}
-
-.btn-ghost {
-  /* background-color: none; */
-  border: 2px solid #fff;
-  color: #1B0563;
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 500;
 }
 
 .btn-secondary:hover {
-  background: #8bc5bf;
-}
-
-body {
-  background: #fff;
+  background-color: var(--hover-secundary-btn-bg);
 }
 
 .section-title {
   margin-bottom: 70px;
-} 
+}
 
 .section-title {
   margin-bottom: 70px;
@@ -172,68 +160,24 @@ body {
   }
 }
 
-.section-title h2 {
-  font-weight: 600;
+.section-title h2,
+h3 {
   letter-spacing: -3px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
   max-width: 900px;
+}
+
+.section-title h3 {
+  letter-spacing: -2px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 @media (max-width: 991px) {
   .section-title h2 {
     font-size: 40px;
   }
-}
-
-.section-title p {
-  font-size: 20px;
-  font-weight: 300;
-}
-
-.form-control {
-  background: transparent;
-  border-radius: 0;
-  margin-bottom: 30px;
-  padding: 0 0 10px 0;
-  border-width: 0 0 1px 0;
-  border-color: #EAA4A4;
-  font-weight: 300;
-  letter-spacing: 1px;
-  -webkit-appearance: none;
-  height: 42px;
-}
-
-.form-control:focus {
-  box-shadow: none;
-  background: transparent;
-  border-color: #9D9EA5;
-}
-
-select.form-control {
-  height: 42px !important;
-  position: relative;
-}
-
-.select-wrapper {
-  position: relative;
-}
-
-.select-wrapper::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 10px;
-  background: url("../images/angle-down-select.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-80%);
-}
-
-textarea.form-control {
-  height: auto;
 }
 
 .site-navigation {
@@ -289,7 +233,7 @@ textarea.form-control {
 }
 
 .site-navigation .nav-item .nav-link:hover {
-  color: #ADD6D2;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .site-navigation .nav-item:last-child {
@@ -358,9 +302,17 @@ textarea.form-control {
   display: flex;
   flex-flow: row;
   align-items: center;
-  background: linear-gradient(to bottom, #433878, #6353B2, #705DC8);
-  /*TODO: solid background #050540  */
-  /* background-color: #050540; */
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.site-hero h6 {
+  color: var(--text-light-color);
+}
+
+.site-hero-btn {
+  margin-top: 100px;
+  margin: 0 auto;
 }
 
 @media (max-width: 991px) {
@@ -376,12 +328,25 @@ textarea.form-control {
   }
 }
 
-.site-hero-content h1 {
-  margin-bottom: 16px;
-  margin-top: 45px;
+.site-hero-content {
+  margin-bottom: 50px;
+  margin-top: 70px;
 }
 
 @media (max-width: 991px) {
+  .site-hero-content h1 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 789px) {
+  .site-hero-content h1 {
+    font-size: 40px;
+  }
+  .site-hero-content h6 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 575px) {
   .site-hero-content h1 {
     font-size: 30px;
   }
@@ -467,31 +432,33 @@ textarea.form-control {
   font-weight: 700;
 }
 
-.site-project {
-  background: linear-gradient(to bottom, #F5F5F5, #FDFDFD);
-}
-
 .challenge-col {
   padding: 8px;
-  border-radius: 6px;
-  gap:2px;
 }
 
-.challenge-container {
+.challenge-card {
   display: flex;
   border-radius: 16px;
-  margin:6px;
+  margin: 6px;
   background-color: #FFF;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  border: 0.2px solid rgb(229, 231, 235);
 }
 
-.challenge-container img {
+.challenge-card img {
   width: 100px;
   padding: 16px 16px 16px 32px;
 }
 
 .challenge-content {
   padding: 16px;
+}
+.challenge-content h6 {
+  color: var(--text-blue-color);
+}
+
+.challenge-content p {
+  color:#454545;
 }
 
 .site-project,
