@@ -13,15 +13,13 @@ hero:
   managedCloud:
     text: "Managed Cloud"
     link: "#project"  
-  # automationBtn:
-  #   text: "Automation"
-  #   link: "#project"
   connectBtn:
     text: "Book a call"
     link: "#project"
 
 challenge:
   title: "<span style='color: #000'>Network performance is the backbone of your business operations.</span> Make it unbreakable."
+  subTitle: "<span style='color: #000'>Whatever the complexity...</span>"
 
 ourSolutions:
   title: "Explore our solutions"

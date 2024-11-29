@@ -49,16 +49,19 @@ h1 {
   background-image: linear-gradient(to right, #6439FF, #4F75FF, #00CCDD, #7CF5FF);
   color: transparent;
   background-clip: text;
+  letter-spacing: -5px;
 }
 
 h2 {
   font-size: 50px;
   color: var(--text-blue-color);
+  letter-spacing: -3px;
 }
 
 h3 {
   font-size: 40px;
   color: var(--primary-color);
+  letter-spacing: -3px;
 }
 
 h4 {
@@ -74,6 +77,19 @@ h5 {
 h6 {
   font-size: 16px;
   color: var(--text-light-color);
+}
+
+.center {
+  justify-items: center;
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.mb-lg {
+  margin-bottom: 50px;
 }
 
 .btn {
@@ -133,19 +149,6 @@ h6 {
   background-color: var(--hover-secundary-btn-bg);
 }
 
-.section-title {
-  margin-bottom: 70px;
-}
-
-.section-title {
-  margin-bottom: 70px;
-}
-
-.center {
-  justify-items: center;
-  text-align: center;
-}
-
 @media (max-width: 991px) {
   .section-title {
     text-align: center;
@@ -154,17 +157,7 @@ h6 {
 
 .section-title h2,
 h3 {
-  font-weight: 600;
-  letter-spacing: -3px;
   max-width: 900px;
-}
-
-.section-title h3 {
-  letter-spacing: -2px;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 @media (max-width: 991px) {
