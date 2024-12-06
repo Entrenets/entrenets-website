@@ -1,96 +1,51 @@
-{% extends "base.njk" %}
+{% extends "base.njk" %} {% block content %}
 
-{% block content %}
-    <section class="site-about-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="site-about-wrapper">
-              <div class="site-about-company">
-                {{content | safe}}
-              </div>
-              <div class="site-about-description">
-                <p>
-                  {{des}}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="hero">
+  <div class="">
+    <h3 class="light-font">{{title | safe}}</h3>
+  </div>
+</section>
 
-    <section class="site-expertise">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="section-title">
-              <h2>{{expertise.title}}</h2>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <ul class="site-expertise-list">
-              {% for expertIn in expertise.expertIn %}
-              <li>{{expertIn}}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="about-section">
+  <div class="container introContainer">
+    <div class="imageContent image1">
+      <img src="{{aboutUs.image}}" class="image" />
+    </div>
+    <div class="textContent text1">
+      <h4 class="title">{{aboutUs.title | safe}}</h4>
+      <p class="description">{{aboutUs.introduction | safe}}</p>
+    </div>
+    <div class="textContent text2">
+      <h6 class="title">{{vision.innovate.title}}</h6>
+      <p class="description">{{vision.innovate.text}}</p>
+    </div>
+    <div class="imageContent image2">
+      <img src="{{vision.innovate.image}}" class="image" />
+    </div>
+    <div class="imageContent image3">
+      <img src="{{vision.humanPotential.image}}" class="image" />
+    </div>
+    <div class="textContent text3">
+      <h6 class="title">{{vision.humanPotential.title}}</h6>
+      <p class="description">{{vision.humanPotential.text}}</p>
+    </div>
+  </div>
+</section>
 
-    <section class="site-client">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title">
-              <h2>{{clients.title}}</h2>
-            </div>
-            <div class="site-client-wrapper">
-              {% for trustedClient in clients.trustedClients %}
-              <div class="site-client-item">
-                <img src="{{trustedClient}}" alt="client-logo">
-              </div> 
-              {% endfor %}
-            </div>
-          </div>
-        </div>
+<section class="about-section">
+  <div class="container">
+    <div class="section-title center">
+      <h3 class="valuesTitle center">{{valuesTitle | safe }}</h3>
+    </div>
+    <div class="gridContainerValues">
+      {% for value in values %}
+      <div class="grid-item valueContainer">
+        <img src="{{value.icon}}" class="valueIcon" />
+        <h6 class="valueTitle">{{value.title}}</h6>
+        <p class="valueDescription">{{value.description | safe}}</p>
       </div>
-    </section>
-
-    <section class="site-team">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title">
-              <h2>
-                {{team.title}}
-              </h2>
-            </div>
-          </div>
-          {% for teamMember in team.teamMembers %}
-          <div class="col-lg-4 col-md-6">
-            <div class="site-team-member">
-              <div class="site-team-member-image">
-                <img src="{{teamMember.img}}" alt="team-member">
-              </div>
-              <div class="site-team-member-content">
-                <h3>{{teamMember.name}}</h3>
-                <p>{{teamMember.dig}}</p>
-                <ul class="site-team-member-social">
-                  {% for social in teamMember.social %}
-                  <li>
-                    <a href="/{{social.link}}">
-                      <i class="fa fa-{{social.icon}}"></i>
-                    </a>
-                  </li> 
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div> 
-          {% endfor %}
-        </div>
-      </div>
-    </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}

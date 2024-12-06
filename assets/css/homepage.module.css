@@ -138,11 +138,6 @@
   font-weight: 700;
 }
 
-.challenges,
-.mission {
-  background-color: var(--light-bg-color);
-}
-
 .challenge-col {
   padding: 8px;
 }
@@ -174,7 +169,7 @@
 }
 
 .challenge-content h6 {
-  color: var(--text-blue-color);
+  color: var(--primary-color);
 }
 
 .challenge-content p {
