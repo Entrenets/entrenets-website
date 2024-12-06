@@ -51,7 +51,7 @@
 </section>
 #}
 
-<section class="homepage-section light-bg" id="project">
+<section class="section light-bg" id="project">
   <div class="container">
     <div class="row">
       <div class="col-12 center">
@@ -86,7 +86,7 @@
   </div>
 </section>
 
-<section class="homepage-section" id="project">
+<section class="section" id="project">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -117,7 +117,7 @@
     </div>
   </div>
 </section>
-<section class="homepage-section solutions" id="project">
+<section class="section solutions" id="project">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -127,7 +127,7 @@
         </div>
         <div class="col-12 solution-col">
           {% for solution in solutions.solutions %}
-          <div class="col-md-4 mb-4">
+          <div class="col-6">
             <div class="solution-item">
               <div class="solutions-content">
                 <img src="{{solution.icon}}" />
@@ -137,7 +137,7 @@
             </div>
           </div>
           {% endfor %} {% for solution in solutions.solutions %}
-          <div class="col-md-4 mb-4">
+          <div class="col-6">
             <div class="solution-card">
               <div class="solutions-content">
                 <img src="{{solution.icon}}" />

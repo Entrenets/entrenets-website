@@ -4,20 +4,30 @@
    "description": "",
    "main": ".eleventy.js",
    "scripts": {
-      "build:eleventy": "npx eleventy",  
-      "build:css": "postcss assets/css/*.module.css --dir _site/assets/css",  
+      "build:eleventy": "npx eleventy",
+      "build:css": "postcss assets/css/*.module.css --dir _site/assets/css",
       "build": "npm run build:css && npm run build:eleventy",
       "dev": "npx eleventy --serve"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Alba-Rodriguez/entrenets-website.git"
    },
    "keywords": [],
    "author": "",
    "license": "ISC",
    "dependencies": {
       "@11ty/eleventy": "^0.12.1",
-      "postcss-modules": "^6.0.1"
+      "postcss-modules": "^6.0.1",
+      "postcss-values": "^0.0.0",
+      "save-dev": "^0.0.1-security"
    },
    "devDependencies": {
       "postcss": "^8.4.49",
-      "postcss-cli": "^11.0.0"
+      "postcss-cli": "^11.0.0",
+      "postcss-modules-extract-imports": "^3.1.0",
+      "postcss-modules-local-by-default": "^4.2.0",
+      "postcss-modules-scope": "^3.2.1",
+      "postcss-modules-values": "^4.0.0"
    }
 }

@@ -1,0 +1,169 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  text-align: center;
+}
+
+.heroText {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.about-section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.gridContainerValues {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.introContainer {
+  width: auto;
+  border-radius: 10px;
+  padding: 8px 16px 0;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "image1 text1"
+    "text2 image2"
+    "image3 text3";
+}
+
+.textContent {
+  padding: 20px;
+  color: var(--text-light-color);
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.imageContent {
+  display: flex;
+  justify-content: center;
+}
+
+.image1 {
+  grid-area: image1;
+}
+
+.text1 {
+  grid-area: text1;
+}
+
+.image2 {
+  grid-area: image2;
+}
+
+.text2 {
+  grid-area: text2;
+}
+
+.image3 {
+  grid-area: image3;
+}
+
+.text3 {
+  grid-area: text3;
+}
+
+.image {
+  width: 80%;
+  border-radius: 20px;
+}
+
+.round {
+  border-radius: 10px;
+}
+
+.valueContainer {
+  min-height: fit-content;
+  background-color: #161616;
+  border-radius: 5px;
+}
+
+.valueIcon {
+  width: 70px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-self: center;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.valuesTitle {
+  font-weight: 500;
+}
+
+@media (max-width: 995px) {
+
+  .about-section {
+    padding: 20px 0;
+  }
+
+  .gridContainerValues {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .valueContainer {
+    max-width: 400px;
+  }
+
+  .valueIcon {
+    width: 45px;
+  }
+
+  .introContainer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text1"
+      "image1"
+      "text2"
+      "image2"
+      "text3"
+      "image3"
+  }
+
+  .image {
+    width: 80%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .valuesTitle {
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .gridContainerValues {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .valueIcon {
+    width: 60px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+}
