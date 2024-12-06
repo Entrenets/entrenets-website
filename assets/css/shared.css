@@ -174,9 +174,10 @@ h3 {
 .btn {
   font-family: "Avenir";
   border: none;
-  margin: 0 6px;
+  margin: 6px 6px;
   padding: 10px 15px;
   border-radius: 40px;
+  width: fit-content;
 }
 
 .btn:focus {
