@@ -1,0 +1,68 @@
+{% extends "base.njk" %} {% block content %}
+<section class="site-hero">
+  <div class="container cloud-migration-hero">
+    <div class="site-hero-content center">
+      <img src="/assets/images/cloud-migration/cloud-icon.svg" width="60px" />
+      <h6 class="heroServiceName">{{hero.name}}</h6>
+      <h1 class="heroTitle">{{hero.title | safe}}</h1>
+      <h6 class="heroSubTitle center light-font">{{hero.subTitle | safe}}</h6>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container gridContainer">
+    <div class="grid-item">
+      <h3>{{subTitle | safe}}</h3>
+      <h3>{{intro}}</h3>
+    </div>
+    <div class="cloud-migration-challenges-container">
+      {% for challenge in challenges %}
+      <div class="cloud-migration-challenges-item">
+        <img src="{{challenge.image}}" width="70px" />
+        <h6>{{challenge.name}}</h6>
+        <p>{{challenge.description}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section light-bg">
+  <div class="container ">
+    <div class="title-section center">
+      <h3 class="process-title pb-lg">{{approach.title}}</h3>
+      {# <p class="process-title">{{approach.intro |safe}}</p> #}
+    </div>
+    <div class="process-container process-step">
+      {% for step in approach.steps%}
+      <div class="grid-item">
+        <div class="process-content">
+          <img src="{{step.icon}}" class="cloud-migration-process-item-image" />
+          <h4 class="process-number">{{step.name}}</h4>
+          <p class="process-description">{{step.description}}</p>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-title center">
+      <h3>Benefits of Migrating into AWS</h3>
+    </div>
+    <div class="benefitsGridContainer cloud-migration-benefits-container">
+      {% for benefit in AWS.benefits %}
+      <div class="grid-item cloud-migration-benefits-item">
+        <img
+          src="{{benefit.image}}"
+          class="cloud-migration-benefits-item-image"
+        />
+        <h6>{{benefit.name}}</h6>
+        <p>{{benefit.description}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

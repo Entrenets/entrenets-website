@@ -14,12 +14,12 @@
 }
 
 .heroTitle {
+  font-size: 78px;
   letter-spacing: -3px;
   background-image: linear-gradient(to right, #6439FF, #4F75FF, #00CCDD, #7CF5FF);
   color: transparent;
   background-clip: text;
   letter-spacing: -5px;
-  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .heroSubTitle {
