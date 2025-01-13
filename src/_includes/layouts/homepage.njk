@@ -2,27 +2,25 @@
 
 <section class="site-hero">
   <div class="container">
-    <div class="row">
-      <div class="col-12 site-hero-content">
-        <h1>{{hero.title | safe}}</h1>
-        <h6>{{hero.subTitle}}</h6>
-      </div>
-      <div class="site-hero-btn">
-        <a href="/{{hero.cloudMigrationBtn.link}}" class="btn btn-secondary">
-          <span class="btn-area">
-            <span data-text="{{hero.cloudMigrationBtn.text}}"
-              >{{hero.cloudMigrationBtn.text}}</span
-            >
-          </span>
-        </a>
-        <a href="/{{hero.automationBtn.link}}" class="btn btn-secondary">
-          <span class="btn-area">
-            <span data-text="{{hero.automationBtn.text}}"
-              >{{hero.automationBtn.text}}</span
-            >
-          </span>
-        </a>
-      </div>
+    <div class="site-hero-content">
+      <h1>{{hero.title | safe}}</h1>
+      <h6>{{hero.subTitle}}</h6>
+    </div>
+    <div class="site-hero-btn">
+      <a href="/{{hero.cloudMigrationBtn.link}}" class="btn btn-secondary">
+        <span class="btn-area">
+          <span data-text="{{hero.cloudMigrationBtn.text}}"
+            >{{hero.cloudMigrationBtn.text}}</span
+          >
+        </span>
+      </a>
+      <a href="/{{hero.automationBtn.link}}" class="btn btn-secondary">
+        <span class="btn-area">
+          <span data-text="{{hero.automationBtn.text}}"
+            >{{hero.automationBtn.text}}</span
+          >
+        </span>
+      </a>
     </div>
   </div>
 
@@ -53,7 +51,7 @@
 </section>
 #}
 
-<section class="site-project" id="project">
+<section class="homepage-section light-bg" id="project">
   <div class="container">
     <div class="row">
       <div class="col-12 center">
@@ -88,7 +86,7 @@
   </div>
 </section>
 
-<section class="site-project" id="project">
+<section class="homepage-section" id="project">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -106,7 +104,7 @@
               window.addEventListener("load", function () {
                 calendar.schedulingButton.load({
                   url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0vjsn2s4bFmi008CdMUzP-OVemccm239MljgA84LubSCTzS5SNDQMzZNt45JM3Gwzv5yyXOYCU?gv=true",
-                  color: "#54C392",
+                  color: "#EB3678",
                   label: "Book a call",
                   target,
                 })
@@ -119,7 +117,7 @@
     </div>
   </div>
 </section>
-<section class="site-project solutions" id="project">
+<section class="homepage-section solutions" id="project">
   <div class="container">
     <div class="row">
       <div class="col-12">

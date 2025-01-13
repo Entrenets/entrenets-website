@@ -1,7 +1,8 @@
 ---
+title: "Home Page"
 layout: "layouts/homepage.njk"
+stylesheet: "homepage.module.css"
 hero:
-  # subTitle: "WE WORK HARD, WE PLAY HARD"
   title: "<span style='color:#fcfbf9'>Automate Your Network.</span><br/> Unlock the Cloud."
   subTitle: "Driving efficiency, scalability, and innovation for your network operations."
   cloudMigrationBtn:
@@ -31,5 +32,4 @@ mission:
         scale with ease by simplifying operations, boosting agility, and
         building resilience. So, you can focus on what matters most—growing
         without limits."
-
 ---

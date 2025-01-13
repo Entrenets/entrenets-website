@@ -4,22 +4,20 @@
    "description": "",
    "main": ".eleventy.js",
    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "npx eleventy --serve",
-      "build": "eleventy"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Tanvir9290/Roxo_eleventy.git"
+      "build:eleventy": "npx eleventy",  
+      "build:css": "postcss assets/css/*.module.css --dir _site/assets/css",  
+      "build": "npm run build:css && npm run build:eleventy",
+      "dev": "npx eleventy --serve"
    },
    "keywords": [],
    "author": "",
    "license": "ISC",
-   "bugs": {
-      "url": "https://github.com/Tanvir9290/Roxo_eleventy/issues"
-   },
-   "homepage": "https://github.com/Tanvir9290/Roxo_eleventy#readme",
    "dependencies": {
-      "@11ty/eleventy": "^0.12.1"
+      "@11ty/eleventy": "^0.12.1",
+      "postcss-modules": "^6.0.1"
+   },
+   "devDependencies": {
+      "postcss": "^8.4.49",
+      "postcss-cli": "^11.0.0"
    }
 }

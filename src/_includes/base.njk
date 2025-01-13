@@ -31,7 +31,9 @@
       rel="stylesheet"
     />
     <!-- Stylesheets -->
-    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/base.module.css" rel="stylesheet" />
+    <link href="/assets/css/{{ stylesheet }}" rel="stylesheet" />
+    <link href="/assets/css/shared.css" rel="stylesheet" />
 
     <!--Favicon-->
     <link
@@ -75,24 +77,24 @@
             {% endfor %}
             <li class="nav-item">
               <!-- Google Calendar Appointment Scheduling begin -->
-                <script
-                  src="https://calendar.google.com/calendar/scheduling-button-script.js"
-                  async
-                ></script>
-                <script>
-                  ;(function () {
-                    var target = document.currentScript
-                    window.addEventListener("load", function () {
-                      calendar.schedulingButton.load({
-                        url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0vjsn2s4bFmi008CdMUzP-OVemccm239MljgA84LubSCTzS5SNDQMzZNt45JM3Gwzv5yyXOYCU?gv=true",
-                        color: "#54C392",
-                        label: "Book a call",
-                        target,
-                      })
+              <script
+                src="https://calendar.google.com/calendar/scheduling-button-script.js"
+                async
+              ></script>
+              <script>
+                ;(function () {
+                  var target = document.currentScript
+                  window.addEventListener("load", function () {
+                    calendar.schedulingButton.load({
+                      url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0vjsn2s4bFmi008CdMUzP-OVemccm239MljgA84LubSCTzS5SNDQMzZNt45JM3Gwzv5yyXOYCU?gv=true",
+                      color: "#EB3678",
+                      label: "Book a call",
+                      target,
                     })
-                  })()
-                </script>
-                <!-- end Google Calendar Appointment Scheduling -->
+                  })
+                })()
+              </script>
+              <!-- end Google Calendar Appointment Scheduling -->
             </li>
           </ul>
         </div>
@@ -101,7 +103,7 @@
     {% endblock %} {% block content %} {{content | safe}} {% endblock %} {%
     block workTogether %}
     <section class="site-cta">
-      <div class="container">
+      <div class="container about-us">
         <div class="row">
           <div class="col-12 text-center">
             <h1 class="site-cta-title">{{workTogether.heading}}</h1>

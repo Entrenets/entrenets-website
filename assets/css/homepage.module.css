@@ -1,0 +1,237 @@
+.site-hero-content {
+  margin-bottom: 50px;
+  margin-top: 70px;
+}
+
+
+.site-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.site-hero h6 {
+  color: var(--text-light-color);
+}
+
+.site-hero-btn {
+  margin-top: 100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .site-hero {
+    height: auto;
+    padding: 200px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .site-hero {
+    padding: 150px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .site-hero-content h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 789px) {
+  .site-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .site-hero-content h6 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .site-hero-content h1 {
+    font-size: 30px;
+  }
+}
+
+.site-hero-content-buttons {
+  margin: 0;
+  padding: 0;
+}
+
+.site-hero-content-buttons li {
+  display: inline-block;
+}
+
+@media (max-width: 575px) {
+  .site-hero-content-buttons li {
+    display: block;
+  }
+}
+
+.site-hero-content-buttons li:not(:last-child) {
+  margin-right: 30px;
+}
+
+@media (max-width: 575px) {
+  .site-hero-content-buttons li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.site-hero-content-buttons li .btn {
+  font-weight: 600;
+}
+
+@media (max-width: 575px) {
+  .site-hero-content-buttons li .btn {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.site-hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+}
+
+.site-counter {
+  padding: 85px 0;
+  color: #fff;
+  background: #ADD6D2;
+}
+
+.site-counter .section-title {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 575px) {
+  .site-counter {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .site-counter-item {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+.site-counter-item-title {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.site-counter-item-number {
+  color: #fff;
+  font-size: 60px;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.challenges,
+.mission {
+  background-color: var(--light-bg-color);
+}
+
+.challenge-col {
+  padding: 8px;
+}
+
+.challenge-card {
+  display: flex;
+  border-radius: 16px;
+  margin: 6px;
+  background-color: #FFF;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  border: 0.2px solid rgb(229, 231, 235);
+}
+
+.challenge-card img {
+  width: 100px;
+  padding: 16px 16px 16px 32px;
+}
+
+.challenge-card p {
+  font-size: 15px;
+}
+
+.challenge-card h6 {
+  font-size: 16px;
+}
+
+.challenge-content {
+  padding: 16px;
+}
+
+.challenge-content h6 {
+  color: var(--text-blue-color);
+}
+
+.challenge-content p {
+  color: #454545;
+}
+
+.solution-col {
+  display: flex;
+  padding: 8px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.solutions {
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.solution-item {
+  color: var(--text-light-color);
+  text-align: start;
+}
+
+.solutions h2,
+p {
+  color: var(--text-light-color);
+}
+
+.solutions-content-image {
+  width: 320px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.solutions-content-title,
+.solutions-content-subtitle {
+  padding-bottom: 20px;
+}
+
+.solutions-content-description {
+  padding-bottom: 30px;
+}
+
+.solutions-content-title {
+  color: var(--text-blue-color);
+}
+
+.learn-more-icon {
+  width: 45px;
+}
+
+.homepage-section {
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+
+/*# sourceMappingURL=maps/style.css.map */
