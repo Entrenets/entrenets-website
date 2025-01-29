@@ -15,7 +15,7 @@ challenges:
 
   - name: Cost management
     description: We provide guidance to help you avoid common pitfalls and mistakes that can lead to skyrocketing cloud spending, as initial cost projections are often unreliable and can result in unforeseen expenses.
-    image: /assets/images/servicePageTemplate/cost.svg
+    image: /assets/images/servicePageTemplate/cost-effectiveness.svg
 
   - name: Cloud security
     description: We prioritise robust security measures, ensuring compliance with industry standards and regulations while safeguarding your data from breaches and vulnerabilities.
@@ -23,14 +23,14 @@ challenges:
 
   - name: Expertise
     description: We bridge this gap by providing skilled professionals who offer hands-on assistance, training, and support throughout the migration process, empowering your team to handle cloud operations confidently.
-    image: /assets/images/servicePageTemplate/expertise.svg
+    image: /assets/images/servicePageTemplate/share-knowledge.svg
 
 AWS:
   title: Benefits of Migrating into AWS
   benefits:
     - name: Cost Savings
       description: AWS allows you to replace capital expenses (such as hardware and data center costs) with flexible, pay-as-you-go pricing. You only pay for the resources you use, reducing overall IT costs.
-      image: /assets/images/servicePageTemplate/cost.svg
+      image: /assets/images/servicePageTemplate/cost-effectiveness.svg
 
     - name: Scalability and Flexibility
       description: AWS enables you to scale resources up or down quickly based on demand. This flexibility ensures you can handle spikes in traffic without over-provisioning or wasting resources
