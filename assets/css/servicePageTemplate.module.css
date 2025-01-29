@@ -1,5 +1,5 @@
 .heroServiceName, .heroSubTitle {
-  color: #bcbcbc;
+  color: #e2e2e2;
 }
 
 .cloud-migration-challenges-container {
@@ -42,6 +42,11 @@
   text-align: center;
 }
 
+.challengeIcon {
+  width: 50px;
+  padding-bottom: 12px;
+}
+
 .challenges-container {
   margin-top: 20px;
   padding: 20px;
@@ -73,7 +78,7 @@
   padding: 20px 15px;
   border-radius: 4px;
   text-align: center;
-  background-color: rgba(127, 136, 255, 0.435);
+  background-color: rgba(127, 255, 212, 0.435);
 }
 
 .cloud-migration-benefits-item-image {
