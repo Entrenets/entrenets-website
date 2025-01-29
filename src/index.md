@@ -10,8 +10,8 @@ hero:
       link: "cloud-migration"
     - text: "Network Automation"
       link: "network-automation"
-    - text: "Managed Cloud"
-      link: "managed-cloud"
+    - text: "Cloud Management"
+      link: "cloud-management"
 
 yourChallenges:
   title: "<span style='color: #000'>Network performance is the backbone of your business operations.</span> Make it unbreakable."

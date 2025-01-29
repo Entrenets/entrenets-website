@@ -2,7 +2,7 @@
 <section class="site-hero">
   <div class="container cloud-migration-hero">
     <div class="site-hero-content center">
-      <img src="/assets/images/cloud-migration/cloud-icon.svg" width="60px" />
+      <img src="{{hero.icon}}" width="60px" />
       <h6 class="heroServiceName">{{hero.name}}</h6>
       <h1 class="heroTitle">{{hero.title | safe}}</h1>
       <h6 class="heroSubTitle center light-font">{{hero.subTitle | safe}}</h6>
@@ -13,6 +13,7 @@
 <section class="section">
   <div class="container gridContainer">
     <div class="grid-item">
+      <h3>{{title | safe}}</h3>
       <h3>{{subTitle | safe}}</h3>
       <h3>{{intro}}</h3>
     </div>
@@ -28,10 +29,12 @@
   </div>
 </section>
 <section class="section light-bg">
-  <div class="container ">
+  <div class="container">
     <div class="title-section center">
       <h3 class="process-title pb-lg">{{approach.title}}</h3>
-      {# <p class="process-title">{{approach.intro |safe}}</p> #}
+      {#
+      <p class="process-title">{{approach.intro |safe}}</p>
+      #}
     </div>
     <div class="process-container process-step">
       {% for step in approach.steps%}
@@ -49,7 +52,7 @@
 <section class="section">
   <div class="container">
     <div class="section-title center">
-      <h3>Benefits of Migrating into AWS</h3>
+      <h3>{{AWS.title}}</h3>
     </div>
     <div class="benefitsGridContainer cloud-migration-benefits-container">
       {% for benefit in AWS.benefits %}
