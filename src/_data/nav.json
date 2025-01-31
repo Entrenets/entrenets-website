@@ -1,6 +1,35 @@
 {
-  "navLogo":"/assets/images/logo.png",
-  "navLinks":["services","study cases","blog","about"],
-  "navBtnLink":"https://calendar.google.com/calendar/scheduling-button-script.css",
-  "navBtnText":"Get in touch"
+  "navLogo": "/assets/images/logo.png",
+  "navLinks": [
+    {
+      "url": "/",
+      "text": "home"
+    },
+    {
+      "text": "solutions",
+      "sublinks": [
+        {
+          "url": "cloud-management",
+          "text": "Cloud Management",
+          "icon": "/assets/images/servicePageTemplate/cloud-icon.svg"
+        },
+        {
+          "url": "cloud-migration",
+          "text": "Cloud Migration",
+          "icon": "/assets/images/servicePageTemplate/cloud-management.svg"
+        },
+        {
+          "url": "network-automation",
+          "text": "Network Automation",
+          "icon": "/assets/images/servicePageTemplate/network-automation.svg"
+        }
+      ]
+    },
+    {
+      "url": "about",
+      "text": "about"
+    }
+  ],
+  "navBtnLink": "https://calendar.google.com/calendar/scheduling-button-script.css",
+  "navBtnText": "Get in touch"
 }
