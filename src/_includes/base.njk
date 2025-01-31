@@ -66,12 +66,20 @@
           <ul class="navbar-nav ml-auto main-nav">
             {% for navLink in nav.navLinks %}
             <li class="nav-item">
-              {% if navLink == "home" %}
-              <a class="nav-link" href="/">{{navLink}}</a>
-              {% else %}
-              <a class="nav-link" href="/{{navLink}}"
-                >{{navLink | capitalize}}</a
+              <a class="nav-link" href="{{ navLink.url | default('/') }}"
+                >{{navLink.text | capitalize}}</a
               >
+              {% if navLink.sublinks %}
+              <ul class="submenu">
+                {% for sublink in navLink.sublinks %}
+                <li class="submenu-list-item">
+                  <img src="{{sublink.icon}}" width="20px" />
+                  <a href="/{{ sublink.url}}" class="sublink"
+                    >{{ sublink.text }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
               {% endif %}
             </li>
             {% endfor %}
