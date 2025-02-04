@@ -1,0 +1,168 @@
+.next-steps {
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.next-steps-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.next-steps-list {
+  list-style: none;
+  padding: 0;
+}
+
+.next-steps-item {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.step-title {
+  color: #315dfb;
+  font-weight: 600;
+}
+
+.next-steps-contact {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.next-steps-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.next-steps-link:hover {
+  text-decoration: underline;
+}
+
+.site-contact-title {
+  font-weight: 700;
+}
+
+.content-wrapper {
+  /* /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contact-image {
+  width: 500px;
+  max-width: 400px;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.required-field::after {
+  content: "*";
+  color: #007bff;
+  margin-left: 4px;
+}
+
+@media (max-width: 767px) {
+  .site-contact-title {
+    font-size: 40px;
+  }
+}
+
+.site-contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.site-contact-form h4 {
+  font-weight: 300;
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: center;
+  font-size: #fff;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #222222;
+  border-radius: 5px;
+  padding: 30px;
+  width: 100%;
+}
+
+.form-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.form-item {
+  max-width: 100%;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.contact-form-label {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .site-contact-form h4 {
+    font-size: 20px;
+  }
+
+  .two-column-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 991px) {
+  .site-contact-form h4 {
+    margin-bottom: 70px;
+  }
+}
+
+.welcome-message {
+  background-color: #315dfb;
+  border: 1px solid #315dfb;
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.welcome-message p {
+  margin: 0;
+  line-height: 1.5;
+}

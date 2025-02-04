@@ -89,25 +89,13 @@
             </li>
             {% endfor %}
             <li class="nav-item">
-              <!-- Google Calendar Appointment Scheduling begin -->
-              <script
-                src="https://calendar.google.com/calendar/scheduling-button-script.js"
-                async
-              ></script>
-              <script>
-                ;(function () {
-                  var target = document.currentScript
-                  window.addEventListener("load", function () {
-                    calendar.schedulingButton.load({
-                      url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0vjsn2s4bFmi008CdMUzP-OVemccm239MljgA84LubSCTzS5SNDQMzZNt45JM3Gwzv5yyXOYCU?gv=true",
-                      color: "#EB3678",
-                      label: "Book a call",
-                      target,
-                    })
-                  })
-                })()
-              </script>
-              <!-- end Google Calendar Appointment Scheduling -->
+              <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="/{{nav.navBtnLink}}">
+                <span class="btn-area">
+                  <span data-text="{{nav.navBtnText}}">
+                    {{nav.navBtnText}}
+                  </span>
+                </span>
+              </a>
             </li>
           </ul>
         </div>
