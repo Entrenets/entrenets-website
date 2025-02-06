@@ -36,7 +36,7 @@ $(window).on('scroll', function () {
 });
 
 document.getElementById("email").addEventListener("input", function () {
-  const blockedDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com"];
+  const blockedDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "gmx.de"];
   const emailInput = this.value;
   const emailDomain = emailInput.split("@")[1]; 
 
