@@ -173,7 +173,9 @@ h6 {
 }
 
 .section-title {
+  margin: 0 auto;
   margin-bottom: 50px;
+  max-width: 900px;
 }
 
 .section-title h2,
