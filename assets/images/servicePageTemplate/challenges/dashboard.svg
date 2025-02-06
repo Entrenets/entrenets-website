@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="dashboard">
+  <rect width="55.188" height="38.13" x="4.406" y="8.855" fill="#4964f8" rx="2.124"></rect>
+  <path fill="#f1f8ff" d="M57.275 11.173v33.494H6.724V11.173z"></path>
+  <path fill="#4964f8" d="M27.36 46.986h9.28v5.066h-9.28z"></path>
+  <path fill="#4964f8" d="M17.858 52.051h28.283v3.093H17.858z"></path>
+  <circle cx="10.439" cy="14.865" r="1.141" fill="#ff4874"></circle>
+  <circle cx="13.982" cy="14.865" r="1.141" fill="#ffc300"></circle>
+  <circle cx="17.526" cy="14.865" r="1.141" fill="#3ae89d"></circle>
+  <path fill="#4964f8" d="M11.425 27.573h13.696v2.318H11.425zM11.425 32.709h26.658v2.318H11.425zM11.425 37.845h26.658v2.318H11.425zM53.12 21.8v.072a6.344 6.344 0 1 1-6.344-6.344V21.8Z"></path>
+  <path fill="#ffc300" d="M53.12 21.8h-6.344v-6.272A6.337 6.337 0 0 1 53.12 21.8Z"></path>
+</svg>

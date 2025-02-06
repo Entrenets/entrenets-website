@@ -8,63 +8,63 @@ hero:
   subTitle: "We ensure your cloud infrastructure runs securely, reliably, and cost-effectively 
 while you drive your business forward."
 title: Reliable Cloud Management.
-intro: "Maintaining and optimising your cloud environment can be a challenge. 
-Here’s how we make it effortless for you:"
+intro: "Maintaining and optimising your cloud environment can be a challenge. These are some of the common problems:"
 challenges: 
-  - name: Cloud Infrastructure
-    description: We design and manage cloud infrastructures that align with your business goals, providing the perfect balance of performance and cost-efficiency.
-    image: /assets/images/servicePageTemplate/infrastructure.svg
-
-  - name: Security & Compliance
-    description: From compliance to threat detection, we ensure your data and systems are protected at every level.
-    image: /assets/images/servicePageTemplate/cloud-security.svg
-
-  - name: Performance Monitoring
-    description: With 24/7 oversight, we detect and resolve issues before they impact your operations.
-    image: /assets/images/servicePageTemplate/performance.svg
-
-  - name: Disaster Recovery & Backup
-    description: We design reliable backup solutions and disaster recovery plans for business continuity.
-    image: /assets/images/servicePageTemplate/backup.svg
+  - name: Hidden costs
+    description: "Without constant monitoring, cloud expenses can escalate quickly due to unused resources, oversized instances, or poor configuration."
+    icon: "/assets/images/servicePageTemplate/challenges/financial-stock-market-fluctuations.svg"
+  - name: Security & Compliance Gaps
+    description: Maintaining proper access controls, encryption, and compliance with evolving regulations requires constant attention and expertise.
+    icon: "/assets/images/servicePageTemplate/challenges/security.svg"
+  - name: Lack of Visibility & Control
+    description: As environments grow, it becomes harder to track what's running where—leading to inefficiencies, risks, and limited control over resources.
+    icon: "/assets/images/servicePageTemplate/challenges/dashboard.svg"
+  - name: Complex Tooling
+    description: Managing various services, platforms, and monitoring tools often leads to inconsistent processes and increased overhead.
+    icon: "/assets/images/servicePageTemplate/challenges/puzzle.svg"
+  - name: Skill & Resource Gaps
+    description: Managing modern cloud environments demands specialized skills many internal teams don’t have the time or resources to build.
+    icon: "/assets/images/servicePageTemplate/challenges/person-with-a-wrench-for-skills.svg"
 
 AWS:
-  title: Benefits of Expert Cloud Management
+  title: Why work with us
+  intro: "Working with our team means more than just cloud support—you gain a strategic partner focused on real, measurable outcomes. Here’s what that looks like:"
   benefits:
     - name: Expertise
-      description: We bring deep technical expertise and experience, ensuring your cloud infrastructure is optimized, secure, and aligned with the best practices.
-      image: /assets/images/servicePageTemplate/share-knowledge.svg
+      description: Cloud infrastructure isn’t one-size-fits-all. Our team brings hands-on experience across a wide range of industries and architectures to deliver solutions tailored to your unique environment. From high availability and performance tuning to security architecture, we ensure your cloud is aligned with best practices and evolving business needs—without the trial-and-error. You gain peace of mind, knowing your systems are in expert hands.
+      image: /assets/images/servicePageTemplate/results/cloud-service-usage.svg
 
-    - name: Time & Resource Savings
-      description: Your internal resources can focus on core business activities, strategic initiatives, and innovation—rather than spending valuable time on troubleshooting, updates, and maintenance.
-      image: /assets/images/servicePageTemplate/time-saving.svg
+    - name: Time & Focus for What Matters
+      description: Managing cloud environments can be time-consuming and resource-intensive. We take over the complexity—so your internal teams are free to focus on strategic initiatives, product development, and customer experience. No more chasing errors, coordinating patching, or firefighting outages. Just more time for what drives value.
+      image: /assets/images/servicePageTemplate/results/product-development-team-conducts-market-research-for-new-product.svg
 
-    - name: Improved Security & Compliance
-      description: We stay up to date with the latest security protocols and compliance regulations, reducing the risk of data breaches and ensuring your infrastructure meets industry standards and legal requirements.
-      image: /assets/images/servicePageTemplate/cloud-security.svg
+    - name: Stronger Security & Compliance
+      description: Security is an ongoing process—not a checklist. We implement and continuously update your cloud infrastructure using modern security protocols, encryption, IAM, and role-based access controls. We also ensure you stay aligned with industry regulations like GDPR, ISO, HIPAA, or SOC 2—minimizing compliance risks and boosting customer trust.
+      image: /assets/images/servicePageTemplate/results/man-and-woman-working-at-security-service.svg
 
-    - name: Cost Efficiency
-      description: We’ll optimize your cloud resources, ensuring you only pay for what you need and reduce overall costs avoiding unnecessary expenses related to over-provisioning, inefficient resource allocation, or unexpected outages.
-      image: /assets/images/servicePageTemplate/cost-effectiveness.svg
+    - name: Cost-Efficient Cloud Operations
+      description: We help you avoid the most common cloud pitfalls—over-provisioned services, unused resources, or surprise charges—by auditing your infrastructure and applying smart governance policies. This means lower monthly costs and a cloud environment that scales with your business, not your bills.
+      image: /assets/images/servicePageTemplate/challenges/financial-stock-market-fluctuations.svg
 
-    - name: Proactive Monitoring & Issue Resolution
-      description: With continuous monitoring, potential issues are detected and resolved before they affect your operations. This proactive approach minimizes downtime and ensures that your cloud infrastructure is always performing optimally.
-      image: /assets/images/servicePageTemplate/performance.svg
+    - name: Continuous Monitoring & Fast Resolution
+      description: We keep a close eye on performance, availability, and security metrics 24/7. With intelligent alerts and proactive incident response, most issues are resolved before they impact users. This ensures a stable, high-performing environment without you having to lift a finger.
+      image: /assets/images/servicePageTemplate/results/data-monitoring.svg
 
-    - name: Reduced Risk
-      description: By relying on experts who specialize in cloud infrastructure, you mitigate the risk of misconfigurations, security vulnerabilities, or costly downtime. We take on the responsibility for the health and performance of your cloud environment, so you don’t have to.
-      image: /assets/images/servicePageTemplate/reduced-risks.svg
+    - name: Lower Operational Risk
+      description: Running mission-critical systems in the cloud comes with inherent risks—but you don’t have to face them alone. Our team minimizes misconfigurations, security holes, and single points of failure through automation, documentation, and redundancy planning. It’s not just about avoiding problems—it’s about building resilience into everything.
+      image: /assets/images/servicePageTemplate/results/reduce-business-risk.svg
 
 approach:
   title: Our approach to Cloud Management
   steps:
-  - name: Security First
+  - name: 1. Security First
     description: With robust monitoring, regular updates, and best-in-class practices, we ensure your cloud environment stays protected against threats.
-    icon: /assets/images/servicePageTemplate/security.svg
+    icon: /assets/images/servicePageTemplate/process/security-check.svg
 
-  - name: Uninterrupted Reliability
+  - name: 2. Uninterrupted Reliability
     description: We guarantee minimal downtime, proactive maintenance, and quick issue resolution to keep your systems running smoothly.
-    icon: /assets/images/servicePageTemplate/uninterrupted-reliability.svg
+    icon: /assets/images/servicePageTemplate/process/continuous.svg
 
-  - name: Cost Optimisation
+  - name: 3. Cost Optimisation
     description: From analysing resource usage to recommending smarter configurations, we help reduce unnecessary expenses while maximising performance.
-    icon: /assets/images/servicePageTemplate/money-management.svg
+    icon: /assets/images/servicePageTemplate/process/wealth-management.svg
