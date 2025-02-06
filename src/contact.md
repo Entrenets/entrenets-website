@@ -12,9 +12,9 @@ steps:
       text: Our team will review your details and get back to you within 2 business days. If we need any additional information, we'll reach out.
 
     - title: "Step 3: First Call Setup"
-      text: Once we've reviewed your request, we'll schedule an initial call to learn more about your project, discuss your needs, and explore how we can help..
+      text: Once we've reviewed your request, we'll schedule an initial call to learn more about your project, discuss your needs, and explore how we can help...
 
 requiredFieldIndicator: true
-requiredFieldStyle: "color: #007bff; margin-left: 4px;"
+requiredFieldStyle: "color: #EB3678; margin-left: 4px;"
 ---
 

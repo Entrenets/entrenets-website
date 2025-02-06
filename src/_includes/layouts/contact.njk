@@ -3,12 +3,11 @@
 <section class="section">
   <div class="container form-container">
     <h4 class="form-title center light-font">{{formTitle}}</h4>
-
     <div class="two-column-grid">
       <div class="grid-item">
         <div class="content-wrapper">
           <img
-            src="/assets/images/contact/mail-service.svg"
+            src="/assets/images/contact/email (2).png"
             alt="Contact illustration"
             class="contact-image"
           />
@@ -16,7 +15,7 @@
             <ul class="next-steps-list">
               {%for step in steps%}
               <li class="next-steps-item">
-                <p class="step-title">{{step.title}}</p> 
+                <p class="step-title">{{step.title}}</p>
                 <p>{{step.text}}</p>
               </li>
               {%endfor%}
@@ -28,12 +27,17 @@
       <div class="grid-item">
         <div class="content-wrapper">
           <div class="welcome-message">
-            <p>👋 We're excited to hear about your project! Fill out the form below and we'll get back to you shortly.</p>
+            <p>
+              👋 We're excited to hear about your project! Fill out the form
+              below and we'll get back to you shortly.
+            </p>
           </div>
-          <form method="POST" action="https://fabform.io/f/ulB_j_f">
+          <form method="POST" action="https://fabform.io/f/6dD7uQu" enctype=multipart/form-data>
             <div class="form-row">
               <div class="form-item">
-                <label for="first-name" class="contact-form-label required-field"
+                <label
+                  for="first-name"
+                  class="contact-form-label required-field"
                   >First Name</label
                 >
                 <input
@@ -41,6 +45,7 @@
                   class="form-control"
                   name="first-name"
                   id="first-name"
+                  required
                 />
               </div>
               <div class="form-item">
@@ -52,22 +57,31 @@
                   class="form-control"
                   name="last-name"
                   id="last-name"
+                  required
                 />
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-item">
-                <label for="email" class="contact-form-label required-field">Work Email</label>
+                <label
+                  for="email"
+                  class="contact-form-label required-field"
+                  pattern="^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$"
+                  >Work Email</label
+                >
                 <input
                   type="email"
                   class="form-control"
                   name="email"
                   id="email"
+                  required
                 />
               </div>
               <div class="form-item">
-                <label for="company-website" class="contact-form-label required-field"
+                <label
+                  for="company-website"
+                  class="contact-form-label required-field"
                   >Company Website</label
                 >
                 <input
@@ -75,6 +89,7 @@
                   class="form-control"
                   name="company-website"
                   id="company-website"
+                  required
                 />
               </div>
             </div>
@@ -89,21 +104,27 @@
                   class="form-control"
                   name="phone"
                   id="phone"
+                  required
                 />
               </div>
               <div class="form-item">
-                <label for="country" class="contact-form-label required-field">Country</label>
+                <label for="country" class="contact-form-label required-field"
+                  >Country</label
+                >
                 <input
                   type="country"
                   class="form-control"
                   name="country"
                   id="country"
+                  required
                 />
               </div>
             </div>
 
             <div class="form-item">
-              <label for="aboutProject" class="contact-form-label required-field"
+              <label
+                for="aboutProject"
+                class="contact-form-label required-field"
                 >Tell us about the project</label
               >
               <textarea
@@ -111,6 +132,7 @@
                 id="aboutProject"
                 rows="6"
                 placeholder="About the Project"
+                required
               ></textarea>
             </div>
             <button type="submit" class="btn btn-primary" formtarget="_blank">
