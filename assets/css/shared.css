@@ -268,3 +268,7 @@ h3 {
     text-align: center;
   }
 }
+
+.thanks-message {
+  line-height: 2;
+}
