@@ -1,8 +1,7 @@
 ---
 layout: "layouts/contact.njk"
 stylesheet: "contact.module.css"
-
-image: /assets/images/contact/email.png
+title: "Send us a message"
 formTitle: "Tell us about your project"
 btnText: "Send Message"
 title: "Let's talk!"
