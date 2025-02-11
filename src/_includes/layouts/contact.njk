@@ -32,34 +32,30 @@
               below and we'll get back to you shortly.
             </p>
           </div>
-          <form method="POST" action="https://fabform.io/f/6dD7uQu" enctype="multipart/form-data">
+          <form
+            method="POST"
+            action="https://fabform.io/f/6dD7uQu"
+            enctype="multipart/form-data"
+          >
             <div class="form-row">
               <div class="form-item">
-              <input type="hidden" name="_gotcha" style="display:none !important">
+                <input
+                  type="hidden"
+                  name="_gotcha"
+                  style="display: none !important"
+                />
                 <label
                   for="first-name"
                   class="contact-form-label required-field"
                   >First Name</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  name="first-name"
-                  id="first-name"
-                  required
-                />
+                <input type="text" name="first-name" id="first-name" required />
               </div>
               <div class="form-item">
                 <label for="last-name" class="contact-form-label required-field"
                   >Last Name</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  name="last-name"
-                  id="last-name"
-                  required
-                />
+                <input type="text" name="last-name" id="last-name" required />
               </div>
             </div>
 
@@ -71,13 +67,7 @@
                   pattern="^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$"
                   >Work Email</label
                 >
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  id="email"
-                  required
-                />
+                <input type="email" name="email" id="email" required />
               </div>
               <div class="form-item">
                 <label
@@ -86,8 +76,7 @@
                   >Company Website</label
                 >
                 <input
-                  type="company-website"
-                  class="form-control"
+                  type="url"
                   name="company-website"
                   id="company-website"
                   required
@@ -97,46 +86,81 @@
 
             <div class="form-row">
               <div class="form-item">
-                <label for="phone" class="contact-form-label required-field"
+                <label
+                  for="prefix"
+                  id="prefix"
+                  class="contact-form-label required-field"
+                  >Prefix</label
+                >
+                <select
+                  name="prefix"
+                  id="prefix"
+                  required
+                  class="prefix-dropdown"
+                >
+                  <option value="" disabled selected hidden></option>
+                  {% for country in countries %}
+                  <option
+                    value="{{ country.prefix }}"
+                    label="{{country.name}} +{{country.prefix}}"
+                  >
+                    +{{country.prefix}}
+                  </option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="form-item">
+                <label
+                  for="phone"
+                  id="phone"
+                  class="contact-form-label required-field"
                   >Phone number</label
                 >
                 <input
+                  class="phone"
                   type="phone"
-                  class="form-control"
                   name="phone"
                   id="phone"
                   required
-                />
-              </div>
-              <div class="form-item">
-                <label for="country" class="contact-form-label required-field"
-                  >Country</label
-                >
-                <input
-                  type="country"
-                  class="form-control"
-                  name="country"
-                  id="country"
-                  required
+                  pattern="^[0-9+\s-]+$"
                 />
               </div>
             </div>
-
             <div class="form-item">
               <label
-                for="aboutProject"
+                for="country"
+                if="country"
                 class="contact-form-label required-field"
-                >Tell us about the project</label
+                >Country</label
               >
-              <textarea
-                class="form-control"
-                name="about-project"
-                id="about-project"
-                rows="6"
-                placeholder="About the Project"
-                required
-              ></textarea>
+              <select name="country" id="country" required>
+                <option value="" disabled selected hidden>
+                  Select your country
+                </option>
+                {% for country in countries %}
+                <option
+                  value="{{ country.countryCode }}"
+                  label="{{country.name}}"
+                >
+                  {{ country.name }}
+                </option>
+                {% endfor %}
+              </select>
             </div>
+            <label
+              for="aboutProject"
+              class="contact-form-label required-field"
+              id="aboutProject"
+              >Tell us about the project</label
+            >
+            <textarea
+              class="form-control"
+              name="about-project"
+              id="about-project"
+              rows="6"
+              minlength="5"
+              required
+            ></textarea>
             <button type="submit" class="btn btn-primary" formtarget="_blank">
               <span class="btn-area">
                 <span data-text="{{btnText}}"> {{btnText}} </span>

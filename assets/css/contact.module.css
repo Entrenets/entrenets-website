@@ -43,7 +43,7 @@
 
 .contact-image {
   width: 200px;
-  margin: 0 auto ;
+  margin: 0 auto;
   display: block;
 }
 
@@ -111,13 +111,41 @@
 }
 
 .form-item {
+  width: 100%;
   max-width: 100%;
   padding-bottom: 8px;
+}
+
+.form-item select,
+.form-item input {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 40px;
 }
 
 .contact-form-label {
   color: #fff;
+}
+
+.phone-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.prefix-conatiner {
+  display: flex;
+  flex-direction: column;
+}
+
+.prefix-dropdown {
+  width: 100%;
+  padding: 8px;
+}
+
+.phone {
+  padding: 8px;
+  font-size: 14px;
 }
 
 @media (max-width: 767px) {

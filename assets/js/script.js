@@ -35,10 +35,11 @@ $(window).on('scroll', function () {
   }
 });
 
+// Blocks certain e-mail domains
 document.getElementById("email").addEventListener("input", function () {
   const blockedDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "gmx.de"];
   const emailInput = this.value;
-  const emailDomain = emailInput.split("@")[1]; 
+  const emailDomain = emailInput.split("@")[1];
 
   if (emailDomain && blockedDomains.includes(emailDomain.toLowerCase())) {
     this.setCustomValidity("Please enter a company email.");
@@ -46,3 +47,12 @@ document.getElementById("email").addEventListener("input", function () {
     this.setCustomValidity("");
   }
 });
+
+//Adds http or https if user does not. 
+document.getElementById("company-website").addEventListener("blur", function () {
+  if (this.value && !this.value.startsWith("http://") && !this.value.startsWith("https://")) {
+    this.value = "https://" + this.value;
+  }
+});
+
+
