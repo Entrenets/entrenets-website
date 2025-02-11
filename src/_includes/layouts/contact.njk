@@ -7,7 +7,7 @@
       <div class="grid-item">
         <div class="content-wrapper">
           <img
-            src="/assets/images/contact/email (2).png"
+            src="/assets/images/contact/email.png"
             alt="Contact illustration"
             class="contact-image"
           />
@@ -40,7 +40,7 @@
             <div class="form-row">
               <div class="form-item">
                 <input
-                  type="hidden"
+                  type="text"
                   name="_gotcha"
                   style="display: none !important"
                 />
@@ -161,12 +161,27 @@
               minlength="5"
               required
             ></textarea>
-            <button type="submit" class="btn btn-primary" formtarget="_blank">
+            <div
+              class="g-recaptcha"
+              data-sitekey="YOUR_RECAPTCHA_SITE_KEY"
+            ></div>
+
+            <button type="submit" class="btn btn-primary">
               <span class="btn-area">
                 <span data-text="{{btnText}}"> {{btnText}} </span>
               </span>
             </button>
           </form>
+          <script src="https://www.google.com/recaptcha/api.js?render={{ recaptchaSiteKey }}"></script>
+          <script>
+            grecaptcha.ready(function () {
+              grecaptcha
+                .execute({{ recaptchaSiteKey }}, { action: "submit" })
+                .then(function (token) {
+                  document.getElementById("g-recaptcha-response").value = token
+                })
+            })
+          </script>
         </div>
       </div>
     </div>

@@ -373,3 +373,7 @@
 .nav-item:hover>.submenu {
   display: block;
 }
+
+.get-in-touch:hover {
+  color: #fff !important;
+}

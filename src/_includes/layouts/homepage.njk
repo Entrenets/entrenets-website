@@ -40,27 +40,8 @@
 
 <section class="section" id="project">
   <div class="container center">
-    <h3 class="mission-title">{{mission.title | safe}}</h3>
-    <h3 class="mission-main">{{mission.main | safe}}</h3>
-    <!-- Google Calendar Appointment Scheduling begin -->
-    <script
-      src="https://calendar.google.com/calendar/scheduling-button-script.js"
-      async
-    ></script>
-    <script defer>
-      ;(function () {
-        var target = document.currentScript
-        window.addEventListener("load", function () {
-          calendar.schedulingButton.load({
-            url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0vjsn2s4bFmi008CdMUzP-OVemccm239MljgA84LubSCTzS5SNDQMzZNt45JM3Gwzv5yyXOYCU?gv=true",
-            color: "#EB3678",
-            label: "Book a call",
-            target,
-          })
-        })
-      })()
-    </script>
-    <!-- end Google Calendar Appointment Scheduling -->
+    <h3 class="missionTitle">{{mission.title | safe}}</h3>
+    <h3 class="missionMain">{{mission.main | safe}}</h3
   </div>
 </section>
 
