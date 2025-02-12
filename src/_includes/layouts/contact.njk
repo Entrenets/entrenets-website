@@ -27,14 +27,11 @@
       <div class="grid-item">
         <div class="content-wrapper">
           <div class="welcome-message">
-            <p>
-              👋 We're excited to hear about your project! Fill out the form
-              below and we'll get back to you shortly.
-            </p>
+            <p>{{welcomeMessage}}</p>
           </div>
           <form
             method="POST"
-            action="https://fabform.io/f/{{}}"
+            action="https://fabform.io/f/{{formId}}"
             enctype="multipart/form-data"
           >
             <div class="form-row">
