@@ -76,6 +76,36 @@ h6 {
   color: var(--text-light-color);
 }
 
+@media (max-width: 575px) {
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: normal;
+  }
+  
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+}
+
 .section {
   padding: 120px 0;
   overflow: hidden;
@@ -95,7 +125,6 @@ h6 {
   display: flex;
   flex-flow: row;
   align-items: center;
-  /* background-color: #084f7b3f; */
   text-align: center;
 }
 

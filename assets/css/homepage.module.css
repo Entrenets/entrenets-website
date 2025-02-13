@@ -1,9 +1,4 @@
-.siteHeroContent {
-  margin-bottom: 50px;
-  margin-top: 70px;
-}
-
-.siteHero {
+.site-hero {
   position: relative;
   height: 100vh;
   display: flex;
@@ -13,84 +8,56 @@
   text-align: center;
 }
 
-.heroTitle {
-  font-size: 78px;
-  letter-spacing: -3px;
+.site-hero-content {
+  margin-bottom: 50px;
+  margin-top: 70px;
+}
+
+.hero-title {
   background-image: linear-gradient(to right, #6439FF, #4F75FF, #00CCDD, #7CF5FF);
   color: transparent;
   background-clip: text;
-  letter-spacing: -5px;
 }
 
-.heroSubTitle {
+.hero-subtitle {
   color: var(--text-light-color);
   font-weight: 400;
 }
 
-.heroButtons {
+.hero-buttons {
   display: flex;
   justify-content: center;
 }
 
-.site-hero-scroll {
-  position: absolute;
-  left: 50%;
-  bottom: 70px;
-  transform: translateX(-50%);
-}
-
-.challengesGridContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  gap: 10px;
-  margin: 0 auto;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.challengesGridItem {
+.challenges {
   display: flex;
   align-items: center;
-  border-radius: 16px;
-  margin: 6px;
-  background-color: #FFF;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-  border: 0.2px solid rgb(229, 231, 235);
-  grid-column: 1 / -1;
 }
 
-.challengesGridItem:first-child {
-  justify-self: center;
+.challenge-item {
+  display: flex;
+  align-items: center;
 }
 
-.challengesGridItem:nth-child(2) {
-  justify-self: right;
+.challenge-icon {
+  width: 30px;
+  padding-top: 16px;
+  align-self: flex-start;
 }
 
-.challengesGridItem:last-child {
-  justify-self: center;
+.challenge-description {
+  color: #c1c1c1;
 }
 
-.challengesGridItemIcon {
-  width: 100px;
-  padding: 16px 16px 16px 32px;
+.challenge-title {
+  color: #fff;
 }
 
-.challengesGridItemDescription {
-  font-size: 15px;
-  color: #454545;
-}
-
-.challengesGridItemTitle {
-  font-size: 16px;
-  color: var(--primary-color);
-}
-
-.challengeContent {
+.challenge-content {
   padding: 16px;
 }
 
-.solutionsContainer {
+.solutions-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -98,37 +65,37 @@
   text-align: center;
 }
 
-.solutionItem {
+.solution-item {
   color: var(--text-light-color);
   text-align: start;
   flex: 1 1 calc(33.333% - 40px);
   max-width: 350px;
 }
 
-.solutionsTitle {
+.solutions-title {
   color: var(--text-light-color);
 }
 
-.solutionsContentImage {
+.solution-image {
   width: 320px;
   height: 180px;
   margin-bottom: 20px;
 }
 
-.solutionsContentTitle,
-.solutionsContentSubtitle {
+.solution-title,
+.solution-subtitle {
   padding-bottom: 20px;
 }
 
-.solutionsContentDescription {
+.solution-description {
   padding-bottom: 30px;
 }
 
-.solutionsContentTitle {
+.solution-title {
   color: var(--text-blue-color);
 }
 
-.learnMoreIcon {
+.learn-more-icon {
   width: 45px;
 }
 
@@ -137,34 +104,21 @@
     height: auto;
     padding: 200px 0;
   }
-
-  .heroTitle {
-    font-size: 68px;
-  }
-
-  .challengesGridContainer {
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .missionTitle,
-  .missionMain {
-    font-size: 32px;
-    letter-spacing: -1px;
-  }
-
-  .solutionsContent {
+  .solution-item {
     align-items: center;
   }
 }
 
 @media (max-width: 789px) {
-  .heroTitle {
-    font-size: 50px;
-    letter-spacing: -4px;
+
+  .challenges {
+    flex-direction: column;
   }
 
-  .heroSubTitle {
-    font-size: 18px;
+  .challenges-grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
@@ -173,44 +127,11 @@
     padding: 150px 0;
   }
 
-  .heroTitle {
-    font-size: 35px;
-    letter-spacing: -3px;
-  }
-
-  .heroSubTitle {
-    font-size: 16px;
-  }
-
-  .heroButtons {
+  .hero-buttons {
     display: grid;
   }
 
-  .challengesGridContainer {
-    display: flex;
-    justify-content: center;
-  }
-
-  .challengesGridItem {
-    margin: 3px;
-    width: 450px;
-  }
-
-  .challengesGridItem:first-child,
-  .challengesGridItem:nth-child(2),
-  .challengesGridItem:last-child {
-    justify-self: normal;
-  }
-
-  .challengesGridItemTitle {
-    margin-bottom: 0;
-  }
-
-  .challengesGridItemDescription {
-    display: none;
-  }
-
-  .challengesGridItemIcon {
-    width: 80px;
+  .challenges-title {
+    text-align: center;
   }
 }

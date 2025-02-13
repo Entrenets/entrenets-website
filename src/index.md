@@ -3,7 +3,7 @@ title: "Home Page"
 layout: "layouts/homepage.njk"
 stylesheet: "homepage.module.css"
 hero:
-  title: "Automate Your Network.<br/> Unlock the Cloud."
+  title: "<span style='color: #fff'>Automate Your Network.</span><br/> Unlock the Cloud."
   subTitle: "Driving efficiency, scalability, and innovation for your network operations."
   buttons:
     - text: "Cloud Migration"
@@ -14,21 +14,20 @@ hero:
       link: "cloud-management"
 
 yourChallenges:
-  title: "<span style='color: #000'>Network performance is the backbone of your business operations.</span> Make it unbreakable."
-  subTitle: "<span style='color: #000'>Whatever the complexity...</span>"
+  title: YOUR CHALLENGES
   challenges:
     
     - title: Long downtimes and slow troubleshooting
       des: Network inefficiencies can lead to extended service outages and delays in identifying and fixing issues.
-      icon: ./assets/images/homepage/challenges/notification.svg
+      icon: ./assets/images/homepage/challenges/bullet-point.svg
 
     - title: Increased operational costs
       des: Unoptimized networks drive up expenses for maintenance, bandwidth, and hardware replacements.
-      icon: ./assets/images/homepage/challenges/notification.svg
+      icon: ./assets/images/homepage/challenges/bullet-point.svg
 
     - title: Security vulnerabilities
       des: Outdated or poorly maintained networks are easier targets for cyberattacks, putting sensitive data at risk.
-      icon: ./assets/images/homepage/challenges/notification.svg
+      icon: ./assets/images/homepage/challenges/bullet-point.svg
 
 ourSolutions:
   title: "Explore our solutions"

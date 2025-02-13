@@ -1,12 +1,12 @@
 {% extends "base.njk" %} {% block content %}
 
-<section class="siteHero">
+<section class="site-hero">
   <div class="container">
-    <div class="siteHeroContent">
-      <h1 class="heroTitle">{{hero.title | safe}}</h1>
-      <h6 class="heroSubTitle">{{hero.subTitle}}</h6>
+    <div class="site-hero-content">
+      <h1 class="hero-title">{{hero.title | safe}}</h1>
+      <h6 class="hero-subtitle">{{hero.subTitle}}</h6>
     </div>
-    <div class="heroButtons">
+    <div class="hero-buttons">
       {% for button in hero.buttons%}
       <a href="/{{button.link}}" class="btn btn-secondary">
         <span class="btn-area">
@@ -18,30 +18,30 @@
   </div>
 </section>
 
-<section class="section light-bg" id="project">
+<section class="section" id="project">
   <div class="container">
-    <div class="section-title mb-lg center">
-      <h2 class="uppercase mb-lg">{{yourChallenges.title | safe}}</h2>
+    <div class="challenges">
+      <h2 class="challenges-title">{{yourChallenges.title}}</h2>
       <p>{{yourChallenges.subTitle | safe}}</p>
-    </div>
-    <div class="challengesGridContainer">
-      {% for challenge in yourChallenges.challenges %}
-      <div class="challengesGridItem">
-        <img src="{{challenge.icon}}" class="challengesGridItemIcon" />
-        <div class="challengeContent">
-          <h6 class="challengesGridItemTitle">{{challenge.title}}</h6>
-          <p class="challengesGridItemDescription">{{challenge.des}}</p>
+      <div class="challenges-grid">
+        {% for challenge in yourChallenges.challenges %}
+        <div class="challenge-item">
+          <img src="{{challenge.icon}}" class="challenge-icon" />
+          <div class="challenge-content">
+            <h6 class="challenge-title">{{challenge.title}}</h6>
+            <p class="challenge-description">{{challenge.des}}</p>
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
 </section>
 
 <section class="section" id="project">
   <div class="container center">
-    <h3 class="missionTitle">{{mission.title | safe}}</h3>
-    <h3 class="missionMain">{{mission.main | safe}}</h3>
+    <h3 class="mission-title">{{mission.title | safe}}</h3>
+    <h3 class="mission-main">{{mission.main | safe}}</h3>
     <!-- Google Calendar Appointment Scheduling begin -->
     <script
       src="https://calendar.google.com/calendar/scheduling-button-script.js"
@@ -63,33 +63,30 @@
     <!-- end Google Calendar Appointment Scheduling -->
   </div>
 </section>
+
 <section class="section" id="project">
-    <h2 class="solutionsTitle center">Solutions</h2>
-    <div class="solutionsContainer">
-      {% for solution in ourSolutions.solutions %}
-      <div class="grid-item solutionItem">
-        <div class="solutionsContent">
-          <img
-            src="{{solution.image}}"
-            class="solutionsContentImage"
-            altText="{{solution.altText}}"
-          />
-          <p class="solutionsContentTitle"><b>{{solution.title}}</b></p>
-          <h6 class="solutionsContentSubtitle">{{solution.subtitle}}</h6>
-          <p class="solutionsContentDescription">{{solution.description}}</p>
-          <a href="/{{hero.managedCloud.link}}">
-            <span class="btn-area">
-              <span data-text="Explore {{solution.title}}"
-                ><b>Explore {{solution.title}}</b
-                ><img
-                  src="/assets/images/right-arrow.svg"
-                  class="learnMoreIcon"
-              /></span>
-            </span>
-          </a>
-        </div>
-      </div>
-      {% endfor %}
+  <h2 class="solutions-title center">Solutions</h2>
+  <div class="solutions-grid">
+    {% for solution in ourSolutions.solutions %}
+    <div class="solution-item">
+      <img
+        src="{{solution.image}}"
+        class="solution-image"
+        alt="{{solution.altText}}"
+      />
+      <p class="solution-title"><b>{{solution.title}}</b></p>
+      <h6 class="solution-subtitle">{{solution.subtitle}}</h6>
+      <p class="solution-description">{{solution.description}}</p>
+      <a href="/{{hero.managedCloud.link}}" class="solution-link">
+        <span class="btn-area">
+          <span data-text="Explore {{solution.title}}"
+            ><b>Explore {{solution.title}}</b
+            ><img src="/assets/images/right-arrow.svg" class="learn-more-icon"
+          /></span>
+        </span>
+      </a>
     </div>
+    {% endfor %}
+  </div>
 </section>
 {% endblock %}
