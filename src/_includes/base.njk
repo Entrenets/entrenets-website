@@ -101,13 +101,6 @@
     <footer class="site-footer">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <div class="site-footer-logo">
-              <a href="/">
-                <img src="{{footer.footerLogo}}" alt="logo-footer" />
-              </a>
-            </div>
-          </div>
           <div class="col-lg-3 col-md-6">
             <div class="site-footer-widget">
               <h5 class="site-footer-widget-title">
@@ -135,19 +128,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-2 col-md-6">
-            <div class="site-footer-widget">
-              <h5 class="site-footer-widget-title">{{footer.socialHeading}}</h5>
-              <ul class="site-footer-widget-links">
-                {% for socialMedia in footer.socialMedia %}
-                <li>
-                  <a href="/{{socialMedia.link}}">{{socialMedia.text}}</a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
+          {# <div class="col-lg-3 col-md-6">
             <div class="site-footer-widget">
               <h5 class="site-footer-widget-title">{{footer.brandHeading}}</h5>
               <p class="site-footer-widget-description">
@@ -156,7 +137,7 @@
                 {% endfor %}
               </p>
             </div>
-          </div>
+          </div> #}
           <div class="col-lg-2 col-12">
             <a href="#top" class="site-footer-widget-top">
               <img src="{{footer.back2topIcon}}" alt="back-to-top" />
@@ -165,12 +146,7 @@
           </div>
           <div class="col-12">
             <div class="site-footer-copyright text-center my-3">
-              <p>
-                © Copyright 2022 - All Rights Reserved by
-                <a href="https://staticmania.com/" target="_blank"
-                  >StaticMania</a
-                >
-              </p>
+              <p>© 2025 Entrenets</p>
             </div>
           </div>
         </div>
