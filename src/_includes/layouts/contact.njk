@@ -2,186 +2,108 @@
 
 <section class="section">
   <div class="container form-container">
-    <h4 class="form-title center light-font">{{formTitle}}</h4>
-    <div class="two-column-grid">
-      <div class="grid-item">
-        <div class="content-wrapper">
-          <img
-            src="{{image}}"
-            alt="Contact illustration"
-            class="contact-image"
-          />
-          <section class="next-steps">
-            <ul class="next-steps-list">
-              {%for step in steps%}
-              <li class="next-steps-item">
-                <p class="step-title">{{step.title}}</p>
-                <p>{{step.text}}</p>
-              </li>
-              {%endfor%}
-            </ul>
-          </section>
-        </div>
-      </div>
-
-      <div class="grid-item">
-        <div class="content-wrapper">
-          <div class="welcome-message">
-            <p>{{welcomeMessage}}</p>
-          </div>
-          <form
-            method="POST"
-            {# action="https://fabform.io/f/{{ formId }}" #}
-            enctype="multipart/form-data"
-          >
-            <div class="form-row">
-              <div class="form-item">
-                <input
-                  type="text"
-                  name="_gotcha"
-                  style="display: none !important"
-                />
-                <label
-                  for="first-name"
-                  class="contact-form-label required-field"
-                  >First Name</label
-                >
-                <input type="text" name="first-name" id="first-name" required />
-              </div>
-              <div class="form-item">
-                <label for="last-name" class="contact-form-label required-field"
-                  >Last Name</label
-                >
-                <input type="text" name="last-name" id="last-name" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-item">
-                <label
-                  for="email"
-                  class="contact-form-label required-field"
-                  pattern="^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$"
-                  >Work Email</label
-                >
-                <input type="email" name="email" id="email" required />
-              </div>
-              <div class="form-item">
-                <label
-                  for="company-website"
-                  class="contact-form-label required-field"
-                  >Company Website</label
-                >
-                <input
-                  type="url"
-                  name="company-website"
-                  id="company-website"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-item">
-                <label
-                  for="prefix"
-                  id="prefix"
-                  class="contact-form-label required-field"
-                  >Prefix</label
-                >
-                <select
-                  name="prefix"
-                  id="prefix"
-                  required
-                  class="prefix-dropdown"
-                >
-                  <option value="" disabled selected hidden></option>
-                  {% for country in countries %}
-                  <option
-                    value="{{ country.prefix }}"
-                    label="{{country.name}} +{{country.prefix}}"
-                  >
-                    +{{country.prefix}}
-                  </option>
-                  {% endfor %}
-                </select>
-              </div>
-              <div class="form-item">
-                <label
-                  for="phone"
-                  id="phone"
-                  class="contact-form-label required-field"
-                  >Phone number</label
-                >
-                <input
-                  class="phone"
-                  type="phone"
-                  name="phone"
-                  id="phone"
-                  required
-                  pattern="^[0-9+\s-]+$"
-                />
-              </div>
-            </div>
-            <div class="form-item">
-              <label
-                for="country"
-                if="country"
-                class="contact-form-label required-field"
-                >Country</label
-              >
-              <select name="country" id="country" required>
-                <option value="" disabled selected hidden>
-                  Select your country
-                </option>
-                {% for country in countries %}
-                <option
-                  value="{{ country.countryCode }}"
-                  label="{{country.name}}"
-                >
-                  {{ country.name }}
-                </option>
-                {% endfor %}
-              </select>
-            </div>
-            <label
-              for="aboutProject"
-              class="contact-form-label required-field"
-              id="aboutProject"
-              >Tell us about the project</label
-            >
-            <textarea
-              class="form-control"
-              name="about-project"
-              id="about-project"
-              rows="6"
-              minlength="5"
-              required
-            ></textarea>
-            <div
-              class="g-recaptcha"
-              data-sitekey="YOUR_RECAPTCHA_SITE_KEY"
-            ></div>
-
-            <button type="submit" class="btn btn-primary">
-              <span class="btn-area">
-                <span data-text="{{btnText}}"> {{btnText}} </span>
-              </span>
-            </button>
-          </form>
-          <script src="https://www.google.com/recaptcha/api.js?render={{ recaptchaSiteKey }}"></script>
-          <script>
-            grecaptcha.ready(function () {
-              grecaptcha
-                .execute({{ recaptchaSiteKey }}, { action: "submit" })
-                .then(function (token) {
-                  document.getElementById("g-recaptcha-response").value = token
-                })
-            })
-          </script>
-        </div>
-      </div>
+    <div class="form-title">
+      <h4>{{title}}</h4>
+      <p>{{subTitle}}</p>
     </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input
+        type="hidden"
+        name="access_key"
+        value="0f7b2452-3ca9-43d1-932f-ccca45046387"
+      />
+      <input
+        type="hidden"
+        name="subject"
+        value="New Submission from Entrenets website"
+      />
+      <input type="hidden" name="from_name" value="Entrenets" />
+      <div class="form-row">
+        <div class="form-item">
+          <label for="name" class="contact-form-label required-field"
+            >Your Name</label
+          >
+          <input type="text" name="name" required placeholder="Full Name" />
+        </div>
+        <div class="form-item">
+          <label for="email" class="contact-form-label required-field"
+            >Email Address</label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="name@company.com"
+            pattern="^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$"
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-item">
+          <label for="website" class="contact-form-label required-field"
+            >Website URL</label
+          >
+          <input
+            type="url"
+            name="website"
+            required
+            placeholder="https://company.com"
+          />
+        </div>
+        <div class="form-item">
+          <label for="phone" class="contact-form-label required-field"
+            >Phone number</label
+          >
+          <input
+            type="phone"
+            name="phone"
+            required
+            placeholder="+14155552671"
+            pattern="^\+[1-9]\d{1,14}$"
+          />
+        </div>
+      </div>
+
+      <label for="message" class="contact-form-label required-field"
+        >Tell us about the project</label
+      >
+      <textarea
+        class="form-control message"
+        name="message"
+        rows="6"
+        minlength="5"
+        required
+        placeholder="Please provide all details about your project"
+      ></textarea>
+
+      <!-- Honeypot Spam Protection -->
+      <input
+        type="checkbox"
+        name="botcheck"
+        cass="hidden"
+        style="display: none"
+      />
+
+      <!-- h-captcha -->
+      <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
+
+      <!-- Custom Confirmation / Success Page -->
+      <input
+        type="hidden"
+        name="redirect"
+        value="http://localhost:8080/thanks/"
+      />
+
+      <button type="submit" class="btn btn-primary">
+        <span class="btn-area">
+          <span data-text="{{btnText}}"> {{btnText}} </span>
+        </span>
+      </button>
+    </form>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </div>
 </section>
 
