@@ -6,7 +6,7 @@ hero:
   name: "Cloud Migration Services"
   title: "Migrate to the cloud</br>with confidence"
   subTitle: "Our team of highly experienced AWS professionals </br>is dedicated to making your cloud migration journey seamless and efficient"
-title: "<span style='color: #4F75FF'>We make the transition easy.</span>"
+title: We make the transition easy.
 intro: "Cloud services offer unmatched flexibility, scalability, and efficiency. Yet, navigating the migration process can be complex. Here’s how we can help:"
 challenges: 
   - name: Migration Strategy
