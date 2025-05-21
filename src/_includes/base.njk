@@ -2,7 +2,7 @@
 <html lang="zxx">
   <head>
     <meta charset="utf-8" />
-    <title>Roxo | Creative Design Agency</title>
+    <title>Entrenets: {{title|safe}}</title>
     <meta name="generator" content="Eleventy" />
     <!--Meta For No Index-->
     <meta name="robots" content="noindex, Nofollow, Noimageindex" />
@@ -38,19 +38,24 @@
     <!--Favicon-->
     <link
       rel="shortcut icon"
-      href="/assets/images/favIcon.png"
+      href="/assets/images/favicon.png"
       type="image/x-icon"
     />
-    <link rel="icon" href="/assets/images/favIcon.png" type="image/x-icon" />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon" />
   </head>
 
   <body>
     {% block navbar %}
     <nav class="navbar navbar-expand-lg site-navigation">
       <div class="container">
+        {#
+        <h6 class="logo">Entrenets</h6>
+        #}
+
         <a class="navbar-brand" href="/">
-          <img src="{{nav.navLogo}}" alt="nav-logo" />
+          <img src="{{nav.navLogo}}" alt="nav-logo" class="logo" />
         </a>
+
         <button
           class="navbar-toggler collapsed"
           type="button"

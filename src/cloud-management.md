@@ -7,7 +7,7 @@ hero:
   title: "<span style='color: #FFF'>Secure, Optimise and Scale.</br></span>We make it easy for you."
   subTitle: "We ensure your cloud infrastructure runs securely, reliably, and cost-effectively 
 while you drive your business forward."
-title: "<span style='color: #4F75FF'>Reliable Cloud Management.</span>"
+title: Reliable Cloud Management.
 intro: "Maintaining and optimising your cloud environment can be a challenge. 
 Here’s how we make it effortless for you:"
 challenges: 

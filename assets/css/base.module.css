@@ -88,8 +88,7 @@
 
 @media (max-width: 991px) {
   .site-navigation {
-    background: #00113E;
-    ;
+    background: #000;
     margin: 10px;
     border-radius: 5px;
     top: 0;
@@ -109,13 +108,19 @@
   margin: 0;
 }
 
-.site-navigation .navbar-brand img {
-  max-width: 78px;
+.logo {
+  width: 150px;
+  height: auto;
 }
 
 @media (max-width: 991px) {
   .site-navigation .nav-item {
     text-align: center;
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
   }
 }
 
@@ -145,7 +150,7 @@
   height: 2px;
   width: 25px;
   transition: all 0.2s;
-  background: #EAA4A4;
+  background: #fff;
   display: block;
 }
 

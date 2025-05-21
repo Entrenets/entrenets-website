@@ -1,6 +1,7 @@
 ---
 layout: layouts/about.njk
 stylesheet: about.module.css
+pageTitle: About us
 title: Our vision is to be the <span style='color:#4F75FF;font-weight:500'>enablers</span> of a smarter, faster future where <span style='color:#4F75FF; font-weight:500'>automation</span> handles the routine and humans lead the <span style='color:#4F75FF; font-weight:500'>extraordinary</span>.
 vision: 
     innovate: 
