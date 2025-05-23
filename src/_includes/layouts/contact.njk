@@ -1,60 +1,110 @@
-{% extends "base.njk" %}
+{% extends "base.njk" %} {% block content %}
 
-{% block content %}
+<section class="section">
+  <div class="container form-container">
+    <div class="form-title">
+      <h4>{{title}}</h4>
+      <p>{{subTitle}}</p>
+    </div>
 
-    <section class="site-contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5">
-            <h1 class="site-contact-title">
-              {{title}}<span>{{subTitle}}</span>
-            </h1>
-          </div>
-          <div class="col-lg-6 ml-auto">
-            <div class="site-contact-form">
-              <h4>{{formTitle}}</h4>
-              <form method="POST" action="https://fabform.io/f/ulB_j_f">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <input type="text" class="form-control" name="first-name" id="first-name" placeholder="First Name">
-                  </div>
-                  <div class="col-lg-6">
-                    <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Last Name">
-                  </div>
-                  <div class="col-lg-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="select-wrapper">
-                      <select class="form-control" id="projectType">
-                        <option value="" selected disabled hidden>Project Type</option>
-                        <option value="gd">Graphics Design</option>
-                        <option value="wb">Web Design</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <textarea class="form-control" id="aboutProject" rows="6" placeholder="About the Project"></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary" formtarget="_blank">
-                      <span class="btn-area">
-                        <span data-text="{{btnText}}">
-                          {{btnText}}
-                        </span>
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-              <p class="contact-form-generator mt-3">
-                <strong>** </strong><a href="https://fabform.io/" target="_blank">Static website forms</a>
-              </p>
-            </div>
-          </div>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input
+        type="hidden"
+        name="access_key"
+        value="0f7b2452-3ca9-43d1-932f-ccca45046387"
+      />
+      <input
+        type="hidden"
+        name="subject"
+        value="New Submission from Entrenets website"
+      />
+      <input type="hidden" name="from_name" value="Entrenets" />
+      <div class="form-row">
+        <div class="form-item">
+          <label for="name" class="contact-form-label required-field"
+            >Your Name</label
+          >
+          <input type="text" name="name" required placeholder="Full Name" />
+        </div>
+        <div class="form-item">
+          <label for="email" class="contact-form-label required-field"
+            >Email Address</label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="name@company.com"
+            pattern="^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$"
+          />
         </div>
       </div>
-    </section>
-  
-{% endblock %}
-{% block workTogether %}{% endblock %}
+
+      <div class="form-row">
+        <div class="form-item">
+          <label for="website" class="contact-form-label required-field"
+            >Website URL</label
+          >
+          <input
+            type="url"
+            name="website"
+            required
+            placeholder="https://company.com"
+          />
+        </div>
+        <div class="form-item">
+          <label for="phone" class="contact-form-label required-field"
+            >Phone number</label
+          >
+          <input
+            type="phone"
+            name="phone"
+            required
+            placeholder="+14155552671"
+            pattern="^\+[1-9]\d{1,14}$"
+          />
+        </div>
+      </div>
+
+      <label for="message" class="contact-form-label required-field"
+        >Tell us about the project</label
+      >
+      <textarea
+        class="form-control message"
+        name="message"
+        rows="6"
+        minlength="5"
+        required
+        placeholder="Please provide all details about your project"
+      ></textarea>
+
+      <!-- Honeypot Spam Protection -->
+      <input
+        type="checkbox"
+        name="botcheck"
+        cass="hidden"
+        style="display: none"
+      />
+
+      <!-- h-captcha -->
+      <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
+
+      <!-- Custom Confirmation / Success Page -->
+      <input
+        type="hidden"
+        name="redirect"
+        value="http://entrenets.com/thanks/"
+      />
+
+      <button type="submit" class="btn btn-primary">
+        <span class="btn-area">
+          <span data-text="{{btnText}}"> {{btnText}} </span>
+        </span>
+      </button>
+    </form>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  </div>
+</section>
+
+{% endblock %} {% block workTogether %}{% endblock %}

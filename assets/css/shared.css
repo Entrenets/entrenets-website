@@ -241,22 +241,26 @@ h3 {
   left: 0;
 }
 
-.qxCTlb {
-  border-radius: 10px;
-  padding: 15px 25px;
-  color: #fff !important;
-}
-
-.qxCTlb:hover {
-  background-color: var(--hover-primary-btn-bg) !important;
-}
-
 .btn-secondary {
   background: var(--secondary-color);
   color: #fff;
   font-weight: 500;
   padding: 15px 25px;
   min-width: 200px;
+}
+
+.CTA {
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 500;
+  padding: 15px 25px;
+  min-width: 150px;
+  color: #fff !important;
+}
+
+.CTA:hover {
+  background-color: var(--hover-primary-btn-bg);
+  color: #fff !important;
 }
 
 .btn-secondary:hover {
@@ -267,4 +271,8 @@ h3 {
   .section-title {
     text-align: center;
   }
+}
+
+.thanks-message {
+  line-height: 2;
 }

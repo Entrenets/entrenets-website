@@ -30,6 +30,6 @@
       "text": "about"
     }
   ],
-  "navBtnLink": "https://calendar.google.com/calendar/scheduling-button-script.css",
-  "navBtnText": "Get in touch"
+  "navBtnLink": "contact",
+  "navBtnText": "Get in Touch"
 }

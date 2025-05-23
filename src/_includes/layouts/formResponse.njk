@@ -1,0 +1,20 @@
+{% extends "base.njk" %} {% block content %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-title center mt-lg thanks-message">
+      <img
+        src="{{image}}"
+        alt="Contact illustration"
+        width="200px"
+      />
+      <h4 class="title">{{title}}</h4>
+      <p class="thanks-message">
+        {{message | safe}}
+      </p>
+      <p><strong>{{signature}}</strong></p>
+    </div>
+  </div>
+</section>
+
+{% endblock %} {% block workTogether %}{% endblock %}
