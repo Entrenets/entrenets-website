@@ -9,27 +9,27 @@
       "text": "solutions",
       "sublinks": [
         {
-          "url": "cloud-management",
+          "url": "/cloud-management",
           "text": "Cloud Management",
           "icon": "/assets/images/servicePageTemplate/cloud-icon.svg"
         },
         {
-          "url": "cloud-migration",
+          "url": "/cloud-migration",
           "text": "Cloud Migration",
           "icon": "/assets/images/servicePageTemplate/cloud-management.svg"
         },
         {
-          "url": "network-automation",
+          "url": "/network-automation",
           "text": "Network Automation",
           "icon": "/assets/images/servicePageTemplate/network-automation.svg"
         }
       ]
     },
     {
-      "url": "about",
+      "url": "/about",
       "text": "about"
     }
   ],
-  "navBtnLink": "contact",
+  "navBtnLink": "/contact",
   "navBtnText": "Get in Touch"
 }

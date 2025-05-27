@@ -66,7 +66,7 @@
           <ul class="navbar-nav ml-auto main-nav">
             {% for navLink in nav.navLinks %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ navLink.url | default('/') }}"
+              <a class="nav-link" href="{{navLink.url}}"
                 >{{navLink.text | capitalize}}</a
               >
               {% if navLink.sublinks %}
@@ -74,7 +74,7 @@
                 {% for sublink in navLink.sublinks %}
                 <li class="submenu-list-item">
                   <img src="{{sublink.icon}}" width="20px" />
-                  <a href="/{{ sublink.url}}" class="sublink"
+                  <a href="{{ sublink.url}}" class="sublink"
                     >{{ sublink.text }}</a
                   >
                 </li>
@@ -84,7 +84,10 @@
             </li>
             {% endfor %}
             <li class="nav-item">
-              <a class="nav-link btn btn-sm btn-sm-rounded CTA" href="/{{nav.navBtnLink}}">
+              <a
+                class="nav-link btn btn-sm btn-sm-rounded CTA"
+                href="/{{nav.navBtnLink}}"
+              >
                 <span class="btn-area">
                   <span data-text="{{nav.navBtnText}}">
                     {{nav.navBtnText}}
@@ -101,81 +104,49 @@
     <footer class="site-footer">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <div class="site-footer-logo">
-              <a href="/">
-                <img src="{{footer.footerLogo}}" alt="logo-footer" />
-              </a>
-            </div>
+          <!-- Logo -->
+          <div class="col-lg-3 col-md-6 site-footer-logo-wrapper">
+            <img
+              src={{footer.logo}}
+              class="site-footer-logo"
+              alt="company-logo"
+            />
           </div>
+          {% for section in footer.sections %}
           <div class="col-lg-3 col-md-6">
             <div class="site-footer-widget">
-              <h5 class="site-footer-widget-title">
-                {{footer.contactsHeading}}
-              </h5>
-              <p class="site-footer-widget-description">
-                {% for contactInfo in footer.contactsInfo %}
-                <a href="{{contactInfo.link}}">{{contactInfo.text}}</a>
-                <br />
-                {% endfor %}
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <div class="site-footer-widget">
-              <h5 class="site-footer-widget-title">
-                {{footer.siteMapHeading}}
-              </h5>
+              <h6 class="site-footer-widget-title">{{ section.heading }}</h6>
               <ul class="site-footer-widget-links">
-                {% for siteMap in footer.siteMap %}
+                {% for item in section.items %}
                 <li>
-                  <a href="/{{siteMap.link}}">{{siteMap.text}}</a>
+                  <a href="{{ item.link }}">{{ item.text }}</a>
                 </li>
                 {% endfor %}
               </ul>
             </div>
           </div>
-          <div class="col-lg-2 col-md-6">
-            <div class="site-footer-widget">
-              <h5 class="site-footer-widget-title">{{footer.socialHeading}}</h5>
-              <ul class="site-footer-widget-links">
-                {% for socialMedia in footer.socialMedia %}
-                <li>
-                  <a href="/{{socialMedia.link}}">{{socialMedia.text}}</a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
+          {% endfor %}
+
+          <!-- Back to Top -->
           <div class="col-lg-3 col-md-6">
-            <div class="site-footer-widget">
-              <h5 class="site-footer-widget-title">{{footer.brandHeading}}</h5>
-              <p class="site-footer-widget-description">
-                {% for brandMotto in footer.brandMotto %} - {{brandMotto}}
-                <br />
-                {% endfor %}
+            <a href="#top" class="site-footer-widget-top" class="center">
+              <img src="{{ footer.backToTop.icon }}" alt="back-to-top" />
+              <p class="site-footer-widget-top-text">
+                {{ footer.backToTop.text }}
               </p>
-            </div>
-          </div>
-          <div class="col-lg-2 col-12">
-            <a href="#top" class="site-footer-widget-top">
-              <img src="{{footer.back2topIcon}}" alt="back-to-top" />
-              <p>{{footer.customerComment}}</p>
             </a>
           </div>
+
+          <!-- Copyright -->
           <div class="col-12">
             <div class="site-footer-copyright text-center my-3">
-              <p>
-                © Copyright 2022 - All Rights Reserved by
-                <a href="https://staticmania.com/" target="_blank"
-                  >StaticMania</a
-                >
-              </p>
+              <p>© 2025 Entrenets</p>
             </div>
           </div>
         </div>
       </div>
     </footer>
+
     {% endblock %}
     <!-- <script src="js/vendor.js"></script> -->
     <script src="/assets/vendor/jQuery/jquery.min.js"></script>
