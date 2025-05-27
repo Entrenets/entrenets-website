@@ -1,55 +1,43 @@
 {
-  "contactsHeading": "Contact Us",
-  "contactsInfo": [
+  "logo": "/assets/images/logo-black-background.png",
+  "sections": [
     {
-      "link": "/contact-us",
-      "text": "Send us a message!"
+      "heading": "Company",
+      "items": [
+        {
+          "link": "/",
+          "text": "Home"
+        },
+        {
+          "link": "/about",
+          "text": "About"
+        },
+        {
+          "link": "/contact",
+          "text": "Contact Us"
+        }
+      ]
     },
     {
-      "link": "mailto:",
-      "text": "info@entrenets.com"
+      "heading": "Services",
+      "items": [
+        {
+          "link": "/cloud-migration",
+          "text": "Cloud Migration"
+        },
+        {
+          "link": "/cloud-management",
+          "text": "Cloud Management"
+        },
+        {
+          "link": "/network-automation",
+          "text": "Network Automation"
+        }
+      ]
     }
   ],
-  "siteMapHeading": "Sitemap",
-  "siteMap": [
-    {
-      "link": "about",
-      "text": "About Entrenets"
-    },
-    {
-      "link": "privacy-policy",
-      "text": "Privacy Policy"
-    },
-    {
-      "link": "terms-conditions",
-      "text": "Terms & Conditions"
-    }
-  ],
-  "socialHeading": "Social Media",
-  "socialMedia": [
-    {
-      "link": "#",
-      "text": "Medium"
-    },
-    {
-      "link": "#",
-      "text": "Behance"
-    },
-    {
-      "link": "#",
-      "text": "Dribbble"
-    },
-    {
-      "link": "#",
-      "text": "Instagram"
-    }
-  ],
-  "brandHeading": "We help companies:",
-  "brandMotto": [
-    "migrate to the Cloud",
-    "with Cloud management",
-    "automating network operations"
-  ],
-  "back2topIcon": "/assets/images/to-top.svg",
-  "customerComment": "I want to visit again"
+  "backToTop": {
+    "icon": "/assets/images/to-top.svg",
+    "text": "Back to top"
+  }
 }
