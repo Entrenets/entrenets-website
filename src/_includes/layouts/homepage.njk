@@ -18,61 +18,92 @@
   </div>
 </section>
 
-<section class="section" id="project">
-  <div class="container">
-    <div class="challenges">
-      <h2 class="challenges-title">{{yourChallenges.title}}</h2>
-      <p>{{yourChallenges.subTitle | safe}}</p>
-      <div class="challenges-grid">
-        {% for challenge in yourChallenges.challenges %}
-        <div class="challenge-item">
-          <img src="{{challenge.icon}}" class="challenge-icon" />
-          <div class="challenge-content">
-            <h6 class="challenge-title">{{challenge.title}}</h6>
-            <p class="challenge-description">{{challenge.des}}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+<section class="section">
+  <div class="container"></div>
 </section>
 
 <section class="section" id="project">
   <div class="container center">
-    <h3 class="missionTitle">{{mission.title | safe}}</h3>
-    <h3 class="missionMain">{{mission.main | safe}}</h3>
+    <h2 class="missionTitle">{{mission.title | safe}}</h3>
+    <h2 class="missionMain">{{mission.main | safe}}</h3>
     <a href="contact" class="btn CTA">
-        <span class="btn-area">
-          <span data-text="{{button.text}}">Start now</span>
-        </span>
-      </a>
+      <span class="btn-area">
+        <span data-text="{{button.text}}">Start now</span>
+      </span>
+    </a>
   </div>
 </section>
 
-<section class="section" id="project">
-  <h2 class="solutions-title center">Solutions</h2>
+<section class="section solutions-section" id="project">
+  <div class="section-title">
+    <h2 class="solutions-title center">{{solutionsSection.title}}</h2>
+    <p class="solutions-subtitle center">{{solutionsSection.subTitle}}</p>
+  </div>
   <div class="solutions-grid">
-    {% for solution in ourSolutions.solutions %}
+    {% for solution in solutions %}
     <div class="solution-item">
-      <img
-        src="{{solution.image}}"
-        class="solution-image"
-        alt="{{solution.altText}}"
-      />
-      <p class="solution-title"><b>{{solution.title}}</b></p>
-      <h6 class="solution-subtitle">{{solution.subtitle}}</h6>
+    <img src="{{solution.image}}" class="icon"/>
+      <p class="solution-subtitle">{{solution.subtitle}}</p>
+      <h6 class="solution-title">{{solution.title}}</h6>
       <p class="solution-description">{{solution.description}}</p>
-      <a href="/{{hero.managedCloud.link}}" class="solution-link">
-        <span class="btn-area">
-          <span data-text="Explore {{solution.title}}"
-            ><b>Explore {{solution.title}}</b
-            ><img src="/assets/images/right-arrow.svg" class="learn-more-icon"
-          /></span>
-        </span>
-      </a>
+      <a href="{{solution.url}}" class="link">Learn more</a>
     </div>
     {% endfor %}
   </div>
 </section>
+<section class="section">
+  <div class="section-title">
+    <h2>{{studyCases.title}}</h2>
+    <p class="case-study-subtitle center">{{studyCases.subtitle}}</p>
+  </div>
+  <div class="container section-customer-success">
+    <div class="case-study-container grid-container">
+      {% for case in cases %}
+      <div class="case-study-item-content">
+        <h6 class="case-study-industry">{{case.industry}}</h6>
+        <h5 class="case-study-title">{{case.title}}</h5>
+        <p class="case-study-text">{{case.subtitle}}</p>
+        <ul class="case-study-facts">
+          {%for fact in case.facts%}
+          <li class="case-study-fact">
+            <img src="{{case.icon}}" class="case-study-fact-icon" />
+            {{fact}}
+          </li>
+          {%endfor%}
+        </ul>
+        <a href="{{case.link}}" class="link">Read study case</a>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why customers choose Entrenets</h2>
+      <p>What sets us apart in delivering cloud-first success.</p>
+    </div>
+    <div class="differentiators-grid">
+      {% for differentiator in differentiators %}
+      <div class="differentiator-card">
+        <div class="differentiator-icon">
+          <img src="{{ differentiator.icon }}" alt="{{ differentiator.title }} icon" class="icon"/>
+        </div>
+        <h6 class="differentiator-title">{{ differentiator.title }}</h4>
+        <p class="differentiator-description">{{ differentiator.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="prefooter-section">
+  <div class="prefooter-content">
+    <h2 class="prefooter-title">{{prefooter.title}}</h2>
+    <p class="prefooter-subtitle">{{prefooter.subtitle}}</p>
+    <a href="/contact" class="cta-button">Get started</a>
+  </div>
+</section>
+
 {% endblock %}

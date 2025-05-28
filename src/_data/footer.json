@@ -37,7 +37,7 @@
     }
   ],
   "backToTop": {
-    "icon": "/assets/images/to-top.svg",
+    "icon": "/assets/images/homepage/to-top.svg",
     "text": "Back to top"
   }
 }

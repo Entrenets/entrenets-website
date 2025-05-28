@@ -29,88 +29,241 @@
   justify-content: center;
 }
 
-.challenges {
-  display: flex;
-  align-items: center;
-}
-
-.challenge-item {
-  display: flex;
-  align-items: center;
-}
-
-.challenge-icon {
-  width: 30px;
-  padding-top: 16px;
-  align-self: flex-start;
-}
-
-.challenge-description {
-  color: #c1c1c1;
-}
-
-.challenge-title {
-  color: #fff;
-}
-
-.challenge-content {
-  padding: 16px;
+.solutions-section {
+  border-radius: 24px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  padding: 56px;
+  margin: 56px;
+  border-radius: 20px;
 }
 
 .solutions-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 32px;
   text-align: center;
 }
 
 .solution-item {
-  color: var(--text-light-color);
   text-align: start;
   flex: 1 1 calc(33.333% - 40px);
   max-width: 350px;
-}
-
-.solutions-title {
-  color: var(--text-light-color);
+  padding: 36px;
+  border-radius: 20px;
+  background: rgba(127, 125, 125, 0.123);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .solution-image {
-  width: 320px;
-  height: 180px;
-  margin-bottom: 20px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 36px;
 }
 
 .solution-title,
 .solution-subtitle {
-  padding-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+.solution-subtitle {
+  color: var(--text-blue-color);
+  font-weight: 600;
 }
 
 .solution-description {
-  padding-bottom: 30px;
+  padding-bottom: 36px;
 }
 
-.solution-title {
-  color: var(--text-blue-color);
+.case-study-container {
+  margin: 24px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  border-radius: 40px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(79, 117, 255, 0.3);
 }
 
-.learn-more-icon {
-  width: 45px;
+.case-study-item-content {
+  align-self: stretch;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  padding: 56px;
+}
+
+.case-study-industry {
+  color: var(--secondary-color);
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.case-study-heading {
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+}
+
+.case-study-title {
+  color: black;
+  font-size: 36px;
+  max-width: 450px;
+  background-clip: text;
+  padding-bottom: 8px;
+}
+
+.case-study-text {
+  padding-bottom: 16px;
+  color: rgb(41, 41, 41);
+  max-width: 400px;
+}
+
+.case-study-facts {
+  list-style-type: none;
+  padding-bottom: 16px;
+  padding-left: 16px;
+}
+
+.case-study-fact {
+  max-width: 500px;
+  color: rgb(41, 41, 41);
+  text-decoration: none;
+  line-height: 1.5;
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+}
+
+.case-study-fact-icon {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.link {
+  color: black;
+  padding: 8px;
+  border-radius: 3px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.link:hover {
+  background-color: var(--hover-secondary-btn-bg);
+  text-decoration: none;
+  color: white;
+}
+
+.differentiators-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+.differentiator-card {
+  border-radius: 20px;
+  padding-bottom: 24px;
+  max-width: 400px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+}
+
+.differentiator-title {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.differentiator-description {
+  line-height: 1.6;
+  color: #e0e7ff;
+}
+
+.prefooter-section {
+  display: flex;
+  justify-self: center;
+  width: 100%;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 100px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.prefooter-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.prefooter-title {
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff
+}
+
+.prefooter-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: white;
+  color: #1d4ed8;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e0e7ff;
+  transform: scale(1.05);
 }
 
 @media (max-width: 978px) {
   .site-hero {
     height: auto;
     padding: 200px 0;
+    flex-direction: column;
   }
+
   .solution-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .solutions-grid {
+    flex-direction: column;
     align-items: center;
+  }
+
+  .differentiators-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .case-study-item {
+    margin: 24px 0;
   }
 }
 
 @media (max-width: 789px) {
-
   .challenges {
     flex-direction: column;
   }
@@ -120,18 +273,50 @@
     justify-content: center;
     flex-direction: column;
   }
+
+  .solutions-grid {
+    gap: 24px;
+  }
+
+  .solution-item,
+  .differentiator-card {
+    padding: 24px;
+  }
 }
 
 @media (max-width: 575px) {
   .site-hero {
-    padding: 150px 0;
+    padding: 150px 20px;
   }
 
   .hero-buttons {
     display: grid;
+    gap: 16px;
   }
 
   .challenges-title {
     text-align: center;
+  }
+
+  .case-study-item-content {
+    padding: 32px;
+  }
+
+  .case-study-title {
+    font-size: 28px;
+  }
+
+  .case-study-fact {
+    font-size: 14px;
+  }
+
+  .prefooter-section {
+    padding: 60px 20px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
   }
 }
