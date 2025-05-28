@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24" id="check">
+  <g id="Duotone">
+    <path d="M21.5 18l-10 5.5-10-5.5V7l10-5.5 10 5.5z" style="fill:#fff"></path>
+    <path d="M19.4 16.7L11.5 21l-7.9-4.3L1.5 18l10 5.5 10-5.5z" style="fill:#cce7ff"></path>
+    <path d="M21.5 18l-10 5.5-10-5.5V7l10-5.5 10 5.5z" style="fill:none;stroke:#1078ff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"></path>
+    <path d="M6 12.5l4.5 4 6.5-8" style="fill:none;stroke:#1078ff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"></path>
+  </g>
+  <path id="Frames-24px" d="M0 0h24v24H0z" style="fill:none"></path>
+</svg>

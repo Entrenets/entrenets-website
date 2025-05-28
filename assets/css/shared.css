@@ -4,7 +4,7 @@
   --primary-color: #000;
   --secondary-color: #4161d3;
   --accent-color: #EB3678;
-  --text-light-color: #ffffff;
+  --text-light-color: #fff;
   --text-dark-color: #454545;
   --text-blue-color: #4F75FF;
   --dark-bg-color: #0201017a;
@@ -12,7 +12,7 @@
 
   --hover-light-text: rgba(255, 255, 255, 0.8);
   --hover-primary-btn-bg: #eb3678cf;
-  --hover-secundary-btn-bg: #2E4BB8;
+  --hover-secondary-btn-bg: #2E4BB8;
 }
 
 
@@ -42,17 +42,16 @@ p {
 
 h1 {
   font-size: 78px;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   background-image: linear-gradient(to right, #6439FF, #4F75FF, #00CCDD, #7CF5FF);
   color: transparent;
   background-clip: text;
-  letter-spacing: -5px;
 }
 
 h2 {
   font-size: 50px;
-  color: var(--text-blue-color);
-  letter-spacing: -3px;
+  color: #fff;
+  letter-spacing: -2px;
 }
 
 h3 {
@@ -86,7 +85,7 @@ h6 {
   }
   
   h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   h2 {
@@ -173,14 +172,11 @@ h6 {
 }
 
 .section-title {
-  margin: 0 auto;
-  margin-bottom: 50px;
-  max-width: 900px;
-}
-
-.section-title h2,
-h3 {
-  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 56px;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -211,7 +207,7 @@ h3 {
   border: none;
   margin: 6px 6px;
   padding: 10px 15px;
-  border-radius: 40px;
+  border-radius: 3px;
   width: fit-content;
 }
 
@@ -255,9 +251,10 @@ h3 {
   background: var(--accent-color);
   color: #fff;
   font-weight: 500;
-  padding: 15px 25px;
+  padding: 15px 30px;
   min-width: 150px;
   color: #fff !important;
+  border-radius: 3px;
 }
 
 .CTA:hover {
@@ -266,12 +263,16 @@ h3 {
 }
 
 .btn-secondary:hover {
-  background-color: var(--hover-secundary-btn-bg);
+  background-color: var(--hover-secondary-btn-bg);
 }
 
 @media (max-width: 991px) {
   .section-title {
     text-align: center;
+  }
+
+  .grid-container {
+    grid-template-columns: auto;
   }
 }
 

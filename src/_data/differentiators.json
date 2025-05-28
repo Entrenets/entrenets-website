@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "/assets/images/homepage/us/quality.svg",
+    "title": "Expertise That Delivers",
+    "description": "We help companies move faster, reduce risk, and unlock operational scale by combining automation, cloud architecture, and security best practices into tailored solutions that stick."
+  },
+  {
+    "icon": "/assets/images/homepage/us/time.svg",
+    "title": "Time Back for What Matters",
+    "description": "We eliminate repetitive tasks and manual bottlenecks so your team can focus on innovation."
+  },
+  {
+    "icon": "/assets/images/homepage/us/efficiency.svg",
+    "title": "Efficiency Through Engineering",
+    "description": "Our automation-first approach means faster deployments, fewer errors, and measurable operational wins."
+  },
+  {
+    "icon": "/assets/images/homepage/us/training.svg",
+    "title": "Knowledge That Sticks",
+    "description": "We don’t just solve but we train, document, and uplift your internal teams. Because the best engineering is repeatable, transferable, and team-first."
+  },
+  {
+    "icon": "/assets/images/homepage/us/security.svg",
+    "title": "Security You Can Trust",
+    "description": "Everything we build is traceable, controlled, and compliant. From versioned network backups to pre-approved rule engines, security is built in."
+  },
+  {
+    "icon": "/assets/images/homepage/us/puzzle.svg",
+    "title": "Tailored Engineering for Your Stack",
+    "description": "Whether you run on AWS, on-prem, hybrid, or a mix of everything. We integrate with your tools, adapt to your environment, and build for your workflows."
+  }
+]
