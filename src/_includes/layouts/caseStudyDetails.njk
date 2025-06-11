@@ -1,0 +1,17 @@
+{% extends "base.njk" %} {% block content %}
+<section class="site-hero">
+  <div class="container">
+    <div class="section-title">
+      <h6>Case study</h6>
+      <h1>{{ title | safe }}</h1>
+      <p>{{ subtitle | safe }}</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <article>{{content | safe}}</article>
+  </div>
+</section>
+
+{% endblock %}

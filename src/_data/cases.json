@@ -1,26 +1,45 @@
 [
   {
-    "industry": "TRAVEL",
+    "industry": "Network Automation",
     "title": "Zero-Touch firewall rule updates at scale",
     "subtitle": "From hours to seconds—network security automation that saves hundreds of hours annually.",
+    "challenge": "Managing thousands of firewall rule changes manually posed significant risks to security, compliance, and operational efficiency.",
+    "solution": "We built an automated, API-driven framework that streamlines firewall rule deployments by integrating with existing approval workflows — reducing manual effort, boosting security, and accelerating change delivery.",
     "facts": [
-      "99% reduction in manual effort.",
-      "2,500+ firewall rules updated with zero human touch.",
-      "Integrated with Jira, AD, Docker, Flask APIs."
+      {
+        "figure": "99%",
+        "keyword": "Manual Effort",
+        "result": "reduction"
+      },
+      {
+        "figure": "90%",
+        "keyword": "Firewall Rule Updates",
+        "result": "faster"
+      }
     ],
-    "link": "",
-    "icon": "/assets/images/homepage/check.svg"
+    "link": "/cases/zero-touch-firewal-rule-updates-at-scale",
+    "icon": "/assets/images/homepage/check.svg", 
+    "integrations": ["Docker", "Flask", "Python", "Jira", "Active Directory"]
   },
   {
-    "industry": "TRAVEL",
+    "industry": "Cloud Management",
     "title": "One global network, defined in code",
     "subtitle": "Deployed AWS infrastructure across 3 continents with Terraform.",
+    "challenge":"Managing a globally distributed AWS environment across regions and accounts demanded tight coordination, risk mitigation, and a repeatable deployment framework.",
     "facts": [
-      "3 continents, 10G/100G links, full BGP/VPN routing.",
-      "Safe-by-default with pre-prod testing env + CI/CD.",
-      "Terraform + Atlantis powered CI/CD"
+      {
+        "figure": "98%",
+        "keyword": "Human Errors",
+        "result": "reduction"
+      },
+      {
+        "figure": "90%",
+        "keyword": "Deployment",
+        "result": "faster"
+      }
     ],
-    "link": "",
+    "integrations": ["Terraform", "Atlantis", "Github Actions", "HashiCorp Vault"],
+    "link": "/cases/one-global-network-defined-in-code",
     "icon": "/assets/images/homepage/check.svg"
   }
 ]

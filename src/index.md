@@ -24,7 +24,7 @@ mission:
         building resilience. So, you can focus on what matters most—growing
         without limits."
 
-studyCases:
+caseStudies:
   title: We automate the complex so you can move faster
   subtitle: From firewall deployments to global network migrations, we’ve saved teams hundreds of hours through automation, infrastructure as code, and self-service tools.
 

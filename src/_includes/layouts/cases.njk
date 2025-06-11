@@ -1,0 +1,47 @@
+{% extends "base.njk" %} {% block content %}
+<section class="site-hero">
+  <div class="container">
+    <div class="section-title">
+      <h6>Case studies</h6>
+      <h1>{{ title | safe }}</h1>
+      <p class="section-description">{{ des | safe }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="container section-customer-success">
+  <div class="cases-grid">
+    {% for case in cases %}
+    <div class="case-card">
+      <h6 class="tag">{{case.industry}}</h6>
+      <h5 class="case-card-title">{{case.title}}</h5>
+      <div class="case-card-intro">
+        <div>
+          <p class="case-card-subtitle">Challenge</p>
+          <p class="case-card-challenge">{{case.challenge}}</p>
+        </div>
+        <div>
+          <p class="case-card-subtitle">Key results</p>
+          <ul class="case-card-facts">
+            {%for fact in case.facts%}
+            <li class="case-card-fact">
+              <p class="case-card-fact-figure">{{fact.figure}}</p>
+              <p class="case-card-fact-keyword">{{fact.keyword}}</p>
+              <p class="case-card-fact-result">{{fact.result}}</p>
+            </li>
+            {%endfor%}
+          </ul>
+        </div>
+        <p class="case-card-subtitle">Integrations</p>
+        <ul class="integrations">
+          {%for integration in case.integrations%}
+          <li class="tag case-card-integration">{{integration}}</li>
+          {%endfor%}
+        </ul>
+        <a href="{{case.link}}" class="btn-secondary">Read more</a>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+{% endblock %}
