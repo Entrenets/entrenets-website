@@ -27,8 +27,4 @@ mission:
 studyCases:
   title: We automate the complex so you can move faster
   subtitle: From firewall deployments to global network migrations, we’ve saved teams hundreds of hours through automation, infrastructure as code, and self-service tools.
-
-prefooter:
-  title: Talk to us
-  subtitle: Contact us to discuss your goals and how we can help.
 ---

@@ -101,13 +101,22 @@
     </nav>
     {% endblock %} {% block content %} {{content | safe}} {% endblock %} {%
     block footer %}
+    <section class="section prefooter-section">
+      <div class="container">
+        <div class="prefooter-content">
+          <h2 class="prefooter-title">{{footer.prefooter.title}}</h2>
+          <p class="prefooter-subtitle">{{footer.prefooter.subtitle}}</p>
+          <a href="/contact" class="cta-button">{{footer.prefooter.button}}</a>
+        </div>
+      </div>
+    </section>
     <footer class="site-footer">
       <div class="container">
         <div class="row">
           <!-- Logo -->
           <div class="col-lg-3 col-md-6 site-footer-logo-wrapper">
             <img
-              src={{footer.logo}}
+              src="{{footer.logo}}"
               class="site-footer-logo"
               alt="company-logo"
             />

@@ -188,53 +188,6 @@
   color: #e0e7ff;
 }
 
-.prefooter-section {
-  display: flex;
-  justify-self: center;
-  width: 100%;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  padding: 100px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.prefooter-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.prefooter-title {
-  letter-spacing: -2px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #fff
-}
-
-.prefooter-subtitle {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.cta-button {
-  background-color: white;
-  color: #1d4ed8;
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 25px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #e0e7ff;
-  transform: scale(1.05);
-}
-
 @media (max-width: 978px) {
   .site-hero {
     height: auto;
@@ -312,11 +265,5 @@
 
   .prefooter-section {
     padding: 60px 20px;
-  }
-
-  .cta-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 0.95rem;
   }
 }

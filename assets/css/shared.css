@@ -107,6 +107,11 @@ h6 {
   h6 {
     font-size: 18px;
   }
+  .cta-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
 }
 
 .section {
@@ -264,6 +269,23 @@ h6 {
 
 .btn-secondary:hover {
   background-color: var(--hover-secondary-btn-bg);
+}
+
+.cta-button {
+  background-color: white;
+  color: #1d4ed8;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e0e7ff;
+  transform: scale(1.05);
 }
 
 @media (max-width: 991px) {

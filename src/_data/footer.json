@@ -1,4 +1,9 @@
 {
+  "prefooter": {
+    "title": "Talk to us",
+    "subtitle": "Contact us to discuss your goals and how we can help.", 
+    "button": "Get started"
+  },
   "logo": "/assets/images/logo/logo-black-background.png",
   "sections": [
     {
