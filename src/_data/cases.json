@@ -1,0 +1,26 @@
+[
+  {
+    "industry": "TRAVEL",
+    "title": "Zero-Touch firewall rule updates at scale",
+    "subtitle": "From hours to seconds—network security automation that saves hundreds of hours annually.",
+    "facts": [
+      "99% reduction in manual effort.",
+      "2,500+ firewall rules updated with zero human touch.",
+      "Integrated with Jira, AD, Docker, Flask APIs."
+    ],
+    "link": "",
+    "icon": "/assets/images/homepage/check.svg"
+  },
+  {
+    "industry": "TRAVEL",
+    "title": "One global network, defined in code",
+    "subtitle": "Deployed AWS infrastructure across 3 continents with Terraform.",
+    "facts": [
+      "3 continents, 10G/100G links, full BGP/VPN routing.",
+      "Safe-by-default with pre-prod testing env + CI/CD.",
+      "Terraform + Atlantis powered CI/CD"
+    ],
+    "link": "",
+    "icon": "/assets/images/homepage/check.svg"
+  }
+]

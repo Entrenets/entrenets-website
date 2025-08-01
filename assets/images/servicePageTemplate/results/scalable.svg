@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="scalable">
+  <line x1="221.36" x2="129.1" y1="290.85" y2="383.11" fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"></line>
+  <polyline fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13" points="129.1 325.93 129.1 383.11 185.97 383.15"></polyline>
+  <line x1="290.72" x2="382.98" y1="290.85" y2="383.11" fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"></line>
+  <polyline fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13" points="382.98 325.93 382.98 383.11 326.11 383.15"></polyline>
+  <line x1="221.28" x2="129.3" y1="221.15" y2="128.89" fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"></line>
+  <path fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13" d="M129,186.07V129.16a.27.27,0,0,1,.28-.27l56.59,0"></path>
+  <line x1="290.72" x2="382.98" y1="221.23" y2="128.97" fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"></line>
+  <polyline fill="none" stroke="#2350ba" stroke-linecap="round" stroke-linejoin="round" stroke-width="13" points="382.98 186.15 382.98 128.97 326.11 128.93"></polyline>
+  <circle cx="168.77" cy="169.09" r="15.81" fill="#b1b0f5"></circle>
+  <circle cx="343.21" cy="169.09" r="15.81" fill="#b1b0f5"></circle>
+  <circle cx="168.77" cy="343.08" r="15.81" fill="#b1b0f5"></circle>
+  <circle cx="343.21" cy="343.08" r="15.81" fill="#b1b0f5"></circle>
+</svg>
