@@ -3,3 +3,4 @@ _site
 dist
 .module.css.json
 .env
+.vercel

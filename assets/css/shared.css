@@ -292,10 +292,6 @@ h6 {
   .section-title {
     text-align: center;
   }
-
-  .grid-container {
-    grid-template-columns: auto;
-  }
 }
 
 .thanks-message {
