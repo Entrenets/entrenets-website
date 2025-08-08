@@ -1,7 +1,6 @@
 ---
 layout: "layouts/contact.njk"
 stylesheet: "contact.module.css"
-title: "Send us a message"
 formTitle: "Tell us about your project"
 welcomeMessage: " 👋 We're excited to hear about your project! Fill out the form below and we'll get back to you shortly."
 btnText: "Send Message"
