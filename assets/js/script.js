@@ -55,6 +55,10 @@ document.getElementById("company-website").addEventListener("blur", function () 
   }
 });
 
+// Vercel analytics
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+
+
 
 
 
