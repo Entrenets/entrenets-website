@@ -117,6 +117,13 @@
   align-items: center;
 }
 
+.submenu {
+  display: none;
+}
+.submenu.open {
+  display: block;
+}
+
 @media (max-width: 575px) {
   .site-navigation.nav-bg {
     padding: 15px;

@@ -9,17 +9,17 @@
       "text": "solutions",
       "sublinks": [
         {
-          "url": "/cloud-management",
+          "url": "/solutions/cloud-management",
           "text": "Cloud Management",
           "icon": "/assets/images/servicePageTemplate/cloud-icon.svg"
         },
         {
-          "url": "/cloud-migration",
+          "url": "/solutions/cloud-migration",
           "text": "Cloud Migration",
           "icon": "/assets/images/servicePageTemplate/cloud-management.svg"
         },
         {
-          "url": "/network-automation",
+          "url": "/solutions/network-automation",
           "text": "Network Automation",
           "icon": "/assets/images/servicePageTemplate/network-automation.svg"
         }

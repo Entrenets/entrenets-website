@@ -26,6 +26,25 @@ $(document).ready(function () {
 
 });
 
+// Toggle dropdown menu on mobile
+document.addEventListener('DOMContentLoaded', () => {
+  const menuLinks = document.querySelectorAll('.menu-item.has-submenu > .menu-link');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      
+      if (isMobile) {
+        e.preventDefault();
+        const submenu = link.nextElementSibling;
+        submenu.classList.toggle('open');
+      }
+    });
+  });
+});
+
+
+
 $(window).on('scroll', function () {
   var windscroll = $(window).scrollTop();
   if (windscroll >= 100) {

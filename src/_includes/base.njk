@@ -36,7 +36,11 @@
       href="/assets/images/logo/favicon.png"
       type="image/x-icon"
     />
-    <link rel="icon" href="/assets/images/logo/favicon.png" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="/assets/images/logo/favicon.png"
+      type="image/x-icon"
+    />
   </head>
 
   <body>
@@ -65,8 +69,10 @@
         <div class="collapse navbar-collapse" id="sitenavbar">
           <ul class="navbar-nav ml-auto main-nav">
             {% for navLink in nav.navLinks %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{navLink.url}}"
+            <li
+              class="nav-item menu-item{% if navLink.sublinks %} has-submenu{% endif %}"
+            >
+              <a class="nav-link menu-link" href="{{navLink.url}}"
                 >{{navLink.text | capitalize}}</a
               >
               {% if navLink.sublinks %}
