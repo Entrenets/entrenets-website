@@ -117,13 +117,6 @@
   align-items: center;
 }
 
-.submenu {
-  display: none;
-}
-.submenu.open {
-  display: block;
-}
-
 @media (max-width: 575px) {
   .site-navigation.nav-bg {
     padding: 15px;
@@ -227,11 +220,7 @@
 
 .submenu {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgb(9, 9, 9);
-  border: 1px solid #242424;
+  justify-items: center;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 280px;
@@ -239,18 +228,16 @@
   z-index: 1000;
 }
 
-.nav-item:last-child .submenu {
-  left: auto;
-  right: 0;
-}
-
 .submenu-list-item {
   display: flex;
   list-style: none;
   padding: 8px 15px;
-  font-weight: 600;
-  border: 0.5px solid #242424;
-  border-radius: 5px;
+  font-weight: 500;
+  color: #2f2b2b;
+}
+
+.submenu-list-item-icon {
+  display: none;
 }
 
 .sublink {
@@ -270,8 +257,40 @@
   background-color: var(--secondary-color);
 }
 
-.nav-item:hover>.submenu {
+.nav-item:hover>.submenu.open {
   display: block;
+}
+
+.nav-item:hover>.submenu {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .submenu {
+    display: none;
+    top: 100%;
+    background-color: rgb(9, 9, 9);
+    padding: 0;
+    z-index: 1000;
+  }
+
+  .submenu.open {
+    display: flex;
+  }
+
+  .nav-item:last-child .submenu {
+    left: 0;
+    right: 0;
+  }
+
+  .submenu-list-item {
+    border: none;
+  }
+
+  .sublink {
+    color: #babec3;
+    font-weight: 400;
+  }
 }
 
 .prefooter-section {
