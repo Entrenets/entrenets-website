@@ -189,8 +189,10 @@
   background-color: var(--secondary-color);
 }
 
-.nav-item:hover>.submenu {
-  display: block;
+@media (min-width: 992px) {
+  .nav-item:hover>.submenu {
+    display: block;
+  }
 }
 
 .prefooter-section {
@@ -220,7 +222,6 @@
   margin-bottom: 30px;
 }
 
-/* Media Queries - Consolidated */
 @media (max-width: 991px) {
   .site-navigation {
     background: #000;
@@ -243,7 +244,7 @@
     width: 100%;
     border-top: 1px solid rgb(75, 75, 75);
   }
-
+  
   .submenu {
     position: relative;
     min-width: 280px;
