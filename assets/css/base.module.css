@@ -248,6 +248,7 @@
     min-width: 280px;
     padding: 0;
     z-index: 1000;
+    border:none;
   }
 
   .submenu.open {
@@ -265,6 +266,7 @@
     justify-content: left;
     width: 100%;
     border: none;
+    border-top: 0.2px solid rgb(75, 75, 75);
   }
 
   .sublink:active {
