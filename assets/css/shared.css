@@ -267,6 +267,12 @@ h6 {
   color: #fff !important;
 }
 
+@media (max-width: 991.98px) {
+  .CTA {
+    display: none;
+  }
+}
+
 .btn-secondary:hover {
   background-color: var(--hover-secondary-btn-bg);
 }
