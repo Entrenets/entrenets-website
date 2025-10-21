@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   menuLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
       
       if (isMobile) {
         e.preventDefault();
