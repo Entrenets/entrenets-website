@@ -8,23 +8,6 @@
   transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
-@media (max-width: 991px) {
-  .site-navigation {
-    background: #000;
-    margin: 10px;
-    border-radius: 5px;
-    top: 0;
-    width: calc(100% - 20px);
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
-  }
-}
-
-@media (max-width: 575px) {
-  .site-navigation {
-    padding: 15px;
-  }
-}
-
 .site-navigation .navbar-brand {
   padding: 0;
   margin: 0;
@@ -33,42 +16,6 @@
 .logo {
   width: 150px;
   height: auto;
-}
-
-@media (max-width: 991px) {
-  .site-navigation .nav-item {
-    text-align: center;
-  }
-
-  .nav-link {
-    font-size: 24px;
-  }
-
-  .logo {
-    width: 150px;
-    height: auto;
-  }
-
-  .navbar-nav {
-    margin-top: 50px;
-    height: 100vh;
-  }
-
-  .menu-item {
-    width: 100%;
-    border-top: 1px solid rgb(75, 75, 75);
-  }
-
-  .submenu-list-item {
-    display: flex;
-    justify-content: left;
-    width: 100%;
-    border-top: 1px solid rgb(52, 52, 52);
-  }
-
-  .sublink:active {
-    color: var(--secondary-color);
-  }
 }
 
 .site-navigation .nav-item .nav-link {
@@ -142,12 +89,6 @@
   align-items: center;
 }
 
-@media (max-width: 575px) {
-  .site-navigation.nav-bg {
-    padding: 15px;
-  }
-}
-
 .site-footer {
   padding: 100px 0;
 }
@@ -157,33 +98,9 @@
   align-self: flex-end;
 }
 
-@media (max-width: 575px) {
-  .site-footer-logo {
-    text-align: center;
-  }
-}
-
-@media (max-width: 991px) {
-  .site-footer-widget {
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 575px) {
-  .site-footer-widget {
-    text-align: center;
-  }
-}
-
 .site-footer-widget-title {
   color: #fff;
   margin-bottom: 30px;
-}
-
-@media (max-width: 991px) {
-  .site-footer-widget-title {
-    margin-bottom: 20px;
-  }
 }
 
 .site-footer-widget-description {
@@ -225,22 +142,11 @@
   padding: 16px;
 }
 
-@media (max-width: 575px) {
-  .site-footer-widget-top {
-    text-align: center;
-    display: block;
-  }
-}
-
 .site-footer-copyright p {
   color: #fff;
   margin: 50px auto 0;
   text-align: center;
   margin-top: 100px;
-}
-
-.nav-item {
-  position: relative;
 }
 
 .submenu {
@@ -265,10 +171,6 @@
   border: 0.3px solid #242424;
 }
 
-.submenu-list-item-icon {
-  display: none;
-}
-
 .sublink {
   text-decoration: none;
   color: #fff;
@@ -288,42 +190,6 @@
 
 .nav-item:hover>.submenu {
   display: block;
-}
-
-@media (max-width: 991.98px) {
-
-  .nav-link {
-    justify-self: left;
-  }
-
-  .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgb(9, 9, 9);
-    border: 1px solid #242424;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 280px;
-    padding: 0;
-    z-index: 1000;
-  }
-
-  .submenu.open {
-    display: flex;
-  }
-
-  .nav-item:last-child .submenu {
-    left: 0;
-    right: 0;
-  }
-
-  .sublink {
-    color: #babec3;
-    font-weight: 400;
-    font-size: 18px;
-  }
 }
 
 .prefooter-section {
@@ -353,7 +219,89 @@
   margin-bottom: 30px;
 }
 
+/* Media Queries - Consolidated */
+@media (max-width: 991px) {
+  .site-navigation {
+    background: #000;
+    margin: 10px;
+    top: 0;
+    width: calc(100% - 20px);
+  }
+
+  .navbar-nav {
+    margin-top: 50px;
+    height: 100vh;
+  }
+
+  .nav-link {
+    justify-self: left;
+    font-size: 24px;
+  }
+
+  .menu-item {
+    width: 100%;
+    border-top: 1px solid rgb(75, 75, 75);
+  }
+
+  .submenu {
+    position: relative;
+    min-width: 280px;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  .submenu.open {
+    display: flex;
+  }
+
+  .sublink {
+    color: #babec3;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  .submenu-list-item {
+    display: block;
+    justify-content: left;
+    width: 100%;
+    border: none;
+  }
+
+  .sublink:active {
+    color: var(--secondary-color);
+  }
+
+  .site-footer-widget {
+    margin-bottom: 40px;
+  }
+
+  .site-footer-widget-title {
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 575px) {
+  .site-navigation {
+    padding: 15px;
+  }
+
+  .site-navigation.nav-bg {
+    padding: 15px;
+  }
+
+  .site-footer-logo {
+    text-align: center;
+  }
+
+  .site-footer-widget {
+    text-align: center;
+  }
+
+  .site-footer-widget-top {
+    text-align: center;
+    display: block;
+  }
+
   .prefooter-content {
     max-width: 280px;
     text-align: center;
