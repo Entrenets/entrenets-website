@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 $(window).on('scroll', function () {
   var windscroll = $(window).scrollTop();
   if (windscroll >= 100) {
