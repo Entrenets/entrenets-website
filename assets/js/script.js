@@ -28,21 +28,67 @@ $(document).ready(function () {
 
 // Toggle dropdown menu on mobile
 document.addEventListener('DOMContentLoaded', () => {
-  const menuLinks = document.querySelectorAll('.menu-item.has-submenu > .menu-link');
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
+  const menuItems = document.querySelectorAll('.nav-item.has-submenu');
+  
+  menuItems.forEach(menuItem => {
+    const menuLink = menuItem.querySelector('.nav-link');
+    const submenu = menuItem.querySelector('.submenu');
+    
+    if (menuLink && submenu) {
+      menuLink.addEventListener('click', (e) => {
+        const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
+        
+        if (isMobile) {
+          e.preventDefault();
+          
+          menuItems.forEach(otherMenuItem => {
+            if (otherMenuItem !== menuItem) {
+              const otherSubmenu = otherMenuItem.querySelector('.submenu');
+              if (otherSubmenu) {
+                otherSubmenu.classList.remove('open');
+              }
+            }
+          });
+          
+          submenu.classList.toggle('open');
+        }
+      });
+    }
+  });
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
+    
+    if (isMobile) {
+      const clickedInsideMenu = e.target.closest('.nav-item.has-submenu');
       
-      if (isMobile) {
-        e.preventDefault();
-        const submenu = link.nextElementSibling;
-        submenu.classList.toggle('open');
+      if (!clickedInsideMenu) {
+        // Close all open submenus
+        menuItems.forEach(menuItem => {
+          const submenu = menuItem.querySelector('.submenu');
+          if (submenu) {
+            submenu.classList.remove('open');
+          }
+        });
       }
-    });
+    }
+  });
+  
+  // Close dropdowns when window is resized to desktop
+  window.addEventListener('resize', () => {
+    const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
+    
+    if (!isMobile) {
+      menuItems.forEach(menuItem => {
+        const submenu = menuItem.querySelector('.submenu');
+        if (submenu) {
+          submenu.classList.remove('open');
+        }
+      });
+    }
   });
 });
-
 
 
 $(window).on('scroll', function () {
