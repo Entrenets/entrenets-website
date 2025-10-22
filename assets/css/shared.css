@@ -20,6 +20,7 @@ body {
   font-family: "avenir";
   font-size: 16px;
   background-color: var(--primary-color);
+  overflow-x: hidden;
 }
 
 h1,
