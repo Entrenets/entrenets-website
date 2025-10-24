@@ -7,11 +7,11 @@ hero:
   subTitle: "Driving efficiency, scalability, and innovation for your network operations."
   buttons:
     - text: "Cloud Migration"
-      link: "cloud-migration"
+      link: "solutions/cloud-migration"
     - text: "Network Automation"
-      link: "network-automation"
+      link: "solutions/network-automation"
     - text: "Cloud Management"
-      link: "cloud-management"
+      link: "solutions/cloud-management"
 
 solutionsSection:
   title: "Solutions built to move your infrastructure forward"
