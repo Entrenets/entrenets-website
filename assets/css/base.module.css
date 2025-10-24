@@ -196,30 +196,44 @@
 }
 
 .prefooter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: white;
   text-align: center;
   border-radius: 10px;
   margin: 120px 0;
   height: 500px;
-  align-content: center;
-  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  
+  /* Compatibility with iPhone (notch / safe area) */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 .prefooter-content {
   position: relative;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .prefooter-title {
   letter-spacing: -2px;
   margin-bottom: 20px;
   font-weight: bold;
-  color: #fff
+  color: #fff;
+  font-size: 48px;
 }
 
 .prefooter-subtitle {
   font-size: 18px;
   margin-bottom: 30px;
+  line-height: 1.4;
 }
 
 @media (max-width: 991px) {
@@ -294,14 +308,8 @@
     padding: 15px;
   }
 
-  .site-footer-logo {
-    text-align: center;
-  }
-
-  .site-footer-widget {
-    text-align: center;
-  }
-
+  .site-footer-logo,
+  .site-footer-widget,
   .site-footer-widget-top {
     text-align: center;
     display: block;
@@ -315,6 +323,11 @@
   }
 
   .prefooter-title {
-    font-size: 40px;
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .prefooter-subtitle {
+    font-size: 16px;
   }
 }
