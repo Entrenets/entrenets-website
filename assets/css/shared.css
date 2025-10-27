@@ -3,15 +3,19 @@
 :root {
   --primary-color: #000;
   --secondary-color: #4161d3;
-  --accent-color: #EB3678;
-  --text-light-color: #fff;
+  --accent-color: #00c6a7;
+
+  --title-color: #fff;
+  --subtitle-color: #808080;
+  --paragraph-color: #808080;
+  
   --text-dark-color: #454545;
   --text-blue-color: #4F75FF;
   --dark-bg-color: #0201017a;
   --light-bg-color: #F5F5F5;
 
   --hover-light-text: rgba(255, 255, 255, 0.8);
-  --hover-primary-btn-bg: #eb3678cf;
+  --hover-primary-btn-bg: #00b298;
   --hover-secondary-btn-bg: #2E4BB8;
 }
 
@@ -38,7 +42,6 @@ p {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 0;
-  color: var(--text-light-color);
 }
 
 h1 {
@@ -57,13 +60,13 @@ h2 {
 
 h3 {
   font-size: 40px;
-  color: var(--text-light-color);
+  color: var(--title-color);
   letter-spacing: -3px;
 }
 
 h4 {
   font-size: 30px;
-  color: var(--text-light-color);
+  color: var(--title-color);
 }
 
 h5 {
@@ -73,11 +76,23 @@ h5 {
 
 h6 {
   font-size: 20px;
-  color: var(--text-light-color);
+  color: var(--title-color);
 }
 
 .secondary-color {
   color: var(--text-blue-color);
+}
+
+.title {
+  color: var(--title-color);
+}
+
+.subtitle {
+  color: var(--subtitle-color)
+}
+
+.paragraph {
+  color: var(--paragraph-color)
 }
 
 @media (max-width: 575px) {
@@ -107,11 +122,6 @@ h6 {
 
   h6 {
     font-size: 18px;
-  }
-  .cta-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 0.95rem;
   }
 }
 
@@ -153,7 +163,6 @@ h6 {
 }
 
 .grid-item {
-  color: white;
   padding: 20px;
 }
 
@@ -253,47 +262,24 @@ h6 {
   min-width: 200px;
 }
 
-.CTA {
+.btn-cta {
   background: var(--accent-color);
-  color: #fff;
-  font-weight: 500;
+  color: #2A5298;
+  font-weight: 800;
   padding: 15px 30px;
   min-width: 150px;
-  color: #fff !important;
   border-radius: 3px;
 }
 
-.CTA:hover {
+.btn-cta:hover {
   background-color: var(--hover-primary-btn-bg);
-  color: #fff !important;
-}
-
-@media (max-width: 991.98px) {
-  .CTA {
-    display: none;
-  }
+  color: #fff;
 }
 
 .btn-secondary:hover {
   background-color: var(--hover-secondary-btn-bg);
 }
 
-.cta-button {
-  background-color: white;
-  color: #1d4ed8;
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 25px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #e0e7ff;
-  transform: scale(1.05);
-}
 
 @media (max-width: 991px) {
   .section-title {

@@ -3,9 +3,9 @@
   <div class="container cloud-migration-hero">
     <div class="site-hero-content center">
       <img src="{{hero.icon}}" width="60px" />
-      <h6 class="heroServiceName">{{hero.name}}</h6>
+      <h6 class="subtitle">{{hero.name}}</h6>
       <h1 class="heroTitle">{{hero.title | safe}}</h1>
-      <h6 class="heroSubTitle center light-font">{{hero.subTitle | safe}}</h6>
+      <h6 class="heroSubTitle center subtitle">{{hero.subTitle | safe}}</h6>
     </div>
   </div>
 </section>
@@ -21,8 +21,8 @@
       {% for challenge in challenges %}
       <div class="challenge card">
         <img src="{{challenge.icon}}" class="icon icon-lg" />
-        <h6>{{challenge.name}}</h6>
-        <p>{{challenge.description}}</p>
+        <h6 class="title">{{challenge.name}}</h6>
+        <p class="paragraph">{{challenge.description}}</p>
       </div>
       {% endfor %}
     </div>
@@ -31,14 +31,14 @@
 <section class="section">
   <div class="container">
     <div class="title-section center">
-      <h3>{{approach.title}}</h3>
+      <h3 class="title">{{approach.title}}</h3>
     </div>
     <div class="grid services-grid">
       {% for step in approach.steps%}
       <div class="grid-item card">
         <img src="{{step.icon}}" class="icon icon-lg" />
-        <h6>{{step.name}}</h6>
-        <p class="">{{step.description}}</p>
+        <h6 class="title">{{step.name}}</h6>
+        <p class="paragraph">{{step.description}}</p>
       </div>
       {%endfor%}
     </div>
@@ -47,8 +47,8 @@
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <h3 class="center">{{AWS.title}}</h3>
-      <p>{{AWS.intro}}</p>
+      <h3 class="title center">{{AWS.title}}</h3>
+      <p class="subtitle">{{AWS.intro}}</p>
     </div>
     <div>
       {% for benefit in AWS.benefits %}
@@ -56,8 +56,8 @@
         class="grid benefit {% if loop.index % 2 == 0 %} reverse {% endif %}"
       >
         <div class="text">
-          <h5>{{benefit.name}}</h5>
-          <p>{{benefit.description}}</p>
+          <h5 class="title">{{benefit.name}}</h5>
+          <p class="paragraph">{{benefit.description}}</p>
         </div>
         <div>
           {% if benefit.name == 'Vendor-Agnostic, Future-Proof Solutions' %} {%
