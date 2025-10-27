@@ -2,7 +2,7 @@
 
 <section class="hero">
   <div class="">
-    <h3 class="light-font">{{title | safe}}</h3>
+    <h3 class="title">{{title | safe}}</h3>
   </div>
 </section>
 
@@ -13,11 +13,11 @@
     </div>
     <div class="textContent text1">
       <h4 class="title">{{aboutUs.title | safe}}</h4>
-      <p class="description">{{aboutUs.introduction | safe}}</p>
+      <p class="description paragraph">{{aboutUs.introduction | safe}}</p>
     </div>
     <div class="textContent text2">
       <h6 class="title">{{vision.innovate.title}}</h6>
-      <p class="description">{{vision.innovate.text}}</p>
+      <p class="description paragraph">{{vision.innovate.text}}</p>
     </div>
     <div class="imageContent image2">
       <img src="{{vision.innovate.image}}" class="image" />
@@ -27,7 +27,7 @@
     </div>
     <div class="textContent text3">
       <h6 class="title">{{vision.humanPotential.title}}</h6>
-      <p class="description">{{vision.humanPotential.text}}</p>
+      <p class="description paragraph">{{vision.humanPotential.text}}</p>
     </div>
   </div>
 </section>
@@ -35,14 +35,14 @@
 <section class="about-section">
   <div class="container">
     <div class="section-title center">
-      <h3 class="valuesTitle center">{{valuesTitle | safe }}</h3>
+      <h3 class="title center">{{valuesTitle | safe }}</h3>
     </div>
     <div class="gridContainerValues">
       {% for value in values %}
       <div class="grid-item valueContainer">
         <img src="{{value.icon}}" class="valueIcon" />
-        <h6 class="valueTitle">{{value.title}}</h6>
-        <p class="valueDescription">{{value.description | safe}}</p>
+        <h6 class="title">{{value.title}}</h6>
+        <p class="paragraph">{{value.description | safe}}</p>
       </div>
       {% endfor %}
     </div>

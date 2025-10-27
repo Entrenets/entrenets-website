@@ -47,10 +47,6 @@
     {% block navbar %}
     <nav class="navbar navbar-expand-lg site-navigation">
       <div class="container">
-        {#
-        <h6 class="logo">Entrenets</h6>
-        #}
-
         <a class="navbar-brand" href="/">
           <img src="{{nav.navLogo}}" alt="nav-logo" class="logo" />
         </a>
@@ -90,7 +86,7 @@
             {% endfor %}
             <li class="nav-item">
               <a
-                class="nav-link btn btn-sm btn-sm-rounded CTA"
+                class="nav-link btn btn-sm btn-sm-rounded btn-cta btn-cta-nav"
                 href="{{nav.navBtnLink}}"
               >
                 <span class="btn-area">
@@ -107,57 +103,44 @@
     {% endblock %} {% block content %} {{content | safe}} {% endblock %} {%
     block footer %}
     <section class="section prefooter-section">
-      <div class="container">
-        <div class="prefooter-content">
-          <h2 class="prefooter-title">{{footer.prefooter.title}}</h2>
-          <p class="prefooter-subtitle">{{footer.prefooter.subtitle}}</p>
-          <a href="/contact" class="cta-button">{{footer.prefooter.button}}</a>
-        </div>
+      <div class="prefooter-content">
+        <h2 class="prefooter-title">{{footer.prefooter.title}}</h2>
+        <p class="prefooter-subtitle">{{footer.prefooter.subtitle}}</p>
+        <a href="/contact" class="btn btn-secondary btn-cta"
+          >{{footer.prefooter.button}}</a
+        >
       </div>
     </section>
+
     <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <!-- Logo -->
-          <div class="col-lg-3 col-md-6 site-footer-logo-wrapper">
-            <img
-              src="{{footer.logo}}"
-              class="site-footer-logo"
-              alt="company-logo"
-            />
-          </div>
+      <div class="container site-footer-container">
+        <div class="site-footer-logo-container">
+          <img
+            src="{{footer.logo}}"
+            class="site-footer-logo"
+            alt="Entrenets logo"
+          />
+          <p class="site-footer-copyright">
+            Entrenets, 2025. All rights reserved.
+          </p>
+        </div>
+
+        <nav class="site-footer-sitemap" aria-label="Footer navigation">
           {% for section in footer.sections %}
-          <div class="col-lg-3 col-md-6">
-            <div class="site-footer-widget">
-              <h6 class="site-footer-widget-title">{{ section.heading }}</h6>
-              <ul class="site-footer-widget-links">
-                {% for item in section.items %}
-                <li>
-                  <a href="{{ item.link }}">{{ item.text }}</a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
+          <div class="footer-sitemap-column">
+            <h6 class="site-footer-widget-title">{{ section.heading }}</h6>
+            <ul class="site-footer-widget-links">
+              {% for item in section.items %}
+              <li>
+                <a href="{{ item.link }}" class="site-footer-widget-link"
+                  >{{ item.text }}</a
+                >
+              </li>
+              {% endfor %}
+            </ul>
           </div>
           {% endfor %}
-
-          <!-- Back to Top -->
-          <div class="col-lg-3 col-md-6">
-            <a href="#top" class="site-footer-widget-top" class="center">
-              <img src="{{ footer.backToTop.icon }}" alt="back-to-top" />
-              <p class="site-footer-widget-top-text">
-                {{ footer.backToTop.text }}
-              </p>
-            </a>
-          </div>
-
-          <!-- Copyright -->
-          <div class="col-12">
-            <div class="site-footer-copyright text-center my-3">
-              <p>© 2025 Entrenets</p>
-            </div>
-          </div>
-        </div>
+        </nav>
       </div>
     </footer>
 

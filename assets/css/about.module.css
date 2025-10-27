@@ -42,7 +42,6 @@
 
 .textContent {
   padding: 20px;
-  color: var(--text-light-color);
   line-height: 1.8;
   font-size: 18px;
 }
