@@ -42,7 +42,7 @@
   <div class="solutions-grid">
     {% for solution in solutions %}
     <div class="solution-item">
-    <img src="{{solution.image}}" class="icon"/>
+    <img src="{{solution.image}}" alt="" class="icon"/>
       <p class="solution-subtitle">{{solution.subtitle}}</p>
       <h6 class="solution-title">{{solution.title}}</h6>
       <p class="solution-description paragraph">{{solution.description}}</p>
@@ -66,7 +66,7 @@
         <ul class="case-study-facts">
           {%for fact in case.facts%}
           <li class="case-study-fact">
-            <img src="{{case.icon}}" class="case-study-fact-icon" />
+            <img src="{{case.icon}}" alt="" class="case-study-fact-icon" />
             {{fact}}
           </li>
           {%endfor%}
@@ -88,7 +88,7 @@
       {% for differentiator in differentiators %}
       <div class="differentiator-card">
         <div class="differentiator-icon">
-          <img src="{{ differentiator.icon }}" alt="{{ differentiator.title }} icon" class="icon"/>
+          <img src="{{ differentiator.icon }}" alt="" class="icon"/>
         </div>
         <h6 class="differentiator-title">{{ differentiator.title }}</h4>
         <p class="differentiator-description paragraph">{{ differentiator.description }}</p>

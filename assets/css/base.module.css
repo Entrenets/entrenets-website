@@ -36,7 +36,6 @@
 }
 
 .site-navigation .navbar-toggler {
-  outline: 0;
   padding: 0;
 }
 
@@ -102,8 +101,15 @@
   z-index: 1000;
 }
 
-.nav-item:hover>.submenu {
+.submenu.open {
   display: block;
+}
+
+button.menu-link {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
 }
 
 .submenu-list-item {
@@ -273,9 +279,6 @@
     height: 100vh;
   }
 
-  .nav-item:hover>.submenu {
-    display: block;
-  }
 
   .nav-link {
     justify-self: left;

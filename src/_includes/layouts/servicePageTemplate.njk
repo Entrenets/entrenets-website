@@ -2,7 +2,7 @@
 <section class="site-hero">
   <div class="container cloud-migration-hero">
     <div class="site-hero-content center">
-      <img src="{{hero.icon}}" width="60px" />
+      <img src="{{hero.icon}}" alt="" width="60px" />
       <h6 class="subtitle">{{hero.name}}</h6>
       <h1 class="heroTitle">{{hero.title | safe}}</h1>
       <h6 class="heroSubTitle center subtitle">{{hero.subTitle | safe}}</h6>
@@ -20,7 +20,7 @@
     <div class="grid services-grid">
       {% for challenge in challenges %}
       <div class="challenge card">
-        <img src="{{challenge.icon}}" class="icon icon-lg" />
+        <img src="{{challenge.icon}}" alt="" class="icon icon-lg" />
         <h6 class="title">{{challenge.name}}</h6>
         <p class="paragraph">{{challenge.description}}</p>
       </div>
@@ -36,7 +36,7 @@
     <div class="grid services-grid">
       {% for step in approach.steps%}
       <div class="grid-item card">
-        <img src="{{step.icon}}" class="icon icon-lg" />
+        <img src="{{step.icon}}" alt="" class="icon icon-lg" />
         <h6 class="title">{{step.name}}</h6>
         <p class="paragraph">{{step.description}}</p>
       </div>
@@ -63,7 +63,7 @@
           {% if benefit.name == 'Vendor-Agnostic, Future-Proof Solutions' %} {%
           set className = 'illustration round' %} {% else %} {% set className =
           'illustration' %} {% endif %}
-          <img src="{{ benefit.image }}" class="{{ className }}" />
+          <img src="{{ benefit.image }}" alt="Illustration: {{ benefit.name }}" class="{{ className }}" />
         </div>
       </div>
       {% endfor %}

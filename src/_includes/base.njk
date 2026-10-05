@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Entrenets: {{title|safe}}</title>
     <meta name="generator" content="Eleventy" />
-    <!--Meta For No Index-->
-    <meta name="robots" content="noindex, Nofollow, Noimageindex" />
+    <meta name="robots" content="{{ robots }}" />
 
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
 
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="/assets/vendor/slick/slick.css" />
@@ -27,35 +22,38 @@
 
     <!-- Stylesheets -->
     <link href="/assets/css/base.module.css" rel="stylesheet" />
+    {% if stylesheet %}
     <link href="/assets/css/{{ stylesheet }}" rel="stylesheet" />
+    {% endif %}
     <link href="/assets/css/shared.css" rel="stylesheet" />
 
     <!--Favicon-->
     <link
       rel="shortcut icon"
-      href="/assets/images/logo/favicon.png"
+      href="/assets/images/logo/favIcon.png"
       type="image/x-icon"
     />
     <link
       rel="icon"
-      href="/assets/images/logo/favicon.png"
+      href="/assets/images/logo/favIcon.png"
       type="image/x-icon"
     />
   </head>
 
   <body>
     {% block navbar %}
-    <nav class="navbar navbar-expand-lg site-navigation">
+    <nav class="navbar navbar-expand-lg site-navigation" aria-label="Main navigation">
       <div class="container">
         <a class="navbar-brand" href="/">
-          <img src="{{nav.navLogo}}" alt="nav-logo" class="logo" />
+          <img src="{{nav.navLogo}}" alt="Entrenets" class="logo" />
         </a>
 
         <button
           class="navbar-toggler collapsed"
           type="button"
-          data-toggle="collapse"
-          data-target="#sitenavbar"
+          aria-label="Toggle navigation"
+          aria-controls="sitenavbar"
+          aria-expanded="false"
         >
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -68,11 +66,9 @@
             <li
               class="nav-item menu-item{% if navLink.sublinks %} has-submenu{% endif %}"
             >
-              <a class="nav-link menu-link" href="{{navLink.url}}"
-                >{{navLink.text | capitalize}}</a
-              >
               {% if navLink.sublinks %}
-              <ul class="submenu">
+              <button type="button" class="nav-link menu-link" aria-expanded="false" aria-controls="submenu-{{loop.index}}">{{navLink.text | capitalize}}</button>
+              <ul class="submenu" id="submenu-{{loop.index}}">
                 {% for sublink in navLink.sublinks %}
                 <li class="submenu-list-item">
                   <a href="{{ sublink.url}}" class="sublink"
@@ -81,6 +77,8 @@
                 </li>
                 {% endfor %}
               </ul>
+              {% else %}
+              <a class="nav-link menu-link" href="{{navLink.url}}">{{navLink.text | capitalize}}</a>
               {% endif %}
             </li>
             {% endfor %}
@@ -150,5 +148,6 @@
     <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
     <script src="/assets/js/script.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>

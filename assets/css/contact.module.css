@@ -49,6 +49,17 @@
   color: #fff;
 }
 
+.contact-help,
+#inquiry-status {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.contact-help a,
+#inquiry-status a {
+  color: #7cf5ff;
+}
+
 .message {
   margin-bottom: 16px;
   background-color: var(--primary-color);

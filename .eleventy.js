@@ -2,6 +2,9 @@ require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addGlobalData("robots", process.env.VERCEL_ENV === "production"
+    ? "index, follow"
+    : "noindex, nofollow");
   eleventyConfig.addGlobalData("recaptchaSiteKey", process.env.GOOGLE_SITE_KEY);
 
   return {

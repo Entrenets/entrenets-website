@@ -7,7 +7,9 @@
       <p>{{subTitle}}</p>
     </div>
 
-    <form action="https://api.web3forms.com/submit" method="POST">
+    <p class="contact-help">Name, email, and message are required. Website and phone are optional.</p>
+    <p class="contact-help">You can also email <a href="mailto:info@entrenets.com">info@entrenets.com</a>. We respond within two business days.</p>
+    <form id="business-inquiry" data-thanks-url="/thanks/" action="https://api.web3forms.com/submit" method="POST">
       <input
         type="hidden"
         name="access_key"
@@ -24,7 +26,7 @@
           <label for="name" class="contact-form-label required-field"
             >Your Name</label
           >
-          <input type="text" name="name" required placeholder="Full Name" />
+          <input type="text" name="name" id="name" autocomplete="name" required placeholder="Full Name" />
         </div>
         <div class="form-item">
           <label for="email" class="contact-form-label required-field"
@@ -36,31 +38,34 @@
             id="email"
             required
             placeholder="name@company.com"
-            pattern="^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$"
+            autocomplete="email"
           />
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-item">
-          <label for="website" class="contact-form-label required-field"
-            >Website URL</label
+          <label for="website" class="contact-form-label"
+            >Website URL (optional)</label
           >
           <input
             type="url"
             name="website"
-            required
+            id="website"
+            autocomplete="url"
             placeholder="https://company.com"
           />
         </div>
         <div class="form-item">
-          <label for="phone" class="contact-form-label required-field"
-            >Phone number</label
+          <label for="phone" class="contact-form-label"
+            >Phone number (optional)</label
           >
           <input
-            type="phone"
+            type="tel"
             name="phone"
-            required
+            id="phone"
+            autocomplete="tel"
+            title="Use international format, for example +14155552671"
             placeholder="+14155552671"
             pattern="^\+[1-9]\d{1,14}$"
           />
@@ -73,6 +78,7 @@
       <textarea
         class="form-control message"
         name="message"
+        id="message"
         rows="6"
         minlength="5"
         required
@@ -83,28 +89,29 @@
       <input
         type="checkbox"
         name="botcheck"
-        cass="hidden"
+        class="hidden"
+        tabindex="-1"
+        aria-hidden="true"
         style="display: none"
       />
 
-      <!-- h-captcha -->
-      <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
+      <div id="inquiry-captcha" class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" data-theme="dark"></div>
+      <noscript><p class="contact-help">Please email info@entrenets.com. This protected form requires JavaScript.</p></noscript>
 
-      <!-- Custom Confirmation / Success Page -->
-      <input
-        type="hidden"
-        name="redirect"
-        value="https://entrenets.com/thanks"
-      />
-
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" disabled>
         <span class="btn-area">
           <span data-text="{{btnText}}"> {{btnText}} </span>
         </span>
       </button>
     </form>
-    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <p id="inquiry-status" role="status" tabindex="-1"></p>
+
   </div>
 </section>
 
 {% endblock %} {% block workTogether %}{% endblock %}
+
+{% block scripts %}
+<script src="/assets/js/contact.js"></script>
+<script id="captcha-script" src="https://js.hcaptcha.com/1/api.js?onload=inquiryCaptchaReady&amp;render=explicit&amp;recaptchacompat=off" async defer></script>
+{% endblock %}

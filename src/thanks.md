@@ -1,8 +1,6 @@
 ---
 layout: layouts/formResponse.njk
-stylesheet: formResponse.module.css
 title: Thank you for contacting us
-message: We've received your request and appreciate you reaching out. <br />Our team is reviewing your details, and we’ll get back to you within 2 business days.
-image: /assets/images/contact/email.png
+message: Thanks for getting in touch! We’ll respond within two business days. You can also reach us at <a href='mailto:info@entrenets.com'>info@entrenets.com</a>.
 signature: The Entrenets Team
 ---
