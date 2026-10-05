@@ -230,6 +230,15 @@ h6 {
   box-shadow: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #7cf5ff;
+  outline-offset: 3px;
+}
+
 @media (max-width: 991px) {
   .btn {
     padding: 17px 40px;
@@ -291,6 +300,27 @@ h6 {
   }
 }
 
+.confirmation-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.confirmation-content {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .thanks-message {
+  color: #fff;
   line-height: 2;
+}
+
+.thanks-message a,
+.thanks-message a:hover,
+.thanks-message a:focus-visible {
+  color: #7cf5ff;
+  text-decoration: underline;
 }

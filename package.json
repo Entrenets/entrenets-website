@@ -4,10 +4,10 @@
    "description": "",
    "main": ".eleventy.js",
    "scripts": {
-      "build:eleventy": "npx eleventy",
-      "build:css": "postcss assets/css/*.module.css --dir _site/assets/css",
-      "build": "npm run build:css && npm run build:eleventy",
-      "dev": "npx eleventy --serve"
+      "build": "node scripts/clean.js && eleventy",
+      "dev": "node scripts/clean.js && eleventy --serve",
+      "test": "playwright test",
+      "check": "node scripts/check.js"
    },
    "repository": {
       "type": "git",
@@ -19,16 +19,12 @@
    "dependencies": {
       "@11ty/eleventy": "^3.0.0",
       "dotenv": "^16.4.7",
-      "postcss-modules": "^6.0.1",
-      "postcss-values": "^0.0.0",
       "save-dev": "^0.0.1-security"
    },
    "devDependencies": {
-      "postcss": "^8.4.49",
-      "postcss-cli": "^11.0.0",
-      "postcss-modules-extract-imports": "^3.1.0",
-      "postcss-modules-local-by-default": "^4.2.0",
-      "postcss-modules-scope": "^3.2.1",
-      "postcss-modules-values": "^4.0.0"
+      "@playwright/test": "^1.63.0"
+   },
+   "engines": {
+      "node": "24.x"
    }
 }

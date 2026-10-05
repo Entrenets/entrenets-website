@@ -9,7 +9,7 @@
 <section class="about-section">
   <div class="container introContainer">
     <div class="imageContent image1">
-      <img src="{{aboutUs.image}}" class="image" />
+      <img src="{{aboutUs.image}}" alt="Entrenets team collaborating" class="image" />
     </div>
     <div class="textContent text1">
       <h4 class="title">{{aboutUs.title | safe}}</h4>
@@ -20,10 +20,10 @@
       <p class="description paragraph">{{vision.innovate.text}}</p>
     </div>
     <div class="imageContent image2">
-      <img src="{{vision.innovate.image}}" class="image" />
+      <img src="{{vision.innovate.image}}" alt="Colleagues working together on a startup" class="image" />
     </div>
     <div class="imageContent image3">
-      <img src="{{vision.humanPotential.image}}" class="image" />
+      <img src="{{vision.humanPotential.image}}" alt="Colleagues discussing their work" class="image" />
     </div>
     <div class="textContent text3">
       <h6 class="title">{{vision.humanPotential.title}}</h6>
@@ -40,7 +40,7 @@
     <div class="gridContainerValues">
       {% for value in values %}
       <div class="grid-item valueContainer">
-        <img src="{{value.icon}}" class="valueIcon" />
+        <img src="{{value.icon}}" alt="" class="valueIcon" />
         <h6 class="title">{{value.title}}</h6>
         <p class="paragraph">{{value.description | safe}}</p>
       </div>

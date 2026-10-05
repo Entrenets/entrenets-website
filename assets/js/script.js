@@ -26,70 +26,59 @@ $(document).ready(function () {
 
 });
 
-// Toggle dropdown menu on mobile
+// Service navigation supports pointer, keyboard, and mobile controls.
 document.addEventListener('DOMContentLoaded', () => {
-  const menuItems = document.querySelectorAll('.nav-item.has-submenu');
-  
-  menuItems.forEach(menuItem => {
-    const menuLink = menuItem.querySelector('.nav-link');
-    const submenu = menuItem.querySelector('.submenu');
-    
-    if (menuLink && submenu) {
-      menuLink.addEventListener('click', (e) => {
-        const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
-        
-        if (isMobile) {
-          e.preventDefault();
-          
-          menuItems.forEach(otherMenuItem => {
-            if (otherMenuItem !== menuItem) {
-              const otherSubmenu = otherMenuItem.querySelector('.submenu');
-              if (otherSubmenu) {
-                otherSubmenu.classList.remove('open');
-              }
-            }
-          });
-          
-          submenu.classList.toggle('open');
-        }
-      });
-    }
-  });
-  
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', (e) => {
-    const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
-    
-    if (isMobile) {
-      const clickedInsideMenu = e.target.closest('.nav-item.has-submenu');
-      
-      if (!clickedInsideMenu) {
-        // Close all open submenus
-        menuItems.forEach(menuItem => {
-          const submenu = menuItem.querySelector('.submenu');
-          if (submenu) {
-            submenu.classList.remove('open');
-          }
-        });
+  const navigationToggle = document.querySelector('.navbar-toggler');
+  const navigation = document.getElementById('sitenavbar');
+  if (navigationToggle && navigation) {
+    const setNavigationOpen = open => {
+      navigation.classList.toggle('show', open);
+      navigationToggle.classList.toggle('collapsed', !open);
+      navigationToggle.setAttribute('aria-expanded', String(open));
+    };
+    navigationToggle.addEventListener('click', () => {
+      setNavigationOpen(navigationToggle.getAttribute('aria-expanded') !== 'true');
+    });
+    navigation.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !event.defaultPrevented) {
+        setNavigationOpen(false);
+        navigationToggle.focus();
       }
-    }
-  });
-  
-  // Close dropdowns when window is resized to desktop
-  window.addEventListener('resize', () => {
-    const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
-    
-    if (!isMobile) {
-      menuItems.forEach(menuItem => {
-        const submenu = menuItem.querySelector('.submenu');
-        if (submenu) {
-          submenu.classList.remove('open');
-        }
-      });
-    }
+    });
+  }
+  const menus = document.querySelectorAll('.nav-item.has-submenu');
+  const mobile = () => window.matchMedia('(max-width: 991.98px)').matches;
+
+  menus.forEach(menu => {
+    const toggle = menu.querySelector('button.menu-link');
+    const submenu = menu.querySelector('.submenu');
+    if (!toggle || !submenu) return;
+
+    const setOpen = open => {
+      submenu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('mouseenter', () => { if (!mobile()) setOpen(true); });
+    menu.addEventListener('mouseleave', () => {
+      if (!mobile() && !menu.contains(document.activeElement)) setOpen(false);
+    });
+    menu.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        toggle.focus();
+        event.preventDefault();
+      }
+    });
+    menu.addEventListener('focusout', () => {
+      window.setTimeout(() => { if (!menu.contains(document.activeElement)) setOpen(false); }, 0);
+    });
+    document.addEventListener('click', event => {
+      if (!menu.contains(event.target)) setOpen(false);
+    });
+    window.addEventListener('resize', () => setOpen(false));
   });
 });
-
 
 $(window).on('scroll', function () {
   var windscroll = $(window).scrollTop();
@@ -100,29 +89,8 @@ $(window).on('scroll', function () {
   }
 });
 
-// Blocks certain e-mail domains
-document.getElementById("email").addEventListener("input", function () {
-  const blockedDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "gmx.de"];
-  const emailInput = this.value;
-  const emailDomain = emailInput.split("@")[1];
-
-  if (emailDomain && blockedDomains.includes(emailDomain.toLowerCase())) {
-    this.setCustomValidity("Please enter a company email.");
-  } else {
-    this.setCustomValidity("");
-  }
-});
-
-//Adds http or https if user does not. 
-document.getElementById("company-website").addEventListener("blur", function () {
-  if (this.value && !this.value.startsWith("http://") && !this.value.startsWith("https://")) {
-    this.value = "https://" + this.value;
-  }
-});
-
 // Vercel analytics
 window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-
 
 
 

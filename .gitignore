@@ -4,3 +4,6 @@ dist
 .module.css.json
 .env
 .vercel
+.test-site/
+test-results/
+playwright-report/

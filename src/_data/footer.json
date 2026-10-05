@@ -27,15 +27,15 @@
       "heading": "Services",
       "items": [
         {
-          "link": "/cloud-migration",
+          "link": "/solutions/cloud-migration/",
           "text": "Cloud Migration"
         },
         {
-          "link": "/cloud-management",
+          "link": "/solutions/cloud-management/",
           "text": "Cloud Management"
         },
         {
-          "link": "/network-automation",
+          "link": "/solutions/network-automation/",
           "text": "Network Automation"
         }
       ]
