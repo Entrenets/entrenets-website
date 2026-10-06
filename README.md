@@ -1,6 +1,6 @@
 # Entrenets website
 
-Eleventy renders Nunjucks layouts and Markdown content into `_site`. CSS and other assets are copied unchanged by Eleventy; the existing `.module.css` filenames are ordinary stylesheets, not CSS Modules.
+Eleventy renders Nunjucks layouts and Markdown content into `_site`. CSS and other assets are copied unchanged by Eleventy as ordinary static files. Project-owned class names use kebab-case and are used directly by templates; vendor classes follow their library's naming.
 
 ## Development
 

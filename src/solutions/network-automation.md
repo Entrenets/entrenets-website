@@ -1,6 +1,6 @@
 ---
 layout: layouts/servicePageTemplate.njk
-stylesheet: servicePageTemplate.module.css
+stylesheet: servicePageTemplate.css
 hero:
   icon: /assets/images/servicePageTemplate/network-automation.svg
   name: "Network Automation Services"

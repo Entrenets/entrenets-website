@@ -128,15 +128,15 @@
 }
 
 @media (max-width: 575px) {
-  .heroTitle {
+  .hero-title {
     font-size: 50px;
   }
 
-  .heroSubTitle {
+  .hero-subtitle {
     font-size: 16px;
   }
 
-  .heroServiceName {
+  .hero-service-name {
     font-size: 16px;
   }
 }
