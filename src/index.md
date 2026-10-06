@@ -1,7 +1,7 @@
 ---
 title: "Driving efficiency, scalability, and innovation for your network operations."
 layout: "layouts/homepage.njk"
-stylesheet: "homepage.module.css"
+stylesheet: "homepage.css"
 hero:
   title: "<span style='color: #fff'>Automate Your Network.</span><br/> Unlock the Cloud."
   subTitle: "Driving efficiency, scalability, and innovation for your network operations."

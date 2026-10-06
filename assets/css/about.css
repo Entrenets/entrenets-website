@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.heroText {
+.hero-text {
   font-size: 20px;
   line-height: 1.8;
 }
@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 
-.gridContainerValues {
+.grid-container-values {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -27,7 +27,7 @@
   text-align: center;
 }
 
-.introContainer {
+.intro-container {
   width: auto;
   border-radius: 10px;
   padding: 8px 16px 0;
@@ -35,44 +35,44 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
-    "image1 text1"
-    "text2 image2"
-    "image3 text3";
+    "about-intro-image about-intro-text"
+    "innovation-text innovation-image"
+    "human-potential-image human-potential-text";
 }
 
-.textContent {
+.text-content {
   padding: 20px;
   line-height: 1.8;
   font-size: 18px;
 }
 
-.imageContent {
+.image-content {
   display: flex;
   justify-content: center;
 }
 
-.image1 {
-  grid-area: image1;
+.about-intro-image {
+  grid-area: about-intro-image;
 }
 
-.text1 {
-  grid-area: text1;
+.about-intro-text {
+  grid-area: about-intro-text;
 }
 
-.image2 {
-  grid-area: image2;
+.innovation-image {
+  grid-area: innovation-image;
 }
 
-.text2 {
-  grid-area: text2;
+.innovation-text {
+  grid-area: innovation-text;
 }
 
-.image3 {
-  grid-area: image3;
+.human-potential-image {
+  grid-area: human-potential-image;
 }
 
-.text3 {
-  grid-area: text3;
+.human-potential-text {
+  grid-area: human-potential-text;
 }
 
 .image {
@@ -84,13 +84,13 @@
   border-radius: 10px;
 }
 
-.valueContainer {
+.value-container {
   min-height: fit-content;
   background-color: #161616;
   border-radius: 5px;
 }
 
-.valueIcon {
+.value-icon {
   width: 70px;
   padding-bottom: 10px;
   display: flex;
@@ -101,7 +101,7 @@
   font-size: 18px;
 }
 
-.valuesTitle {
+.values-title {
   font-weight: 500;
 }
 
@@ -111,28 +111,28 @@
     padding: 20px 0;
   }
 
-  .gridContainerValues {
+  .grid-container-values {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
 
-  .valueContainer {
+  .value-container {
     max-width: 400px;
   }
 
-  .valueIcon {
+  .value-icon {
     width: 45px;
   }
 
-  .introContainer {
+  .intro-container {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "text1"
-      "image1"
-      "text2"
-      "image2"
-      "text3"
-      "image3"
+      "about-intro-text"
+      "about-intro-image"
+      "innovation-text"
+      "innovation-image"
+      "human-potential-text"
+      "human-potential-image"
   }
 
   .image {
@@ -144,17 +144,17 @@
 
 @media (max-width: 480px) {
 
-  .valuesTitle {
+  .values-title {
     font-size: 28px;
     font-weight: 400;
   }
 
-  .gridContainerValues {
+  .grid-container-values {
     grid-template-columns: 1fr;
     gap: 5px;
   }
 
-  .valueIcon {
+  .value-icon {
     width: 60px;
   }
 
