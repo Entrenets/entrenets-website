@@ -2,9 +2,14 @@
   'use strict';
 
   const form = document.getElementById('business-inquiry');
-  if (!form) return;
   const status = document.getElementById('inquiry-status');
-  const submit = form.querySelector('[type="submit"]');
+  const submit = form?.querySelector('[type="submit"]');
+  const captcha = form?.querySelector('#inquiry-captcha');
+  if (!form || !status || !submit || !captcha) {
+    // The async CAPTCHA script can still call back on an incomplete page.
+    window.inquiryCaptchaReady = () => {};
+    return;
+  }
   const unconfirmed = 'Your submission is unconfirmed. Your information is still here. Please complete CAPTCHA verification again before a deliberate retry, or email info@entrenets.com.';
   let submitting = false;
   let widget;
@@ -41,7 +46,7 @@
     window.clearTimeout(captchaTimeout);
     try {
       widget = window.hcaptcha.render('inquiry-captcha', {
-        sitekey: document.getElementById('inquiry-captcha').dataset.sitekey,
+        sitekey: captcha.dataset.sitekey,
         theme: 'dark',
         callback: () => {
           if (!submitting) feedback('Verification complete. You can send your inquiry.');

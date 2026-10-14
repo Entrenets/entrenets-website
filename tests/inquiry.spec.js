@@ -1,5 +1,23 @@
 const { test, expect, fillInquiry } = require('./fixtures');
 
+test('missing inquiry controls do not break the contact page or shared navigation', async ({ page }) => {
+  for (const attribute of ['id="business-inquiry"', 'id="inquiry-status"', 'type="submit"', 'id="inquiry-captcha"']) {
+    await page.route('**/contact/', async route => {
+      const response = await route.fetch();
+      const html = await response.text();
+      expect(html).toContain(attribute);
+      await route.fulfill({ response, body: html.replace(attribute, 'data-unavailable="true"') });
+    });
+    await page.goto('/contact/');
+    const solutions = page.getByRole('button', { name: 'Solutions', exact: true });
+    await solutions.focus();
+    await solutions.press('Enter');
+    await expect(solutions).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.getByRole('link', { name: 'info@entrenets.com', exact: true })).toBeVisible();
+    await page.unroute('**/contact/');
+  }
+});
+
 test('a prospect can use a personal email and omit website and phone, then receive confirmation', async ({ page }) => {
   let submitted;
   await page.route('https://api.web3forms.com/submit', async route => {
