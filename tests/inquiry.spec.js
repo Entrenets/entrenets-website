@@ -80,12 +80,33 @@ test('a rejected inquiry keeps every field and lets the prospect verify again an
   expect(tokens).toEqual(['test-verification-1', 'test-verification-2']);
 });
 
-for (const [outcome, action, expectedFeedback, previouslyVerified] of [
-  ['missing verification', null, /complete CAPTCHA/i, false],
-  ['expired verification', 'Expire verification', /verification expired.*verify again/i, true],
-  ['expired challenge', 'Expire challenge', /challenge expired.*verify again/i, false],
-  ['failed completion', 'Fail verification', /verification failed.*verify again/i, false],
-]) {
+const missingVerification = {
+  outcome: 'missing verification',
+  action: null,
+  expectedFeedback: /complete CAPTCHA/i,
+  previouslyVerified: false,
+};
+const expiredVerification = {
+  outcome: 'expired verification',
+  action: 'Expire verification',
+  expectedFeedback: /verification expired.*verify again/i,
+  previouslyVerified: true,
+};
+const expiredChallenge = {
+  outcome: 'expired challenge',
+  action: 'Expire challenge',
+  expectedFeedback: /challenge expired.*verify again/i,
+  previouslyVerified: false,
+};
+const failedCompletion = {
+  outcome: 'failed completion',
+  action: 'Fail verification',
+  expectedFeedback: /verification failed.*verify again/i,
+  previouslyVerified: false,
+};
+const captchaRecoveryCases = [missingVerification, expiredVerification, expiredChallenge, failedCompletion];
+
+for (const { outcome, action, expectedFeedback, previouslyVerified } of captchaRecoveryCases) {
   test(`a prospect recovers from ${outcome} without rewriting the inquiry`, async ({ page }) => {
     let attempts = 0;
     await page.route('https://api.web3forms.com/submit', route => {
