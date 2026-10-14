@@ -6,6 +6,8 @@ const captchaSDK = `
 (() => {
   let options;
   let response;
+  let verificationCount = 0;
+  let expiry;
   window.hcaptcha = {
     render(container, config) {
       options = config;
@@ -18,21 +20,22 @@ const captchaSDK = `
       verify.type = 'button';
       verify.textContent = 'Complete verification';
       verify.onclick = () => {
-        response.value = 'test-verification';
+        response.value = 'test-verification-' + ++verificationCount;
         options.callback?.(response.value);
-        window.setTimeout(() => { response.value = ''; options['expired-callback']?.(); }, 120000);
+        window.clearTimeout(expiry);
+        expiry = window.setTimeout(() => { response.value = ''; options['expired-callback']?.(); }, 120000);
       };
       root.append(verify);
-      for (const [label, callback] of [['Expire verification', 'expired-callback'], ['Fail verification', 'error-callback']]) {
+      for (const [label, callback] of [['Expire verification', 'expired-callback'], ['Expire challenge', 'chalexpired-callback'], ['Fail verification', 'error-callback']]) {
         const button = document.createElement('button');
         button.type = 'button';
         button.textContent = label;
-        button.onclick = () => { response.value = ''; options[callback]?.('network-error'); };
+        button.onclick = () => { window.clearTimeout(expiry); response.value = ''; options[callback]?.('network-error'); };
         root.append(button);
       }
       return 0;
     },
-    reset() { response.value = ''; },
+    reset() { window.clearTimeout(expiry); response.value = ''; },
     getResponse() { return response.value; },
   };
   const callback = new URL(document.currentScript.src).searchParams.get('onload');

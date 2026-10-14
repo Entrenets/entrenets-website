@@ -54,6 +54,9 @@
         'expired-callback': () => {
           if (!submitting) feedback('CAPTCHA verification expired. Please verify again. Your information is still here, or you can email info@entrenets.com.');
         },
+        'chalexpired-callback': () => {
+          if (!submitting) feedback('CAPTCHA challenge expired. Please verify again. Your information is still here, or you can email info@entrenets.com.');
+        },
         'error-callback': () => {
           if (!submitting) feedback('CAPTCHA verification failed. Please verify again, or email info@entrenets.com. Your information is still here.');
         },

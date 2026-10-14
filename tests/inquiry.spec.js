@@ -1,5 +1,21 @@
 const { test, expect, fillInquiry } = require('./fixtures');
 
+const completeInquiry = [
+  ['Your Name', 'A prospect'],
+  ['Email Address', 'prospect@gmail.com'],
+  ['Website URL', 'https://example.com'],
+  ['Phone number', '+14155552671'],
+  ['Tell us about the project', 'We need help automating our network.'],
+];
+
+async function fillCompleteInquiry(page) {
+  for (const [label, value] of completeInquiry) await page.getByLabel(label).fill(value);
+}
+
+async function expectCompleteInquiryRetained(page) {
+  for (const [label, value] of completeInquiry) await expect(page.getByLabel(label)).toHaveValue(value);
+}
+
 test('missing inquiry controls do not break the contact page or shared navigation', async ({ page }) => {
   for (const attribute of ['id="business-inquiry"', 'id="inquiry-status"', 'type="submit"', 'id="inquiry-captcha"']) {
     await page.route('**/contact/', async route => {
@@ -29,7 +45,7 @@ test('a prospect can use a personal email and omit website and phone, then recei
   await page.getByRole('button', { name: 'Complete verification' }).click();
   await page.getByRole('button', { name: 'Send Message' }).click();
   await expect(page).toHaveURL(/\/thanks\/$/);
-  expect(submitted).toMatchObject({ name: 'A prospect', email: 'prospect@gmail.com', message: 'We need help automating our network.', website: '', phone: '', 'h-captcha-response': 'test-verification' });
+  expect(submitted).toMatchObject({ name: 'A prospect', email: 'prospect@gmail.com', message: 'We need help automating our network.', website: '', phone: '', 'h-captcha-response': 'test-verification-1' });
   expect(submitted.redirect).toBeUndefined();
   await expect(page.getByText(/Thanks for getting in touch!/i)).toBeVisible();
   await expect(page.getByText(/two business days/i)).toBeVisible();
@@ -37,24 +53,23 @@ test('a prospect can use a personal email and omit website and phone, then recei
 
 test('a rejected inquiry keeps every field and lets the prospect verify again and retry', async ({ page }) => {
   let attempts = 0;
+  const tokens = [];
   await page.route('https://api.web3forms.com/submit', route => {
     attempts += 1;
+    tokens.push(route.request().postDataJSON()['h-captcha-response']);
     expect(route.request().postDataJSON()).toMatchObject({ website: 'https://example.com', phone: '+14155552671' });
     return attempts === 1
       ? route.fulfill({ status: 400, json: { success: false, message: 'Invalid captcha' } })
       : route.fulfill({ json: { success: true } });
   });
   await page.goto('/contact/');
-  await fillInquiry(page);
-  await page.getByLabel('Website URL').fill('https://example.com');
-  await page.getByLabel('Phone number').fill('+14155552671');
+  await fillCompleteInquiry(page);
   await page.getByRole('button', { name: 'Complete verification' }).click();
   await page.getByRole('button', { name: 'Send Message' }).click();
   await expect(page.getByRole('status')).toContainText(/rejected/i);
   await expect(page).toHaveURL(/\/contact\/$/);
-  for (const [label, value] of [['Your Name', 'A prospect'], ['Email Address', 'prospect@gmail.com'], ['Website URL', 'https://example.com'], ['Phone number', '+14155552671'], ['Tell us about the project', 'We need help automating our network.']]) {
-    await expect(page.getByLabel(label)).toHaveValue(value);
-  }
+  await expectCompleteInquiryRetained(page);
+  await expect(page.getByRole('status')).toBeFocused();
   await page.getByRole('button', { name: 'Send Message' }).click();
   await expect(page.getByRole('status')).toContainText(/complete CAPTCHA/i);
   expect(attempts).toBe(1);
@@ -62,17 +77,45 @@ test('a rejected inquiry keeps every field and lets the prospect verify again an
   await page.getByRole('button', { name: 'Send Message' }).click();
   await expect(page).toHaveURL(/\/thanks\/$/);
   expect(attempts).toBe(2);
+  expect(tokens).toEqual(['test-verification-1', 'test-verification-2']);
 });
 
-test('expired verification explains how to recover without rewriting the inquiry', async ({ page }) => {
-  await page.goto('/contact/');
-  await fillInquiry(page);
-  await page.getByRole('button', { name: 'Complete verification' }).click();
-  await page.getByRole('button', { name: 'Expire verification' }).click();
-  await expect(page.getByRole('status')).toContainText(/expired.*verify again/i);
-  await expect(page.getByLabel('Tell us about the project')).toHaveValue('We need help automating our network.');
-  await expect(page.getByRole('button', { name: 'Expire verification' })).toBeFocused();
-});
+for (const [outcome, action, expectedFeedback, previouslyVerified] of [
+  ['missing verification', null, /complete CAPTCHA/i, false],
+  ['expired verification', 'Expire verification', /verification expired.*verify again/i, true],
+  ['expired challenge', 'Expire challenge', /challenge expired.*verify again/i, false],
+  ['failed completion', 'Fail verification', /verification failed.*verify again/i, false],
+]) {
+  test(`a prospect recovers from ${outcome} without rewriting the inquiry`, async ({ page }) => {
+    let attempts = 0;
+    await page.route('https://api.web3forms.com/submit', route => {
+      attempts++;
+      return route.fulfill({ json: { success: true } });
+    });
+    await page.goto('/contact/');
+    await fillCompleteInquiry(page);
+    if (previouslyVerified) await page.getByRole('button', { name: 'Complete verification' }).click();
+    if (action) {
+      const control = page.getByRole('button', { name: action });
+      await control.click();
+      await expect(control).toBeFocused();
+    } else {
+      await page.getByRole('button', { name: 'Send Message' }).click();
+      await expect(page.getByRole('status')).toBeFocused();
+    }
+    await expect(page.getByRole('status')).toContainText(expectedFeedback);
+    await expect(page.getByRole('status')).toContainText('info@entrenets.com');
+    await expectCompleteInquiryRetained(page);
+    await page.getByRole('button', { name: 'Send Message' }).click();
+    await expect(page.getByRole('status')).toContainText(/complete CAPTCHA/i);
+    await expect(page).toHaveURL(/\/contact\/$/);
+    expect(attempts).toBe(0);
+    await page.getByRole('button', { name: 'Complete verification' }).click();
+    await page.getByRole('button', { name: 'Send Message' }).click();
+    await expect(page).toHaveURL(/\/thanks\/$/);
+    expect(attempts).toBe(1);
+  });
+}
 
 for (const [outcome, respond] of [
   ['network failure', route => route.abort()],
@@ -82,22 +125,29 @@ for (const [outcome, respond] of [
 ]) {
   test(`a prospect sees an unconfirmed outcome after ${outcome} and can retry deliberately`, async ({ page }) => {
     let attempts = 0;
+    const tokens = [];
     await page.route('https://api.web3forms.com/submit', route => {
       attempts += 1;
+      tokens.push(route.request().postDataJSON()['h-captcha-response']);
       return attempts === 1 ? respond(route) : route.fulfill({ json: { success: true } });
     });
     await page.goto('/contact/');
-    await fillInquiry(page);
+    await fillCompleteInquiry(page);
     await page.getByRole('button', { name: 'Complete verification' }).click();
     await page.getByRole('button', { name: 'Send Message' }).click();
     await expect(page.getByRole('status')).toContainText('unconfirmed');
-    await expect(page.getByLabel('Tell us about the project')).toHaveValue('We need help automating our network.');
+    await expectCompleteInquiryRetained(page);
+    await expect(page.getByRole('status')).toBeFocused();
     await expect(page).toHaveURL(/\/contact\/$/);
     await expect(page.getByRole('button', { name: 'Send Message' })).toBeEnabled();
+    expect(attempts).toBe(1);
+    await page.getByRole('button', { name: 'Send Message' }).click();
+    await expect(page.getByRole('status')).toContainText(/complete CAPTCHA/i);
     expect(attempts).toBe(1);
     await page.getByRole('button', { name: 'Complete verification' }).click();
     await page.getByRole('button', { name: 'Send Message' }).click();
     await expect(page).toHaveURL(/\/thanks\/$/);
+    expect(tokens).toEqual(['test-verification-1', 'test-verification-2']);
   });
 }
 
@@ -122,30 +172,28 @@ test('required fields and supplied optional values receive browser validation', 
   expect(sent).toBe(0);
 });
 
-test('failed CAPTCHA completion preserves the inquiry and offers email and re-verification', async ({ page }) => {
-  await page.goto('/contact/');
-  await fillInquiry(page);
-  await page.getByRole('button', { name: 'Fail verification' }).click();
-  await expect(page.getByRole('status')).toContainText(/verification failed.*verify again/i);
-  await expect(page.getByLabel('Tell us about the project')).toHaveValue('We need help automating our network.');
-  await expect(page.getByRole('link', { name: 'info@entrenets.com', exact: true }).first()).toHaveAttribute('href', 'mailto:info@entrenets.com');
-});
-
 test('a CAPTCHA script loading failure explains the email fallback', async ({ page }) => {
   await page.route('https://js.hcaptcha.com/**', route => route.abort());
   await page.goto('/contact/');
-  await fillInquiry(page);
+  await fillCompleteInquiry(page);
   await expect(page.getByRole('status')).toContainText(/verification.*unavailable.*info@entrenets.com/i);
-  await expect(page.getByLabel('Tell us about the project')).toHaveValue('We need help automating our network.');
+  await expectCompleteInquiryRetained(page);
+  await expect(page).toHaveURL(/\/contact\/$/);
+  await expect(page.getByRole('link', { name: 'info@entrenets.com', exact: true })).toHaveAttribute('href', 'mailto:info@entrenets.com');
 });
 
 test('a stalled submission becomes unconfirmed and returns to an actionable form', async ({ page }) => {
   await page.clock.install();
+  const tokens = [];
   let started;
   const requestStarted = new Promise(resolve => { started = resolve; });
-  await page.route('https://api.web3forms.com/submit', () => { started(); });
+  await page.route('https://api.web3forms.com/submit', route => {
+    tokens.push(route.request().postDataJSON()['h-captcha-response']);
+    if (tokens.length === 1) started();
+    else return route.fulfill({ json: { success: true } });
+  });
   await page.goto('/contact/');
-  await fillInquiry(page);
+  await fillCompleteInquiry(page);
   await page.getByRole('button', { name: 'Complete verification' }).click();
   await page.getByRole('button', { name: 'Send Message' }).click();
   await requestStarted;
@@ -154,7 +202,18 @@ test('a stalled submission becomes unconfirmed and returns to an actionable form
   await page.clock.fastForward(21000);
   await expect(page.getByRole('status')).toContainText(/unconfirmed/i);
   await expect(page.getByRole('button', { name: 'Send Message' })).toBeEnabled();
-  await expect(page.getByLabel('Your Name')).toHaveValue('A prospect');
+  await expectCompleteInquiryRetained(page);
+  await expect(page.getByRole('status')).toBeFocused();
+  await page.clock.fastForward(60000);
+  await expect(page).toHaveURL(/\/contact\/$/);
+  expect(tokens).toEqual(['test-verification-1']);
+  await page.getByRole('button', { name: 'Send Message' }).click();
+  await expect(page.getByRole('status')).toContainText(/complete CAPTCHA/i);
+  expect(tokens).toHaveLength(1);
+  await page.getByRole('button', { name: 'Complete verification' }).click();
+  await page.getByRole('button', { name: 'Send Message' }).click();
+  await expect(page).toHaveURL(/\/thanks\/$/);
+  expect(tokens).toEqual(['test-verification-1', 'test-verification-2']);
 });
 
 test('repeated submit actions cannot send concurrent inquiries', async ({ page }) => {
