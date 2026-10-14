@@ -26,7 +26,7 @@ const captchaSDK = `
         expiry = window.setTimeout(() => { response.value = ''; options['expired-callback']?.(); }, 120000);
       };
       root.append(verify);
-      for (const [label, callback] of [['Expire verification', 'expired-callback'], ['Expire challenge', 'chalexpired-callback'], ['Fail verification', 'error-callback']]) {
+      for (const [label, callback] of [['Expire verification', 'expired-callback'], ['Expire challenge', 'challenge-expired-callback'], ['Fail verification', 'error-callback']]) {
         const button = document.createElement('button');
         button.type = 'button';
         button.textContent = label;
