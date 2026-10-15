@@ -30,7 +30,17 @@ $(document).ready(function () {
 document.addEventListener('DOMContentLoaded', () => {
   const navigationToggle = document.querySelector('.navbar-toggler');
   const navigation = document.getElementById('sitenavbar');
+  const mobile = window.matchMedia('(max-width: 991.98px)');
+  let focusedControl = null;
   if (navigationToggle && navigation) {
+    const navigationRoot = navigationToggle.closest('nav');
+    // CSS can hide the focused control before the breakpoint event arrives.
+    document.addEventListener('focusin', event => {
+      focusedControl = navigationRoot.contains(event.target) ? event.target : null;
+    });
+    document.addEventListener('pointerdown', event => {
+      if (!navigationRoot.contains(event.target)) focusedControl = null;
+    });
     const setNavigationOpen = open => {
       navigation.classList.toggle('show', open);
       navigationToggle.classList.toggle('collapsed', !open);
@@ -40,14 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
       setNavigationOpen(navigationToggle.getAttribute('aria-expanded') !== 'true');
     });
     navigation.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !event.defaultPrevented) {
+      if (event.key === 'Escape' && !event.defaultPrevented && mobile.matches
+          && navigationToggle.getAttribute('aria-expanded') === 'true') {
         setNavigationOpen(false);
         navigationToggle.focus();
+        event.preventDefault();
       }
+    });
+    mobile.addEventListener('change', () => {
+      const focusInNavigation = navigation.contains(focusedControl);
+      const focusOnToggle = focusedControl === navigationToggle;
+      setNavigationOpen(false);
+      if (mobile.matches && focusInNavigation) navigationToggle.focus();
+      else if (!mobile.matches && focusOnToggle) navigation.querySelector('a, button')?.focus();
     });
   }
   const menus = document.querySelectorAll('.nav-item.has-submenu');
-  const mobile = () => window.matchMedia('(max-width: 991.98px)').matches;
 
   menus.forEach(menu => {
     const toggle = menu.querySelector('button.menu-link');
@@ -59,12 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(open));
     };
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
-    menu.addEventListener('mouseenter', () => { if (!mobile()) setOpen(true); });
+    menu.addEventListener('mouseenter', () => { if (!mobile.matches) setOpen(true); });
     menu.addEventListener('mouseleave', () => {
-      if (!mobile() && !menu.contains(document.activeElement)) setOpen(false);
+      if (!mobile.matches && !menu.contains(document.activeElement)) setOpen(false);
     });
     menu.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
         setOpen(false);
         toggle.focus();
         event.preventDefault();
@@ -76,7 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', event => {
       if (!menu.contains(event.target)) setOpen(false);
     });
-    window.addEventListener('resize', () => setOpen(false));
+    mobile.addEventListener('change', () => {
+      if (submenu.contains(focusedControl)) toggle.focus();
+      setOpen(false);
+    });
   });
 });
 
