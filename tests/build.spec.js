@@ -22,6 +22,13 @@ const excludedPages = [
   'privacy-policy/index.html',
   'terms-conditions/index.html',
 ];
+const deploymentCases = [
+  { context: 'production', expectedRobots: 'index, follow' },
+  { context: 'preview', expectedRobots: 'noindex, nofollow' },
+  { context: 'development', expectedRobots: 'noindex, nofollow' },
+  { context: undefined, expectedRobots: 'noindex, nofollow' },
+  { context: 'unknown', expectedRobots: 'noindex, nofollow' },
+];
 
 function htmlFiles(directory, prefix = '') {
   return readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -41,13 +48,7 @@ test('public builds replace stale output with only the intended pages and indexi
   symlinkSync(path.join(repository, 'node_modules'), path.join(project, 'node_modules'), 'dir');
 
   try {
-    for (const [context, robots] of [
-      ['production', 'index, follow'],
-      ['preview', 'noindex, nofollow'],
-      ['development', 'noindex, nofollow'],
-      [undefined, 'noindex, nofollow'],
-      ['unknown', 'noindex, nofollow'],
-    ]) {
+    for (const { context, expectedRobots } of deploymentCases) {
       await test.step(`fresh ${context ?? 'unspecified'} deployment build`, async () => {
         const output = path.join(project, '_site');
         for (const stalePage of [...publicPages, ...excludedPages, 'obsolete/index.html']) {
@@ -72,7 +73,7 @@ test('public builds replace stale output with only the intended pages and indexi
           const html = readFileSync(path.join(output, publicPage), 'utf8');
           const robotsTags = html.match(/<meta\b[^>]*\bname=["']robots["'][^>]*>/gi) ?? [];
           expect(robotsTags, publicPage).toHaveLength(1);
-          expect(robotsTags[0], publicPage).toContain(`content="${robots}"`);
+          expect(robotsTags[0], publicPage).toContain(`content="${expectedRobots}"`);
           expect(html, publicPage).not.toContain('Stale output from a previous deployment.');
         }
       });
