@@ -11,6 +11,7 @@ Use Node 24 (`nvm use`) and install dependencies with `npm ci`.
 - `npm run check` checks JavaScript syntax. This repository does not use TypeScript or have a typechecking command.
 - `npm test` runs the browser integration suite. Install its isolated browser once with `npx playwright install chromium`.
 - `npm test -- tests/inquiry.spec.js` runs only the inquiry tests.
+- `npm test -- tests/build.spec.js` checks the release build and generated output.
 
 The tests start fresh development, production, and preview sites on ports 8080–8082. Those ports must be free. Web3Forms and hCaptcha are controlled at their external boundaries; tests do not send real inquiries or solve live challenges. Uncaught browser errors fail tests. Traces are retained for failures under `test-results`.
 
@@ -20,7 +21,11 @@ Vercel builds with `npm run build` and serves `_site`, as specified in `vercel.j
 
 Only `VERCEL_ENV=production` enables search indexing. Vercel supplies this deployment context; keep system environment variables enabled for builds. Preview, development, and unspecified contexts remain `noindex`. For a production build outside Vercel, run `VERCEL_ENV=production npm run build` explicitly. Allowing indexing does not guarantee search inclusion.
 
-Unfinished blog and legal content remains excluded by `.eleventyignore`. Use the build command before publishing rather than reusing old generated output.
+Unknown deployment contexts also remain `noindex`; `NODE_ENV=production` alone does not enable indexing. The build reads the deployment context at build time, so rebuild when changing it.
+
+Unfinished blog and legal content remains excluded by `.eleventyignore`. `npm run build` removes `_site` before rendering; invoking Eleventy directly does not provide that cleanup guarantee. Fresh output contains only the home, about, contact, thank-you, Cloud Migration, Cloud Management, and Network Automation HTML pages.
+
+Build-output tests run the public build command in an isolated project for production, preview, development, unspecified, and unknown contexts. Each build starts with stale public pages, excluded blog and legal pages, and an obsolete asset. The tests inspect the exact generated HTML page set, indexing instructions on every page, and removal of stale output.
 
 ## Business inquiries
 
